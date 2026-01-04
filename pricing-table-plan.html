@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pricing Table</title>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#111418",
+                        "card-dark": "#1c2127",
+                        "border-dark": "#283039",
+                    },
+                    fontFamily: {
+                        "display": ["Spline Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for cleaner look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #111418;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #283039;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #3b4754;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display antialiased selection:bg-primary selection:text-white overflow-x-hidden">
+<div class="flex flex-col min-h-screen">
+<!-- Top Navigation -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-gray-200 dark:border-border-dark px-6 py-4 lg:px-20 bg-background-light dark:bg-background-dark z-20 sticky top-0">
+<div class="flex items-center gap-4 text-slate-900 dark:text-white">
+<div class="size-8 text-primary">
+<svg class="w-full h-full" fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 4H6V17.3333V30.6667H24V44H42V30.6667V17.3333H24V4Z" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-xl font-bold leading-tight tracking-tight">Plugin</h2>
+</div>
+<div class="hidden md:flex flex-1 justify-end gap-8 items-center">
+<nav class="flex items-center gap-8">
+<a class="text-slate-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary text-sm font-medium transition-colors" href="#">Features</a>
+<a class="text-slate-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary text-sm font-medium transition-colors" href="#">Pricing</a>
+<a class="text-slate-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary text-sm font-medium transition-colors" href="#">Docs</a>
+</nav>
+<button class="flex items-center justify-center overflow-hidden rounded-xl h-10 px-6 bg-primary hover:bg-blue-600 transition-colors text-white text-sm font-bold leading-normal tracking-wide shadow-lg shadow-blue-500/20">
+<span class="truncate">Get Started</span>
+</button>
+</div>
+<button class="md:hidden text-white">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</header>
+<main class="flex-grow flex flex-col items-center justify-center py-12 px-4 md:px-10 lg:px-20 relative">
+<!-- Ambient Background Glow -->
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-[500px] bg-primary/10 blur-[120px] rounded-full pointer-events-none z-0" data-alt="Abstract blue glow background effect"></div>
+<div class="layout-content-container flex flex-col max-w-[1200px] w-full z-10 gap-10">
+<!-- Page Heading & Toggle -->
+<div class="flex flex-col items-center gap-6 text-center">
+<div class="flex flex-col gap-3 max-w-2xl">
+<h1 class="text-slate-900 dark:text-white text-4xl md:text-5xl font-black leading-[1.1] tracking-tight">
+                            Choose the plan that fits your workflow
+                        </h1>
+<p class="text-slate-500 dark:text-gray-400 text-lg font-normal leading-relaxed">
+                            Flexible pricing for teams of all sizes. No hidden fees.
+                        </p>
+</div>
+<!-- Toggle -->
+<div class="flex p-1 bg-gray-200 dark:bg-[#283039] rounded-xl relative">
+<div class="relative flex items-center">
+<label class="cursor-pointer select-none px-6 py-2 rounded-lg text-sm font-bold transition-all duration-200 text-slate-500 dark:text-gray-400 hover:text-slate-900 dark:hover:text-white">
+<input class="sr-only peer" name="billing" type="radio" value="monthly"/>
+<span>Monthly</span>
+</label>
+<label class="cursor-pointer select-none px-6 py-2 rounded-lg text-sm font-bold transition-all duration-200 bg-white dark:bg-[#111418] text-slate-900 dark:text-white shadow-sm ring-1 ring-black/5">
+<input checked="" class="sr-only peer" name="billing" type="radio" value="annual"/>
+<span>Annual</span>
+</label>
+</div>
+<span class="absolute -right-24 top-1/2 -translate-y-1/2 text-xs font-bold text-primary bg-primary/10 px-2 py-1 rounded-md border border-primary/20">
+                            Save 20%
+                        </span>
+</div>
+</div>
+<!-- Pricing Cards Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start mt-4">
+<!-- Basic Plan -->
+<div class="group relative flex flex-col gap-6 rounded-2xl border border-gray-200 dark:border-[#3b4754] bg-white dark:bg-card-dark p-6 md:p-8 hover:border-primary/50 dark:hover:border-primary/50 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/5 hover:-translate-y-1">
+<div class="flex flex-col gap-2">
+<div class="flex justify-between items-start">
+<h3 class="text-slate-900 dark:text-white text-xl font-bold">Starter</h3>
+</div>
+<!-- Star Rating -->
+<div aria-label="3 out of 5 stars" class="flex text-yellow-400 gap-0.5">
+<span class="material-symbols-outlined text-[20px]">star</span>
+<span class="material-symbols-outlined text-[20px]">star</span>
+<span class="material-symbols-outlined text-[20px]">star</span>
+<span class="material-symbols-outlined text-[20px] text-gray-600" style="font-variation-settings: 'FILL' 0;">star</span>
+<span class="material-symbols-outlined text-[20px] text-gray-600" style="font-variation-settings: 'FILL' 0;">star</span>
+</div>
+<div class="flex items-baseline gap-1 mt-2">
+<span class="text-slate-900 dark:text-white text-5xl font-black tracking-tighter">$0</span>
+<span class="text-slate-500 dark:text-gray-400 text-base font-medium">/mo</span>
+</div>
+<p class="text-slate-500 dark:text-gray-400 text-sm">Perfect for individuals just starting out.</p>
+</div>
+<button class="w-full h-12 rounded-xl bg-gray-100 dark:bg-[#283039] hover:bg-gray-200 dark:hover:bg-[#323c47] text-slate-900 dark:text-white text-sm font-bold transition-colors">
+                            Get Started
+                        </button>
+<div class="border-t border-gray-100 dark:border-gray-800 pt-6">
+<ul class="flex flex-col gap-4">
+<li class="flex gap-3 text-sm text-slate-600 dark:text-gray-300">
+<span class="material-symbols-outlined text-primary text-[20px]">check</span>
+<span>Basic plugin features</span>
+</li>
+<li class="flex gap-3 text-sm text-slate-600 dark:text-gray-300">
+<span class="material-symbols-outlined text-primary text-[20px]">check</span>
+<span>Community support</span>
+</li>
+<li class="flex gap-3 text-sm text-slate-600 dark:text-gray-300">
+<span class="material-symbols-outlined text-primary text-[20px]">check</span>
+<span>1 active project</span>
+</li>
+<li class="flex gap-3 text-sm text-slate-400 dark:text-gray-600 line-through decoration-slate-400/50">
+<span class="material-symbols-outlined text-gray-400 dark:text-gray-600 text-[20px]">close</span>
+<span>Advanced analytics</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- Professional Plan (Highlighted) -->
+<div class="group relative flex flex-col gap-6 rounded-2xl border-2 border-primary bg-slate-50 dark:bg-[#161b22] p-6 md:p-8 shadow-xl shadow-primary/10 scale-100 lg:scale-105 z-10 transform transition-transform duration-300">
+<!-- Ribbon -->
+<div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider shadow-lg shadow-blue-500/30">
+                            Most Popular
+                        </div>
+<div class="flex flex-col gap-2 mt-2">
+<h3 class="text-slate-900 dark:text-white text-xl font-bold text-primary">Professional</h3>
+<!-- Star Rating -->
+<div aria-label="5 out of 5 stars" class="flex text-yellow-400 gap-0.5">
+<span class="material-symbols-outlined text-[20px]">star</span>
+<span class="material-symbols-outlined text-[20px]">star</span>
+<span class="material-symbols-outlined text-[20px]">star</span>
+<span class="material-symbols-outlined text-[20px]">star</span>
+<span class="material-symbols-outlined text-[20px]">star</span>
+</div>
+<div class="flex items-baseline gap-1 mt-2">
+<span class="text-slate-900 dark:text-white text-5xl font-black tracking-tighter">$29</span>
+<span class="text-slate-500 dark:text-gray-400 text-base font-medium">/mo</span>
+</div>
+<p class="text-slate-500 dark:text-gray-400 text-sm">Everything you need for growing projects.</p>
+</div>
+<button class="w-full h-12 rounded-xl bg-primary hover:bg-blue-600 text-white text-sm font-bold transition-colors shadow-lg shadow-blue-500/25">
+                            Start Free Trial
+                        </button>
+<div class="border-t border-gray-200 dark:border-gray-800 pt-6">
+<ul class="flex flex-col gap-4">
+<li class="flex gap-3 text-sm text-slate-900 dark:text-white font-medium">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+<span>Everything in Starter</span>
+</li>
+<li class="flex gap-3 text-sm text-slate-900 dark:text-white font-medium">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+<span>Advanced analytics dashboard</span>
+</li>
+<li class="flex gap-3 text-sm text-slate-900 dark:text-white font-medium">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+<span>Priority email support</span>
+</li>
+<li class="flex gap-3 text-sm text-slate-900 dark:text-white font-medium">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+<span>Unlimited projects</span>
+</li>
+<li class="flex gap-3 text-sm text-slate-900 dark:text-white font-medium">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+<span>Custom export formats</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- Team Plan -->
+<div class="group relative flex flex-col gap-6 rounded-2xl border border-gray-200 dark:border-[#3b4754] bg-white dark:bg-card-dark p-6 md:p-8 hover:border-primary/50 dark:hover:border-primary/50 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/5 hover:-translate-y-1">
+<div class="flex flex-col gap-2">
+<h3 class="text-slate-900 dark:text-white text-xl font-bold">Team</h3>
+<!-- Star Rating -->
+<div aria-label="4.5 out of 5 stars" class="flex text-yellow-400 gap-0.5">
+<span class="material-symbols-outlined text-[20px]">star</span>
+<span class="material-symbols-outlined text-[20px]">star</span>
+<span class="material-symbols-outlined text-[20px]">star</span>
+<span class="material-symbols-outlined text-[20px]">star</span>
+<span class="material-symbols-outlined text-[20px]">star_half</span>
+</div>
+<div class="flex items-baseline gap-1 mt-2">
+<span class="text-slate-900 dark:text-white text-5xl font-black tracking-tighter">$99</span>
+<span class="text-slate-500 dark:text-gray-400 text-base font-medium">/mo</span>
+</div>
+<p class="text-slate-500 dark:text-gray-400 text-sm">Advanced controls for scaling teams.</p>
+</div>
+<button class="w-full h-12 rounded-xl bg-gray-100 dark:bg-[#283039] hover:bg-gray-200 dark:hover:bg-[#323c47] text-slate-900 dark:text-white text-sm font-bold transition-colors">
+                            Contact Sales
+                        </button>
+<div class="border-t border-gray-100 dark:border-gray-800 pt-6">
+<ul class="flex flex-col gap-4">
+<li class="flex gap-3 text-sm text-slate-600 dark:text-gray-300">
+<span class="material-symbols-outlined text-primary text-[20px]">check</span>
+<span>Everything in Professional</span>
+</li>
+<li class="flex gap-3 text-sm text-slate-600 dark:text-gray-300">
+<span class="material-symbols-outlined text-primary text-[20px]">check</span>
+<span>SSO &amp; SAML Login</span>
+</li>
+<li class="flex gap-3 text-sm text-slate-600 dark:text-gray-300">
+<span class="material-symbols-outlined text-primary text-[20px]">check</span>
+<span>Dedicated account manager</span>
+</li>
+<li class="flex gap-3 text-sm text-slate-600 dark:text-gray-300">
+<span class="material-symbols-outlined text-primary text-[20px]">check</span>
+<span>Custom contracts &amp; invoicing</span>
+</li>
+<li class="flex gap-3 text-sm text-slate-600 dark:text-gray-300">
+<span class="material-symbols-outlined text-primary text-[20px]">check</span>
+<span>Role-based access control</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- Enterprise CTA Section -->
+<div class="w-full mt-8 mb-10">
+<div class="rounded-3xl bg-[#1c2127] border border-[#283039] p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden group">
+<!-- Abstract Background Decoration -->
+<div class="absolute right-0 top-0 w-1/2 h-full bg-gradient-to-l from-primary/5 to-transparent pointer-events-none" data-alt="Subtle gradient background decoration"></div>
+<div class="flex flex-col gap-3 relative z-10 text-center md:text-left">
+<h2 class="text-slate-900 dark:text-white text-2xl md:text-3xl font-bold tracking-tight">Need a custom Enterprise solution?</h2>
+<p class="text-slate-500 dark:text-gray-400 text-base max-w-xl">
+                                We offer tailored plans for large-scale deployments, custom security requirements, and volume discounts.
+                            </p>
+</div>
+<button class="flex min-w-[160px] cursor-pointer items-center justify-center rounded-xl h-12 px-6 bg-transparent border border-gray-300 dark:border-[#3b4754] hover:bg-gray-100 dark:hover:bg-[#283039] text-slate-900 dark:text-white text-base font-bold transition-all relative z-10">
+                            Contact Us
+                        </button>
+</div>
+</div>
+</div>
+</main>
+<!-- Simple Footer -->
+<footer class="border-t border-gray-200 dark:border-border-dark py-8 text-center">
+<p class="text-slate-500 dark:text-gray-500 text-sm">© 2024 Plugin Inc. All rights reserved.</p>
+</footer>
+</div>
+</body></html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Hosting Plan Comparison</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Spline Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display antialiased overflow-x-hidden selection:bg-primary/30">
+<div class="relative flex min-h-screen w-full flex-col">
+
+<!-- Main Content -->
+<main class="flex-1 flex flex-col items-center py-10 px-4 md:px-8 lg:px-20">
+<div class="w-full max-w-7xl flex flex-col gap-10">
+
+<!-- Comparison Table Container -->
+<div class="w-full overflow-hidden rounded-2xl border border-slate-200 dark:border-[#3b4754] bg-white dark:bg-[#1c2127] shadow-xl">
+<div class="overflow-x-auto">
+<table class="w-full min-w-[1000px] border-collapse">
+<thead>
+<tr>
+<!-- Features Header -->
+<th class="p-6 text-left align-bottom bg-slate-50 dark:bg-[#161b22] min-w-[200px] border-b border-slate-200 dark:border-[#3b4754]">
+<span class="text-sm font-bold uppercase tracking-wider text-slate-400">Features</span>
+<div class="mt-2 text-2xl font-bold">Plan Details</div>
+</th>
+<!-- Shared Hosting -->
+<th class="p-6 text-center align-bottom border-b border-slate-200 dark:border-[#3b4754] min-w-[180px]">
+<div class="flex flex-col gap-4 items-center">
+<h3 class="text-lg font-bold">Shared</h3>
+<div class="flex items-baseline gap-1">
+<span class="text-3xl font-black tracking-tight">$2.99</span>
+<span class="text-sm font-medium text-slate-500">/mo</span>
+</div>
+<button class="w-full py-2 px-4 rounded-lg bg-slate-200 dark:bg-[#283039] hover:bg-slate-300 dark:hover:bg-[#323b46] text-sm font-bold transition-colors">Select</button>
+</div>
+</th>
+<!-- VPS Hosting (Highlighted/Pro) -->
+<th class="relative p-6 text-center align-bottom bg-primary/5 border-b border-slate-200 dark:border-[#3b4754] border-t-4 border-t-primary min-w-[180px]">
+
+<div class="flex flex-col gap-4 items-center">
+<h3 class="text-lg font-bold text-primary">VPS Hosting</h3>
+<div class="flex items-baseline gap-1">
+<span class="text-3xl font-black tracking-tight">$12.99</span>
+<span class="text-sm font-medium text-slate-500">/mo</span>
+</div>
+<button class="w-full py-2 px-4 rounded-lg bg-primary hover:bg-blue-600 text-white text-sm font-bold shadow-lg shadow-primary/25 transition-colors">Select Plan</button>
+</div>
+</th>
+<!-- Dedicated -->
+<th class="p-6 text-center align-bottom border-b border-slate-200 dark:border-[#3b4754] min-w-[180px]">
+<div class="flex flex-col gap-4 items-center">
+<h3 class="text-lg font-bold">Dedicated</h3>
+<div class="flex items-baseline gap-1">
+<span class="text-3xl font-black tracking-tight">$79.99</span>
+<span class="text-sm font-medium text-slate-500">/mo</span>
+</div>
+<button class="w-full py-2 px-4 rounded-lg bg-slate-200 dark:bg-[#283039] hover:bg-slate-300 dark:hover:bg-[#323b46] text-sm font-bold transition-colors">Select</button>
+</div>
+</th>
+<!-- Enterprise -->
+<th class="p-6 text-center align-bottom border-b border-slate-200 dark:border-[#3b4754] min-w-[180px]">
+<div class="flex flex-col gap-4 items-center">
+<h3 class="text-lg font-bold">Enterprise</h3>
+<div class="flex items-baseline gap-1">
+<span class="text-3xl font-black tracking-tight">$149</span>
+<span class="text-sm font-medium text-slate-500">/mo</span>
+</div>
+<button class="w-full py-2 px-4 rounded-lg bg-slate-200 dark:bg-[#283039] hover:bg-slate-300 dark:hover:bg-[#323b46] text-sm font-bold transition-colors">Contact</button>
+</div>
+</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-200 dark:divide-[#3b4754]">
+<!-- Row: Storage -->
+<tr class="hover:bg-slate-50 dark:hover:bg-[#1f262e] transition-colors">
+<td class="p-4 pl-6 text-sm font-semibold text-slate-700 dark:text-slate-200 bg-slate-50 dark:bg-[#161b22]">Storage</td>
+<td class="p-4 text-center text-sm text-slate-600 dark:text-slate-400">20 GB SSD</td>
+<td class="p-4 text-center text-sm font-bold text-slate-900 dark:text-white bg-primary/5">100 GB NVMe</td>
+<td class="p-4 text-center text-sm text-slate-600 dark:text-slate-400">2 TB HDD</td>
+<td class="p-4 text-center text-sm text-slate-600 dark:text-slate-400">Scalable SSD</td>
+</tr>
+<!-- Row: Bandwidth -->
+<tr class="hover:bg-slate-50 dark:hover:bg-[#1f262e] transition-colors">
+<td class="p-4 pl-6 text-sm font-semibold text-slate-700 dark:text-slate-200 bg-slate-50 dark:bg-[#161b22]">Bandwidth</td>
+<td class="p-4 text-center text-sm text-slate-600 dark:text-slate-400">Unmetered</td>
+<td class="p-4 text-center text-sm font-bold text-slate-900 dark:text-white bg-primary/5">2 TB Premium</td>
+<td class="p-4 text-center text-sm text-slate-600 dark:text-slate-400">10 TB</td>
+<td class="p-4 text-center text-sm text-slate-600 dark:text-slate-400">Unmetered</td>
+</tr>
+<!-- Row: RAM -->
+<tr class="hover:bg-slate-50 dark:hover:bg-[#1f262e] transition-colors">
+<td class="p-4 pl-6 text-sm font-semibold text-slate-700 dark:text-slate-200 bg-slate-50 dark:bg-[#161b22]">RAM</td>
+<td class="p-4 text-center text-sm text-slate-600 dark:text-slate-400">1 GB</td>
+<td class="p-4 text-center text-sm font-bold text-slate-900 dark:text-white bg-primary/5">4 GB</td>
+<td class="p-4 text-center text-sm text-slate-600 dark:text-slate-400">16 GB</td>
+<td class="p-4 text-center text-sm text-slate-600 dark:text-slate-400">32 GB +</td>
+</tr>
+<!-- Row: SSL Certificate -->
+<tr class="hover:bg-slate-50 dark:hover:bg-[#1f262e] transition-colors">
+<td class="p-4 pl-6 text-sm font-semibold text-slate-700 dark:text-slate-200 bg-slate-50 dark:bg-[#161b22]">SSL Certificate</td>
+<td class="p-4 text-center text-sm text-slate-600 dark:text-slate-400">
+<div class="flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[18px] text-green-500">check_circle</span>
+<span>Free Basic</span>
+</div>
+</td>
+<td class="p-4 text-center text-sm font-bold text-slate-900 dark:text-white bg-primary/5">
+<div class="flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[18px] text-primary">verified</span>
+<span>Premium</span>
+</div>
+</td>
+<td class="p-4 text-center text-sm text-slate-600 dark:text-slate-400">
+<div class="flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[18px] text-green-500">check_circle</span>
+<span>Wildcard</span>
+</div>
+</td>
+<td class="p-4 text-center text-sm text-slate-600 dark:text-slate-400">
+<div class="flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[18px] text-green-500">check_circle</span>
+<span>EV SSL</span>
+</div>
+</td>
+</tr>
+<!-- Row: Support -->
+<tr class="hover:bg-slate-50 dark:hover:bg-[#1f262e] transition-colors">
+<td class="p-4 pl-6 text-sm font-semibold text-slate-700 dark:text-slate-200 bg-slate-50 dark:bg-[#161b22]">Support Level</td>
+<td class="p-4 text-center text-sm text-slate-600 dark:text-slate-400">Ticket Only</td>
+<td class="p-4 text-center text-sm font-bold text-slate-900 dark:text-white bg-primary/5">24/7 Priority Chat</td>
+<td class="p-4 text-center text-sm text-slate-600 dark:text-slate-400">Dedicated Agent</td>
+<td class="p-4 text-center text-sm text-slate-600 dark:text-slate-400">SLA + Team</td>
+</tr>
+<!-- Row: Uptime -->
+<tr class="hover:bg-slate-50 dark:hover:bg-[#1f262e] transition-colors">
+<td class="p-4 pl-6 text-sm font-semibold text-slate-700 dark:text-slate-200 bg-slate-50 dark:bg-[#161b22]">Uptime Guarantee</td>
+<td class="p-4 text-center text-sm text-slate-600 dark:text-slate-400">99.9%</td>
+<td class="p-4 text-center text-sm font-bold text-slate-900 dark:text-white bg-primary/5">99.95%</td>
+<td class="p-4 text-center text-sm text-slate-600 dark:text-slate-400">99.99%</td>
+<td class="p-4 text-center text-sm text-slate-600 dark:text-slate-400">100% SLA</td>
+</tr>
+<!-- Row: Free Domain -->
+<tr class="hover:bg-slate-50 dark:hover:bg-[#1f262e] transition-colors">
+<td class="p-4 pl-6 text-sm font-semibold text-slate-700 dark:text-slate-200 bg-slate-50 dark:bg-[#161b22]">Free Domain</td>
+<td class="p-4 text-center text-sm text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined text-slate-400 text-xl">remove</span>
+</td>
+<td class="p-4 text-center text-sm font-bold text-slate-900 dark:text-white bg-primary/5">
+<span class="material-symbols-outlined text-primary text-xl">check</span>
+</td>
+<td class="p-4 text-center text-sm text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined text-green-500 text-xl">check</span>
+</td>
+<td class="p-4 text-center text-sm text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined text-green-500 text-xl">check</span>
+</td>
+</tr>
+<!-- Row: Daily Backups -->
+<tr class="hover:bg-slate-50 dark:hover:bg-[#1f262e] transition-colors">
+<td class="p-4 pl-6 text-sm font-semibold text-slate-700 dark:text-slate-200 bg-slate-50 dark:bg-[#161b22] border-b-0">Daily Backups</td>
+<td class="p-4 text-center text-sm text-slate-600 dark:text-slate-400 border-b-0">
+<span class="material-symbols-outlined text-slate-400 text-xl">remove</span>
+</td>
+<td class="p-4 text-center text-sm font-bold text-slate-900 dark:text-white bg-primary/5 border-b-0">
+<span class="material-symbols-outlined text-primary text-xl">check</span>
+</td>
+<td class="p-4 text-center text-sm text-slate-600 dark:text-slate-400 border-b-0">
+<span class="material-symbols-outlined text-green-500 text-xl">check</span>
+</td>
+<td class="p-4 text-center text-sm text-slate-600 dark:text-slate-400 border-b-0">
+<span class="material-symbols-outlined text-green-500 text-xl">check</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+</div>
+</main>
+<!-- Footer -->
+
+</div>
+</body></html>

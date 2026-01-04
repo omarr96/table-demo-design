@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pricing Table Design</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Spline Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .icon-filled {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased overflow-x-hidden">
+<div class="relative flex min-h-screen flex-col">
+
+<main class="flex-grow">
+<div class="relative w-full py-16 lg:py-24" data-alt="Abstract subtle geometric light pattern background">
+<div class="layout-container relative z-10 mx-auto flex max-w-[1200px] flex-col px-4 sm:px-6 lg:px-8">
+
+<div class="mb-14 flex flex-col items-center justify-center gap-4 sm:flex-row">
+
+<div class="flex h-12 items-center rounded-xl bg-slate-100 dark:bg-slate-800 p-1">
+<label class="group relative flex h-full cursor-pointer items-center justify-center gap-2 rounded-lg px-4 text-sm font-bold transition-all has-[:checked]:bg-white has-[:checked]:text-primary has-[:checked]:shadow-sm dark:has-[:checked]:bg-slate-700 dark:has-[:checked]:text-white">
+<span class="material-symbols-outlined text-[20px]">person</span>
+<span>Individual</span>
+<input checked="" class="peer sr-only" name="userType" type="radio" value="individual"/>
+</label>
+<label class="group relative flex h-full cursor-pointer items-center justify-center gap-2 rounded-lg px-4 text-sm font-bold text-slate-500 transition-all has-[:checked]:bg-white has-[:checked]:text-primary has-[:checked]:shadow-sm dark:text-slate-400 dark:has-[:checked]:bg-slate-700 dark:has-[:checked]:text-white">
+<span class="material-symbols-outlined text-[20px]">groups</span>
+<span>Team</span>
+<input class="peer sr-only" name="userType" type="radio" value="team"/>
+</label>
+</div>
+</div>
+<div class="grid grid-cols-1 gap-8 lg:grid-cols-3 lg:items-center xl:gap-10">
+<div class="group relative flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white p-8 shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg dark:border-slate-800 dark:bg-slate-900">
+<div class="absolute inset-0 z-0 opacity-10" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA0JbcgSzfKLVwfhfS-XmDr9O3Qxqq_4SQIqucAJMxezbJjXaDzWh0tWuCDnVwg9YfwqmCtLQ9gm7B41-ZUYnk7p4rME6oRp0eA5z_mlKyWxSEoqDGRYYGwgWWpX4vL1aCyVPmiStNtn154S_vV8W_EmH7WQKoP2-qAteCs2jv51h_5DS1hLwOxNJCHO1Wywqjiltso9H7OXqRh_Gm4TVnS129BY5srFVSoda1Ho_IncigUOMxTQrw4sai7arXJHgs7jHvmLeF3wtfT'); background-size: cover; background-position: center;"></div>
+<div class="relative z-10">
+<div class="mb-6">
+<h3 class="text-xl font-bold text-slate-900 dark:text-white">Starter</h3>
+<p class="mt-2 text-sm text-slate-500 dark:text-slate-400">Perfect for side projects and hobbies.</p>
+</div>
+<div class="mb-6 flex items-baseline">
+<span class="text-4xl font-black tracking-tight text-slate-900 dark:text-white">$0</span>
+<span class="ml-1 text-sm font-medium text-slate-500 dark:text-slate-400">/month</span>
+</div>
+<button class="mb-8 flex w-full items-center justify-center rounded-xl border-2 border-slate-100 bg-white/80 backdrop-blur-sm py-3 text-sm font-bold text-slate-900 transition-colors hover:border-slate-200 hover:bg-slate-50 dark:border-slate-700 dark:bg-transparent dark:text-white dark:hover:bg-slate-800">
+                                    Get Started
+                                </button>
+<div class="flex flex-col gap-4">
+<p class="text-xs font-bold uppercase tracking-wider text-slate-400">Features</p>
+<div class="flex items-center gap-3 text-sm text-slate-700 dark:text-slate-300">
+<span class="material-symbols-outlined text-green-500 icon-filled">check_circle</span>
+<span>1 Active Project</span>
+</div>
+<div class="flex items-center gap-3 text-sm text-slate-700 dark:text-slate-300">
+<span class="material-symbols-outlined text-green-500 icon-filled">check_circle</span>
+<span>Community Support</span>
+</div>
+<div class="flex items-center gap-3 text-sm text-slate-700 dark:text-slate-300">
+<span class="material-symbols-outlined text-green-500 icon-filled">check_circle</span>
+<span>Basic Analytics</span>
+</div>
+<div class="flex items-center gap-3 text-sm text-slate-400">
+<span class="material-symbols-outlined">cancel</span>
+<span>Team Collaboration</span>
+</div>
+</div>
+</div>
+</div>
+<div class="relative flex flex-col overflow-hidden rounded-2xl border-2 border-primary bg-white p-8 shadow-2xl shadow-blue-900/10 transition-transform lg:scale-105 dark:bg-slate-900 dark:shadow-blue-900/20 z-10">
+<div class="absolute inset-0 z-0 opacity-15" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCxGz5FJfJ5ACYMbfBwhKCnxLXyJs_2drr3ICGBbatLtPEmcppp-b_Nvcmd1va6gX16Epw0KINRU-vKwTOR4wxjKf_NXWZJev7bg-ygcVl98T6bx7zhguaRoOBwacDpMPAyRYiuehlDa4t643Y5d2kHha_Zf7TXMIUiqYuRhN9eE4xmwVpGk54ylGfgdHfsKvn--wKv3dTWK1WQ55GNO6EJkx6IHYt6WgPhK7yZdnqABM4ZuyypkNSO3xzX-k9ZJqXS2Y4ZHJaQY6ro'); background-size: cover; background-position: center;"></div>
+<div class="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-primary px-4 py-1 text-xs font-bold uppercase tracking-wide text-white shadow-md z-20">
+                                Most Popular
+                            </div>
+<div class="relative z-10">
+<div class="mb-6">
+<h3 class="text-xl font-bold text-primary">Pro</h3>
+<p class="mt-2 text-sm text-slate-500 dark:text-slate-400">For creators who want full control.</p>
+</div>
+<div class="mb-6 flex items-baseline">
+<span class="text-5xl font-black tracking-tight text-slate-900 dark:text-white">$29</span>
+<span class="ml-1 text-sm font-medium text-slate-500 dark:text-slate-400">/month</span>
+</div>
+<button class="mb-8 flex w-full items-center justify-center rounded-xl bg-primary py-4 text-sm font-bold text-white shadow-lg shadow-blue-500/30 transition-all hover:bg-blue-600 hover:shadow-blue-500/50">
+                                    Get Pro Access
+                                </button>
+<div class="flex flex-col gap-4">
+<p class="text-xs font-bold uppercase tracking-wider text-primary">Everything in Starter, plus</p>
+<div class="flex items-center gap-3 text-sm text-slate-700 dark:text-slate-300">
+<span class="material-symbols-outlined text-primary icon-filled">check_circle</span>
+<span>Unlimited Projects</span>
+</div>
+<div class="flex items-center gap-3 text-sm text-slate-700 dark:text-slate-300">
+<span class="material-symbols-outlined text-primary icon-filled">check_circle</span>
+<span>Priority Support</span>
+</div>
+<div class="flex items-center gap-3 text-sm text-slate-700 dark:text-slate-300">
+<span class="material-symbols-outlined text-primary icon-filled">check_circle</span>
+<span>Advanced Analytics</span>
+</div>
+<div class="flex items-center gap-3 text-sm text-slate-700 dark:text-slate-300">
+<span class="material-symbols-outlined text-primary icon-filled">check_circle</span>
+<span>Custom Domains</span>
+</div>
+<div class="flex items-center gap-3 text-sm text-slate-700 dark:text-slate-300">
+<span class="material-symbols-outlined text-primary icon-filled">check_circle</span>
+<span>Remove Branding</span>
+</div>
+</div>
+</div>
+</div>
+<div class="group relative flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white p-8 shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg dark:border-slate-800 dark:bg-slate-900">
+<div class="absolute inset-0 z-0 opacity-10" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCEcoE2SyYgDHYnWjM2SHKgDcARwYMxu2-OJYApZeeWAqEWEH6ffvdttH5gpmBVantiP6vb5sY6ndhRzzGSQ8ufd5FE3c5KxPhJwPgN4t1isjK9-GGoHi0t-xt16_qXTVpi7binmChKPSbRbJqWTTZaLCIx9H947mUsAfcwXov0FPu_nkBHgE8fVQzteySLblXyAly1Djq2-2m0E3YjWa7FeLBXmHHRLZ722ZERhlEiuQ8il-sIXsUey-_ieYFwilhJ6IyLi2BMDuXS'); background-size: cover; background-position: center;"></div>
+<div class="relative z-10">
+<div class="mb-6">
+<h3 class="text-xl font-bold text-slate-900 dark:text-white">Agency</h3>
+<p class="mt-2 text-sm text-slate-500 dark:text-slate-400">Advanced tools for big teams.</p>
+</div>
+<div class="mb-6 flex items-baseline">
+<span class="text-4xl font-black tracking-tight text-slate-900 dark:text-white">$99</span>
+<span class="ml-1 text-sm font-medium text-slate-500 dark:text-slate-400">/month</span>
+</div>
+<button class="mb-8 flex w-full items-center justify-center rounded-xl border-2 border-slate-100 bg-white/80 backdrop-blur-sm py-3 text-sm font-bold text-slate-900 transition-colors hover:border-slate-200 hover:bg-slate-50 dark:border-slate-700 dark:bg-transparent dark:text-white dark:hover:bg-slate-800">
+                                    Contact Sales
+                                </button>
+<div class="flex flex-col gap-4">
+<p class="text-xs font-bold uppercase tracking-wider text-slate-400">Everything in Pro, plus</p>
+<div class="flex items-center gap-3 text-sm text-slate-700 dark:text-slate-300">
+<span class="material-symbols-outlined text-green-500 icon-filled">check_circle</span>
+<span>Dedicated Account Manager</span>
+</div>
+<div class="flex items-center gap-3 text-sm text-slate-700 dark:text-slate-300">
+<span class="material-symbols-outlined text-green-500 icon-filled">check_circle</span>
+<span>Custom API Integrations</span>
+</div>
+<div class="flex items-center gap-3 text-sm text-slate-700 dark:text-slate-300">
+<span class="material-symbols-outlined text-green-500 icon-filled">check_circle</span>
+<span>SSO &amp; Advanced Security</span>
+</div>
+<div class="flex items-center gap-3 text-sm text-slate-700 dark:text-slate-300">
+<span class="material-symbols-outlined text-green-500 icon-filled">check_circle</span>
+<span>Audit Logs</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</main>
+
+</div>
+</body></html>

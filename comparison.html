@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Feature Comparison Table</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+</head>
+<body>
+<div class="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark group/design-root overflow-x-hidden font-display">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Top Navigation -->
+
+<div class="px-4 md:px-10 lg:px-40 flex flex-1 justify-center py-10">
+<div class="layout-content-container flex flex-col w-full max-w-[1200px] flex-1 gap-8">
+<!-- Page Heading -->
+<div class="flex flex-col gap-4 text-center items-center max-w-3xl mx-auto">
+<h1 class="text-[#111418] dark:text-white text-4xl md:text-5xl font-black leading-tight tracking-[-0.033em]">
+                            Compare Plans &amp; Features
+                        </h1>
+<p class="text-[#617589] dark:text-gray-400 text-lg font-normal leading-normal max-w-2xl">
+                            Choose the perfect plan for your data visualization needs. Upgrade anytime as your team grows with our flexible pricing tiers.
+                        </p>
+</div>
+<!-- Comparison Table Container -->
+<div class="w-full overflow-hidden rounded-xl border border-[#dbe0e6] dark:border-gray-700 bg-white dark:bg-[#1a2632] shadow-sm">
+<div class="overflow-x-auto">
+<table class="w-full min-w-[1000px] border-collapse">
+<thead>
+<tr>
+<th class="sticky left-0 z-10 bg-white dark:bg-[#1a2632] border-b border-[#dbe0e6] dark:border-gray-700 p-6 text-left w-[250px] min-w-[200px] shadow-[2px_0_5px_-2px_rgba(0,0,0,0.05)] md:shadow-none">
+<span class="text-sm font-semibold text-[#617589] dark:text-gray-400 uppercase tracking-wider">Features</span>
+</th>
+<th class="p-6 text-center border-b border-[#dbe0e6] dark:border-gray-700 min-w-[160px]">
+<h3 class="text-xl font-bold text-[#111418] dark:text-white">Free</h3>
+<p class="text-sm text-[#617589] dark:text-gray-400 mt-1">For hobbyists</p>
+</th>
+<th class="p-6 text-center border-b border-[#dbe0e6] dark:border-gray-700 min-w-[160px]">
+<h3 class="text-xl font-bold text-[#111418] dark:text-white">Starter</h3>
+<p class="text-sm text-[#617589] dark:text-gray-400 mt-1">For small teams</p>
+</th>
+<th class="relative p-6 text-center border-b border-[#dbe0e6] dark:border-gray-700 min-w-[180px] bg-primary/5 dark:bg-primary/10">
+
+<h3 class="text-xl font-bold text-primary dark:text-blue-400">Professional</h3>
+<p class="text-sm text-[#617589] dark:text-gray-400 mt-1">For scaling businesses</p>
+</th>
+<th class="p-6 text-center border-b border-[#dbe0e6] dark:border-gray-700 min-w-[160px]">
+<h3 class="text-xl font-bold text-[#111418] dark:text-white">Business</h3>
+<p class="text-sm text-[#617589] dark:text-gray-400 mt-1">For large orgs</p>
+</th>
+<th class="p-6 text-center border-b border-[#dbe0e6] dark:border-gray-700 min-w-[160px]">
+<h3 class="text-xl font-bold text-[#111418] dark:text-white">Enterprise</h3>
+<p class="text-sm text-[#617589] dark:text-gray-400 mt-1">Custom solutions</p>
+</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#dbe0e6] dark:divide-gray-700">
+<!-- Price Row -->
+<tr class="group hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+<td class="sticky left-0 z-10 bg-white dark:bg-[#1a2632] group-hover:bg-gray-50 dark:group-hover:bg-[#1e2a36] p-4 pl-6 text-sm font-medium text-[#111418] dark:text-white shadow-[2px_0_5px_-2px_rgba(0,0,0,0.05)] md:shadow-none">
+                                            Monthly Price
+                                        </td>
+<td class="p-4 text-center">
+<span class="text-2xl font-bold text-[#111418] dark:text-white">$0</span>
+<span class="text-sm text-[#617589] dark:text-gray-400">/mo</span>
+</td>
+<td class="p-4 text-center">
+<span class="text-2xl font-bold text-[#111418] dark:text-white">$12</span>
+<span class="text-sm text-[#617589] dark:text-gray-400">/mo</span>
+</td>
+<td class="p-4 text-center bg-primary/5 dark:bg-primary/10 group-hover:bg-primary/10 dark:group-hover:bg-primary/20 transition-colors">
+<span class="text-2xl font-bold text-primary dark:text-blue-400">$29</span>
+<span class="text-sm text-[#617589] dark:text-gray-400">/mo</span>
+</td>
+<td class="p-4 text-center">
+<span class="text-2xl font-bold text-[#111418] dark:text-white">$59</span>
+<span class="text-sm text-[#617589] dark:text-gray-400">/mo</span>
+</td>
+<td class="p-4 text-center">
+<span class="text-xl font-bold text-[#111418] dark:text-white">Custom</span>
+</td>
+</tr>
+<!-- Export Quality -->
+<tr class="group hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+<td class="sticky left-0 z-10 bg-white dark:bg-[#1a2632] group-hover:bg-gray-50 dark:group-hover:bg-[#1e2a36] p-4 pl-6 text-sm font-medium text-[#111418] dark:text-white shadow-[2px_0_5px_-2px_rgba(0,0,0,0.05)] md:shadow-none">
+                                            Export Quality
+                                        </td>
+<td class="p-4 text-center text-sm font-medium text-[#617589] dark:text-gray-300">720p</td>
+<td class="p-4 text-center text-sm font-medium text-[#617589] dark:text-gray-300">1080p</td>
+<td class="p-4 text-center text-sm font-bold text-[#111418] dark:text-white bg-primary/5 dark:bg-primary/10 group-hover:bg-primary/10 dark:group-hover:bg-primary/20 transition-colors">4k UHD</td>
+<td class="p-4 text-center text-sm font-medium text-[#617589] dark:text-gray-300">4k UHD</td>
+<td class="p-4 text-center text-sm font-medium text-[#617589] dark:text-gray-300">8k</td>
+</tr>
+<!-- Plugin Access -->
+<tr class="group hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+<td class="sticky left-0 z-10 bg-white dark:bg-[#1a2632] group-hover:bg-gray-50 dark:group-hover:bg-[#1e2a36] p-4 pl-6 text-sm font-medium text-[#111418] dark:text-white shadow-[2px_0_5px_-2px_rgba(0,0,0,0.05)] md:shadow-none">
+                                            Plugin Access
+                                        </td>
+<td class="p-4 text-center"><span class="material-symbols-outlined text-primary text-[24px]">check</span></td>
+<td class="p-4 text-center"><span class="material-symbols-outlined text-primary text-[24px]">check</span></td>
+<td class="p-4 text-center bg-primary/5 dark:bg-primary/10 group-hover:bg-primary/10 dark:group-hover:bg-primary/20 transition-colors"><span class="material-symbols-outlined text-primary text-[24px]">check</span></td>
+<td class="p-4 text-center"><span class="material-symbols-outlined text-primary text-[24px]">check</span></td>
+<td class="p-4 text-center"><span class="material-symbols-outlined text-primary text-[24px]">check</span></td>
+</tr>
+<!-- Support Speed -->
+<tr class="group hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+<td class="sticky left-0 z-10 bg-white dark:bg-[#1a2632] group-hover:bg-gray-50 dark:group-hover:bg-[#1e2a36] p-4 pl-6 text-sm font-medium text-[#111418] dark:text-white shadow-[2px_0_5px_-2px_rgba(0,0,0,0.05)] md:shadow-none">
+                                            Support Speed
+                                        </td>
+<td class="p-4 text-center">
+<div class="flex justify-center text-yellow-400">
+<span class="material-symbols-outlined text-[20px] fill-current">star</span>
+<span class="material-symbols-outlined text-[20px] text-gray-300">star</span>
+<span class="material-symbols-outlined text-[20px] text-gray-300">star</span>
+<span class="material-symbols-outlined text-[20px] text-gray-300">star</span>
+<span class="material-symbols-outlined text-[20px] text-gray-300">star</span>
+</div>
+<span class="text-xs text-gray-500 mt-1 block">Email only</span>
+</td>
+<td class="p-4 text-center">
+<div class="flex justify-center text-yellow-400">
+<span class="material-symbols-outlined text-[20px] fill-current">star</span>
+<span class="material-symbols-outlined text-[20px] fill-current">star</span>
+<span class="material-symbols-outlined text-[20px] text-gray-300">star</span>
+<span class="material-symbols-outlined text-[20px] text-gray-300">star</span>
+<span class="material-symbols-outlined text-[20px] text-gray-300">star</span>
+</div>
+<span class="text-xs text-gray-500 mt-1 block">24h Response</span>
+</td>
+<td class="p-4 text-center bg-primary/5 dark:bg-primary/10 group-hover:bg-primary/10 dark:group-hover:bg-primary/20 transition-colors">
+<div class="flex justify-center text-yellow-400">
+<span class="material-symbols-outlined text-[20px] fill-current">star</span>
+<span class="material-symbols-outlined text-[20px] fill-current">star</span>
+<span class="material-symbols-outlined text-[20px] fill-current">star</span>
+<span class="material-symbols-outlined text-[20px] fill-current">star</span>
+<span class="material-symbols-outlined text-[20px] text-gray-300">star</span>
+</div>
+<span class="text-xs text-gray-500 mt-1 block">Priority</span>
+</td>
+<td class="p-4 text-center">
+<div class="flex justify-center text-yellow-400">
+<span class="material-symbols-outlined text-[20px] fill-current">star</span>
+<span class="material-symbols-outlined text-[20px] fill-current">star</span>
+<span class="material-symbols-outlined text-[20px] fill-current">star</span>
+<span class="material-symbols-outlined text-[20px] fill-current">star</span>
+<span class="material-symbols-outlined text-[20px] fill-current">star</span>
+</div>
+<span class="text-xs text-gray-500 mt-1 block">Live Chat</span>
+</td>
+<td class="p-4 text-center">
+<div class="flex justify-center items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[20px]">support_agent</span>
+<span class="text-sm font-bold">Dedicated</span>
+</div>
+</td>
+</tr>
+<!-- Cloud Storage -->
+<tr class="group hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+<td class="sticky left-0 z-10 bg-white dark:bg-[#1a2632] group-hover:bg-gray-50 dark:group-hover:bg-[#1e2a36] p-4 pl-6 text-sm font-medium text-[#111418] dark:text-white shadow-[2px_0_5px_-2px_rgba(0,0,0,0.05)] md:shadow-none">
+                                            Cloud Storage
+                                        </td>
+<td class="p-4 text-center text-sm font-medium text-[#617589] dark:text-gray-300">2GB</td>
+<td class="p-4 text-center text-sm font-medium text-[#617589] dark:text-gray-300">10GB</td>
+<td class="p-4 text-center text-sm font-bold text-[#111418] dark:text-white bg-primary/5 dark:bg-primary/10 group-hover:bg-primary/10 dark:group-hover:bg-primary/20 transition-colors">100GB</td>
+<td class="p-4 text-center text-sm font-medium text-[#617589] dark:text-gray-300">1TB</td>
+<td class="p-4 text-center text-sm font-bold text-[#111418] dark:text-white">Unlimited</td>
+</tr>
+<!-- Team Members -->
+<tr class="group hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+<td class="sticky left-0 z-10 bg-white dark:bg-[#1a2632] group-hover:bg-gray-50 dark:group-hover:bg-[#1e2a36] p-4 pl-6 text-sm font-medium text-[#111418] dark:text-white shadow-[2px_0_5px_-2px_rgba(0,0,0,0.05)] md:shadow-none">
+                                            Team Members
+                                        </td>
+<td class="p-4 text-center text-sm font-medium text-[#617589] dark:text-gray-300">1 User</td>
+<td class="p-4 text-center text-sm font-medium text-[#617589] dark:text-gray-300">1 User</td>
+<td class="p-4 text-center text-sm font-bold text-[#111418] dark:text-white bg-primary/5 dark:bg-primary/10 group-hover:bg-primary/10 dark:group-hover:bg-primary/20 transition-colors">5 Users</td>
+<td class="p-4 text-center text-sm font-medium text-[#617589] dark:text-gray-300">20 Users</td>
+<td class="p-4 text-center text-sm font-bold text-[#111418] dark:text-white">Unlimited</td>
+</tr>
+<!-- Advanced Analytics -->
+<tr class="group hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors border-b-0">
+<td class="sticky left-0 z-10 bg-white dark:bg-[#1a2632] group-hover:bg-gray-50 dark:group-hover:bg-[#1e2a36] p-4 pl-6 text-sm font-medium text-[#111418] dark:text-white shadow-[2px_0_5px_-2px_rgba(0,0,0,0.05)] md:shadow-none">
+                                            Advanced Analytics
+                                        </td>
+<td class="p-4 text-center"><span class="material-symbols-outlined text-gray-300 text-[24px]">close</span></td>
+<td class="p-4 text-center"><span class="material-symbols-outlined text-gray-300 text-[24px]">close</span></td>
+<td class="p-4 text-center bg-primary/5 dark:bg-primary/10 group-hover:bg-primary/10 dark:group-hover:bg-primary/20 transition-colors"><span class="material-symbols-outlined text-primary text-[24px]">check</span></td>
+<td class="p-4 text-center"><span class="material-symbols-outlined text-primary text-[24px]">check</span></td>
+<td class="p-4 text-center"><span class="material-symbols-outlined text-primary text-[24px]">check</span></td>
+</tr>
+<!-- Action Buttons -->
+<tr class="bg-gray-50 dark:bg-gray-800/20">
+<td class="sticky left-0 z-10 bg-gray-50 dark:bg-[#16202a] p-6 text-sm font-medium text-[#111418] dark:text-white shadow-[2px_0_5px_-2px_rgba(0,0,0,0.05)] md:shadow-none">
+<!-- Empty for alignment -->
+</td>
+<td class="p-6 text-center">
+<span class="text-sm font-semibold text-gray-400 cursor-default">Current Plan</span>
+</td>
+<td class="p-6 text-center">
+<button class="w-full cursor-pointer rounded-lg border border-primary bg-transparent px-4 py-2.5 text-sm font-bold text-primary hover:bg-primary/5 transition-all">
+                                                Upgrade
+                                            </button>
+</td>
+<td class="p-6 text-center bg-primary/5 dark:bg-primary/10">
+<button class="w-full cursor-pointer rounded-lg bg-primary px-4 py-2.5 text-sm font-bold text-white shadow-sm hover:bg-blue-600 transition-all transform active:scale-95">
+                                                Upgrade
+                                            </button>
+</td>
+<td class="p-6 text-center">
+<button class="w-full cursor-pointer rounded-lg border border-primary bg-transparent px-4 py-2.5 text-sm font-bold text-primary hover:bg-primary/5 transition-all">
+                                                Contact Sales
+                                            </button>
+</td>
+<td class="p-6 text-center">
+<button class="w-full cursor-pointer rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-4 py-2.5 text-sm font-bold text-[#111418] dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700 transition-all">
+                                                Contact Sales
+                                            </button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+</div>
+</body></html>

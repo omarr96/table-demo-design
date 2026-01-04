@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pros and Cons Table</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700;900&amp;family=Spline+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Theme Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Spline Sans", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body>
+<div class="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark group/design-root overflow-x-hidden font-display text-slate-900 dark:text-white">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Main Layout Centering -->
+<div class="px-4 md:px-10 lg:px-40 flex flex-1 justify-center py-5">
+<div class="layout-content-container flex flex-col max-w-[960px] flex-1 gap-8">
+<!-- Header Section -->
+<div class="flex flex-col gap-2 px-4">
+<h1 class="text-slate-900 dark:text-white tracking-tight text-[32px] font-bold leading-tight">Comparison Analysis</h1>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal">Scenario: In-House Development vs. Outsourcing</p>
+</div>
+<!-- Table Component -->
+<div class="px-4 @container">
+<div class="flex flex-col overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 shadow-sm">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-slate-50 dark:bg-slate-900/50 border-b border-slate-200 dark:border-slate-700">
+<th class="p-4 md:p-5 text-sm font-semibold text-slate-900 dark:text-white w-1/4">
+                                            Criteria
+                                        </th>
+<th class="p-4 md:p-5 text-sm font-semibold text-primary w-[37.5%]">
+                                            Pros (Advantages)
+                                        </th>
+<th class="p-4 md:p-5 text-sm font-semibold text-slate-500 dark:text-slate-400 w-[37.5%]">
+                                            Cons (Trade-offs)
+                                        </th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 dark:divide-slate-700">
+<!-- Row 1: Cost -->
+<tr class="group hover:bg-slate-50 dark:hover:bg-slate-700/30 transition-colors">
+<td class="p-4 md:p-5 align-top">
+<span class="text-sm font-bold text-slate-900 dark:text-white">Cost Structure</span>
+</td>
+<td class="p-4 md:p-5 align-top">
+<div class="flex items-start gap-3">
+<div class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+<span class="material-symbols-outlined text-[16px] font-bold">add</span>
+</div>
+<p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                                                    Lower long-term expenses once the initial infrastructure is established. No recurring vendor markups.
+                                                </p>
+</div>
+</td>
+<td class="p-4 md:p-5 align-top">
+<div class="flex items-start gap-3">
+<div class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400">
+<span class="material-symbols-outlined text-[16px] font-bold">remove</span>
+</div>
+<p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                                                    Significant upfront capital required for hiring, training, and equipment setup.
+                                                </p>
+</div>
+</td>
+</tr>
+<!-- Row 2: Control -->
+<tr class="group hover:bg-slate-50 dark:hover:bg-slate-700/30 transition-colors bg-slate-50/50 dark:bg-slate-800/50">
+<td class="p-4 md:p-5 align-top">
+<span class="text-sm font-bold text-slate-900 dark:text-white">Control &amp; Quality</span>
+</td>
+<td class="p-4 md:p-5 align-top">
+<div class="flex items-start gap-3">
+<div class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+<span class="material-symbols-outlined text-[16px] font-bold">add</span>
+</div>
+<p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                                                    Complete oversight of the development process, code standards, and cultural fit.
+                                                </p>
+</div>
+</td>
+<td class="p-4 md:p-5 align-top">
+<div class="flex items-start gap-3">
+<div class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400">
+<span class="material-symbols-outlined text-[16px] font-bold">remove</span>
+</div>
+<p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                                                    Requires heavy management bandwidth and technical leadership involvement.
+                                                </p>
+</div>
+</td>
+</tr>
+<!-- Row 3: Speed -->
+<tr class="group hover:bg-slate-50 dark:hover:bg-slate-700/30 transition-colors">
+<td class="p-4 md:p-5 align-top">
+<span class="text-sm font-bold text-slate-900 dark:text-white">Speed to Market</span>
+</td>
+<td class="p-4 md:p-5 align-top">
+<div class="flex items-start gap-3">
+<div class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+<span class="material-symbols-outlined text-[16px] font-bold">add</span>
+</div>
+<p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                                                    Direct communication allows for rapid iteration cycles once the team is ramped up.
+                                                </p>
+</div>
+</td>
+<td class="p-4 md:p-5 align-top">
+<div class="flex items-start gap-3">
+<div class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400">
+<span class="material-symbols-outlined text-[16px] font-bold">remove</span>
+</div>
+<p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                                                    Slower start due to recruitment and onboarding lead times.
+                                                </p>
+</div>
+</td>
+</tr>
+<!-- Locked Row -->
+<tr class="relative overflow-hidden bg-slate-50/80 dark:bg-slate-900/30">
+<td class="p-4 md:p-5 align-top">
+<div class="flex items-center gap-2">
+<span class="text-sm font-bold text-slate-400 dark:text-slate-500">ROI Projection</span>
+<span class="rounded bg-slate-200 dark:bg-slate-700 px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Pro</span>
+</div>
+</td>
+<td class="p-4 md:p-5 align-middle" colspan="2">
+<div class="flex items-center gap-2 text-slate-400 dark:text-slate-500">
+<span class="material-symbols-outlined text-lg">lock</span>
+<span class="text-sm italic">Advanced ROI analytics are locked. Upgrade to view full financial breakdown.</span>
+</div>
+</td>
+<!-- Subtle gradient overlay for locked feel -->
+<td class="absolute inset-0 pointer-events-none bg-gradient-to-b from-white/40 to-white/10 dark:from-slate-800/40 dark:to-transparent"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Feature / Upsell Section -->
+<div class="px-4">
+<div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 rounded-xl bg-slate-900 text-white p-6 md:p-8 dark:bg-slate-800 border border-slate-800 dark:border-slate-700 shadow-lg relative overflow-hidden">
+<!-- Background Decoration -->
+<div class="absolute -right-10 -top-10 h-64 w-64 rounded-full bg-primary opacity-10 blur-3xl"></div>
+<div class="relative flex flex-col gap-2 max-w-lg z-10">
+<h3 class="text-xl font-bold leading-tight">Unlock Pro Features</h3>
+<p class="text-slate-400 text-sm leading-normal">Get access to advanced ROI projections, unlimited comparison rows, and exportable PDF reports.</p>
+</div>
+<button class="relative z-10 flex cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-6 bg-primary hover:bg-blue-600 transition-colors text-white text-sm font-bold leading-normal tracking-wide whitespace-nowrap shadow-md shadow-blue-500/20">
+<span class="truncate">Upgrade to Pro</span>
+</button>
+</div>
+</div>
+<!-- Action Footer -->
+<div class="px-4 pb-8 flex justify-end pt-4 border-t border-slate-200 dark:border-slate-700">
+<div class="flex gap-3">
+<button class="flex cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-600 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors text-sm font-bold leading-normal tracking-wide">
+<span class="truncate">Export PDF</span>
+</button>
+<button class="flex cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-5 bg-primary hover:bg-blue-600 transition-colors text-white text-sm font-bold leading-normal tracking-wide shadow-lg shadow-blue-500/30">
+<span class="truncate">Save Comparison</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

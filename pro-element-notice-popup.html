@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pro Feature Upgrade Notice</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#137fec",
+              "background-light": "#f6f7f8",
+              "background-dark": "#101922",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark min-h-screen flex items-center justify-center p-4">
+<!-- Backdrop -->
+<div aria-hidden="true" class="fixed inset-0 bg-black/60 backdrop-blur-[2px] z-10"></div>
+<!-- Modal Card -->
+<div class="relative z-20 w-full max-w-[440px] bg-white dark:bg-[#1C2632] rounded-xl shadow-2xl flex flex-col overflow-hidden animate-in fade-in zoom-in-95 duration-200">
+<!-- Close Button -->
+<button class="absolute top-3 right-3 p-2 rounded-full text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-white/5 transition-colors z-30 outline-none focus:ring-2 focus:ring-primary/50">
+<span class="material-symbols-outlined text-[24px]">close</span>
+</button>
+<!-- Header Hero Section -->
+<div class="relative h-40 w-full bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-slate-800 dark:to-slate-900 flex items-center justify-center">
+<!-- Background Decoration -->
+<div class="absolute inset-0 opacity-40 mix-blend-overlay bg-cover bg-center" data-alt="Abstract colorful gradient mesh texture" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCK1RwTbYzrDfzUQ5Fek4oBGO-zxT2pay9i8EDPXiwyIdQ4lMo6HWAZplbtYbii5rNo8W1nWDOXtFYuZdr9PId2oRcWXoz51xtWDN1iiZtC35mrxoVDlc0HU5GqUgaa8HwDxJU33aJOPP3qOgzVbCH5I4HGFrK0XRk9Jojqq3XCzRpGSyWQKlN3hXF8GEU7sc1D28ZyJbqi7dqaXNnzuMhtNfsSMgPUBm6wnxVgiPF4Ap7sWojmGvMA7WoFXmnMDhBmAXAtkZvrsgB1');">
+</div>
+<!-- Icon Badge -->
+<div class="relative flex h-16 w-16 items-center justify-center rounded-full bg-white dark:bg-[#1C2632] shadow-lg ring-4 ring-white/20 dark:ring-black/10">
+<span class="material-symbols-outlined text-primary text-[32px] fill">diamond</span>
+</div>
+</div>
+<!-- Content Body -->
+<div class="px-8 pt-6 pb-8 flex flex-col items-center">
+<!-- Headline -->
+<h2 class="text-[#111418] dark:text-white tracking-tight text-[24px] font-bold leading-tight text-center mb-3">
+                Access this Pro Feature
+            </h2>
+<!-- Body Text -->
+<p class="text-[#4b5563] dark:text-gray-300 text-[15px] font-normal leading-relaxed text-center mb-6">
+                You're trying to access a Pro feature. Upgrade now to unlock advanced customization, powerful design options, and exclusive pro elements.
+            </p>
+<!-- Benefits List -->
+<div class="w-full space-y-3 mb-8">
+<div class="flex gap-x-3 items-start p-3 rounded-lg bg-background-light dark:bg-black/20 border border-transparent dark:border-white/5">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">check_circle</span>
+<p class="text-[#111418] dark:text-gray-200 text-sm font-medium leading-tight">
+                        Advanced customization &amp; controls
+                    </p>
+</div>
+<div class="flex gap-x-3 items-start p-3 rounded-lg bg-background-light dark:bg-black/20 border border-transparent dark:border-white/5">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">check_circle</span>
+<p class="text-[#111418] dark:text-gray-200 text-sm font-medium leading-tight">
+                        Powerful design options
+                    </p>
+</div>
+<div class="flex gap-x-3 items-start p-3 rounded-lg bg-background-light dark:bg-black/20 border border-transparent dark:border-white/5">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">check_circle</span>
+<p class="text-[#111418] dark:text-gray-200 text-sm font-medium leading-tight">
+                        Exclusive pro conversion elements
+                    </p>
+</div>
+</div>
+<!-- Primary Action -->
+<button class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-primary hover:bg-blue-600 active:bg-blue-700 text-white text-[15px] font-bold leading-normal tracking-[0.015em] transition-all shadow-md hover:shadow-lg shadow-blue-500/20">
+<span>Upgrade to Pro</span>
+<span class="material-symbols-outlined ml-2 text-[20px]">arrow_forward</span>
+</button>
+<!-- Secondary Actions & Trust -->
+<div class="mt-4 flex flex-col items-center gap-3">
+<button class="text-sm font-medium text-gray-500 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200 transition-colors">
+                    No thanks, I'll stick to free
+                </button>
+<div class="flex items-center gap-1.5 text-xs text-gray-400 dark:text-gray-500 mt-1">
+<span class="material-symbols-outlined text-[14px]">lock</span>
+<span>Secure checkout • Cancel anytime</span>
+</div>
+</div>
+</div>
+</div>
+</body></html>

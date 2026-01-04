@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pros and Cons Table</title>
+<!-- Google Fonts: Spline Sans -->
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with Config -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Spline Sans", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: "Spline Sans", sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 1,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#111418] dark:text-white antialiased overflow-x-hidden">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root">
+<!-- Top Navigation -->
+<div class="layout-container flex h-full grow flex-col">
+<div class="px-4 md:px-10 lg:px-40 flex flex-1 justify-center py-10">
+<div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+
+<!-- Pros & Cons Table Component -->
+<div class="px-4 py-6 @container">
+<div class="flex flex-col overflow-hidden rounded-xl border border-[#dbe0e6] dark:border-gray-700 bg-white dark:bg-[#1e2936] shadow-sm">
+<!-- Custom Table Header -->
+<div class="flex border-b border-[#dbe0e6] dark:border-gray-700 bg-gray-50/50 dark:bg-[#23303e]">
+<div class="flex-1 px-6 py-4 border-r border-[#dbe0e6] dark:border-gray-700">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-emerald-600 dark:text-emerald-400 text-sm font-bold">thumb_up</span>
+</div>
+<h3 class="text-[#111418] dark:text-white text-base font-bold leading-normal">Pros</h3>
+</div>
+</div>
+<div class="flex-1 px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-rose-100 dark:bg-rose-900/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-rose-600 dark:text-rose-400 text-sm font-bold">thumb_down</span>
+</div>
+<h3 class="text-[#111418] dark:text-white text-base font-bold leading-normal">Cons</h3>
+</div>
+</div>
+</div>
+<!-- Table Body -->
+<div class="flex flex-col">
+<!-- Row 1 -->
+<div class="flex border-b border-[#f0f2f4] dark:border-gray-700 hover:bg-gray-50/50 dark:hover:bg-[#23303e] transition-colors group">
+<div class="flex-1 px-6 py-4 border-r border-[#f0f2f4] dark:border-gray-700 flex items-start gap-3">
+<span class="material-symbols-outlined text-emerald-500 mt-0.5 shrink-0">check_circle</span>
+<span class="text-[#111418] dark:text-gray-200 text-sm font-medium leading-relaxed">Lower upfront cost reduces friction for new user acquisition</span>
+</div>
+<div class="flex-1 px-6 py-4 flex items-start gap-3">
+<span class="material-symbols-outlined text-rose-500 mt-0.5 shrink-0">cancel</span>
+<span class="text-[#111418] dark:text-gray-200 text-sm font-medium leading-relaxed">Higher long-term total cost of ownership for customers</span>
+</div>
+</div>
+<!-- Row 2 -->
+<div class="flex border-b border-[#f0f2f4] dark:border-gray-700 hover:bg-gray-50/50 dark:hover:bg-[#23303e] transition-colors group">
+<div class="flex-1 px-6 py-4 border-r border-[#f0f2f4] dark:border-gray-700 flex items-start gap-3">
+<span class="material-symbols-outlined text-emerald-500 mt-0.5 shrink-0">check_circle</span>
+<span class="text-[#111418] dark:text-gray-200 text-sm font-medium leading-relaxed">Predictable, continuous revenue stream allows better forecasting</span>
+</div>
+<div class="flex-1 px-6 py-4 flex items-start gap-3">
+<span class="material-symbols-outlined text-rose-500 mt-0.5 shrink-0">cancel</span>
+<span class="text-[#111418] dark:text-gray-200 text-sm font-medium leading-relaxed">Requires constant value delivery to prevent churn</span>
+</div>
+</div>
+<!-- Row 3 -->
+<div class="flex border-b border-[#f0f2f4] dark:border-gray-700 hover:bg-gray-50/50 dark:hover:bg-[#23303e] transition-colors group">
+<div class="flex-1 px-6 py-4 border-r border-[#f0f2f4] dark:border-gray-700 flex items-start gap-3">
+<span class="material-symbols-outlined text-emerald-500 mt-0.5 shrink-0">check_circle</span>
+<span class="text-[#111418] dark:text-gray-200 text-sm font-medium leading-relaxed">Automatic updates ensure all users are on the latest secure version</span>
+</div>
+<div class="flex-1 px-6 py-4 flex items-start gap-3">
+<span class="material-symbols-outlined text-rose-500 mt-0.5 shrink-0">cancel</span>
+<span class="text-[#111418] dark:text-gray-200 text-sm font-medium leading-relaxed">Active churn rate management becomes a critical operational task</span>
+</div>
+</div>
+<!-- Row 4 -->
+<div class="flex border-b border-[#f0f2f4] dark:border-gray-700 hover:bg-gray-50/50 dark:hover:bg-[#23303e] transition-colors group">
+<div class="flex-1 px-6 py-4 border-r border-[#f0f2f4] dark:border-gray-700 flex items-start gap-3">
+<span class="material-symbols-outlined text-emerald-500 mt-0.5 shrink-0">check_circle</span>
+<span class="text-[#111418] dark:text-gray-200 text-sm font-medium leading-relaxed">Lower barrier to entry expands the potential market size significantly</span>
+</div>
+<div class="flex-1 px-6 py-4 flex items-start gap-3">
+<span class="material-symbols-outlined text-rose-500 mt-0.5 shrink-0">cancel</span>
+<span class="text-[#111418] dark:text-gray-200 text-sm font-medium leading-relaxed">Complex billing infrastructure and dunning management needed</span>
+</div>
+</div>
+<!-- Row 5 -->
+<div class="flex hover:bg-gray-50/50 dark:hover:bg-[#23303e] transition-colors group">
+<div class="flex-1 px-6 py-4 border-r border-[#f0f2f4] dark:border-gray-700 flex items-start gap-3">
+<span class="material-symbols-outlined text-emerald-500 mt-0.5 shrink-0">check_circle</span>
+<span class="text-[#111418] dark:text-gray-200 text-sm font-medium leading-relaxed">Scalable pricing tiers allow capturing value from different segments</span>
+</div>
+<div class="flex-1 px-6 py-4 flex items-start gap-3">
+<span class="material-symbols-outlined text-rose-500 mt-0.5 shrink-0">cancel</span>
+<span class="text-[#111418] dark:text-gray-200 text-sm font-medium leading-relaxed">Subscription fatigue may lead users to audit and cancel recurring costs</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer / Context -->
+
+</div>
+</div>
+</div>
+</div>
+</body></html>
