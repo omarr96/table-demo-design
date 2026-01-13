@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Triple Tier SaaS Pricing Grid</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#ff2e8c", // Vibrant pink from the screenshot
+              "background-light": "#f8f9fc",
+              "background-dark": "#05051a",
+              "card-dark": "#0a0a26",
+              "accent-dark": "#0d0d33",
+            },
+            fontFamily: {
+              display: ["Inter", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "1.5rem",
+            },
+          },
+        },
+      };
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .pricing-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .pricing-card:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white min-h-screen flex items-center justify-center p-6 md:p-12">
+<div class="max-w-6xl w-full">
+<div class="flex justify-end mb-8">
+<button class="flex items-center gap-2 px-4 py-2 bg-white dark:bg-card-dark border border-slate-200 dark:border-slate-800 rounded-full shadow-sm text-sm font-medium transition-colors hover:bg-slate-50 dark:hover:bg-slate-800" onclick="document.documentElement.classList.toggle('dark')">
+<span class="material-icons-round text-primary text-lg">dark_mode</span>
+                Toggle Theme
+            </button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+<div class="pricing-card order-2 md:order-1 bg-white dark:bg-card-dark rounded-[2rem] p-8 shadow-xl shadow-slate-200/50 dark:shadow-none border border-slate-100 dark:border-slate-800 flex flex-col h-[550px]">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-icons-round text-4xl text-slate-800 dark:text-white">smart_toy</span>
+<h3 class="text-3xl font-bold text-slate-900 dark:text-white">Guardian</h3>
+</div>
+<p class="text-slate-400 dark:text-slate-500 font-medium mb-6 uppercase tracking-wider text-sm">What You'll Get</p>
+<ul class="space-y-4 mb-8 flex-grow">
+<li class="flex items-start gap-3">
+<span class="material-icons-round text-slate-800 dark:text-white bg-slate-100 dark:bg-slate-800 rounded-full p-0.5 text-base">check</span>
+<span class="text-slate-600 dark:text-slate-300">Edit up to 10 hours of podcast audio files.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-icons-round text-slate-800 dark:text-white bg-slate-100 dark:bg-slate-800 rounded-full p-0.5 text-base">check</span>
+<span class="text-slate-600 dark:text-slate-300">Set your own CoreLoop Page</span>
+</li>
+</ul>
+<div class="border-t border-dashed border-slate-200 dark:border-slate-700 pt-8 mt-auto">
+<div class="mb-8">
+<span class="text-3xl font-bold text-slate-900 dark:text-white">Free Forever</span>
+</div>
+<button class="w-full py-4 px-6 bg-[#fff0f6] dark:bg-pink-900/20 text-primary font-bold rounded-2xl hover:bg-pink-100 dark:hover:bg-pink-900/30 transition-all">
+                        Choose
+                    </button>
+</div>
+</div>
+<div class="pricing-card order-1 md:order-2 bg-[#050529] rounded-[2.5rem] p-10 shadow-2xl shadow-indigo-500/20 border border-indigo-500/30 flex flex-col h-[650px] scale-105 z-10">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-icons-round text-4xl text-white">psychology</span>
+<h3 class="text-3xl font-bold text-white tracking-tight">Mage</h3>
+</div>
+<p class="text-slate-400 font-medium mb-6 uppercase tracking-wider text-sm">What You'll Get</p>
+<ul class="space-y-6 mb-8 flex-grow">
+<li class="flex items-start gap-3">
+<span class="material-icons-round text-slate-900 bg-white rounded-full p-0.5 text-base">check</span>
+<span class="text-slate-200">Edit up to 1,000 hours of podcast audio files.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-icons-round text-slate-900 bg-white rounded-full p-0.5 text-base">check</span>
+<span class="text-slate-200">Set your own landing page</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-icons-round text-slate-900 bg-white rounded-full p-0.5 text-base">check</span>
+<span class="text-slate-200">24/7 support</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-icons-round text-slate-900 bg-white rounded-full p-0.5 text-base">check</span>
+<span class="text-slate-200">Advanced analytics</span>
+</li>
+</ul>
+<div class="border-t border-dashed border-slate-700 pt-8 mt-auto">
+<div class="mb-8">
+<span class="text-4xl font-extrabold text-white">$480</span>
+<span class="text-slate-400 font-medium">/month</span>
+</div>
+<button class="w-full py-5 px-6 bg-primary text-white font-bold rounded-2xl hover:opacity-90 shadow-lg shadow-pink-500/40 transition-all">
+                        Choose
+                    </button>
+</div>
+</div>
+<div class="pricing-card order-3 bg-white dark:bg-card-dark rounded-[2rem] p-8 shadow-xl shadow-slate-200/50 dark:shadow-none border border-slate-100 dark:border-slate-800 flex flex-col h-[550px]">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-icons-round text-4xl text-slate-800 dark:text-white">support_agent</span>
+<h3 class="text-3xl font-bold text-slate-900 dark:text-white">Phantom</h3>
+</div>
+<p class="text-slate-400 dark:text-slate-500 font-medium mb-6 uppercase tracking-wider text-sm">What You'll Get</p>
+<ul class="space-y-4 mb-8 flex-grow overflow-y-auto custom-scrollbar pr-2">
+<li class="flex items-start gap-3">
+<span class="material-icons-round text-slate-800 dark:text-white bg-slate-100 dark:bg-slate-800 rounded-full p-0.5 text-base">check</span>
+<span class="text-slate-600 dark:text-slate-300 text-sm">Edit up to 4,000 hours of podcast audio files.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-icons-round text-slate-800 dark:text-white bg-slate-100 dark:bg-slate-800 rounded-full p-0.5 text-base">check</span>
+<span class="text-slate-600 dark:text-slate-300 text-sm">Set your own landing page</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-icons-round text-slate-800 dark:text-white bg-slate-100 dark:bg-slate-800 rounded-full p-0.5 text-base">check</span>
+<span class="text-slate-600 dark:text-slate-300 text-sm">24/7 support</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-icons-round text-slate-800 dark:text-white bg-slate-100 dark:bg-slate-800 rounded-full p-0.5 text-base">check</span>
+<span class="text-slate-600 dark:text-slate-300 text-sm">Advanced analytics</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-icons-round text-slate-800 dark:text-white bg-slate-100 dark:bg-slate-800 rounded-full p-0.5 text-base">check</span>
+<span class="text-slate-600 dark:text-slate-300 text-sm">Set sponsor deals</span>
+</li>
+</ul>
+<div class="border-t border-dashed border-slate-200 dark:border-slate-700 pt-8 mt-auto">
+<div class="mb-8">
+<span class="text-3xl font-bold text-slate-900 dark:text-white">$600</span>
+<span class="text-slate-400 dark:text-slate-500 font-medium">/month</span>
+</div>
+<button class="w-full py-4 px-6 bg-[#fff0f6] dark:bg-pink-900/20 text-primary font-bold rounded-2xl hover:bg-pink-100 dark:hover:bg-pink-900/30 transition-all">
+                        Choose
+                    </button>
+</div>
+</div>
+</div>
+</div>
+
+</body></html>
