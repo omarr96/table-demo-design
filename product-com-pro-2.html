@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Fashion Comparison Table</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ee2b4b",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221013",
+                        "terracotta": "#e2725b",
+                        "blush": "#fce4ec"
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Manrope', sans-serif;
+        }
+        .comparison-gradient {
+            background: linear-gradient(180deg, #fffcfc 0%, #f8f6f6 100%);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#181112] dark:text-white transition-colors duration-300">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Top Navigation Bar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-[#e6dbdd] dark:border-[#3d2a2d] px-10 py-3 bg-white dark:bg-background-dark sticky top-0 z-50">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-primary">
+<div class="size-6">
+<span class="material-symbols-outlined text-3xl">styler</span>
+</div>
+<h2 class="text-[#181112] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">FashionCompare</h2>
+</div>
+<nav class="hidden md:flex items-center gap-9">
+<a class="text-[#181112] dark:text-gray-300 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">New Arrivals</a>
+<a class="text-[#181112] dark:text-gray-300 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Dresses</a>
+<a class="text-[#181112] dark:text-gray-300 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Accessories</a>
+<a class="text-primary text-sm font-bold leading-normal" href="#">Sale</a>
+</nav>
+</div>
+<div class="flex flex-1 justify-end gap-6 items-center">
+<label class="flex flex-col min-w-40 h-10 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+<div class="text-[#896168] dark:text-gray-400 flex border-none bg-white/50 dark:bg-white/10 items-center justify-center pl-4 rounded-l-lg" data-icon="search">
+<span class="material-symbols-outlined text-xl">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 border-none bg-white/50 dark:bg-white/10 focus:outline-0 focus:ring-0 h-full placeholder:text-[#896168] px-4 rounded-r-lg text-base font-normal" placeholder="Search styles..." value=""/>
+</div>
+</label>
+<div class="flex gap-2">
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-white/50 dark:bg-white/10 text-primary hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-primary text-white shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined">shopping_bag</span>
+</button>
+</div>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-primary/20" data-alt="User profile avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDxo68YdN55XeMLqxmwPoGE_WyitqH-RzXWhzxZKcqdX_z2LfYs1MV1-jrwujC0Nc4_Q-K-hH-_zvlLjdEXbXE2vg9EtBXJ0_9IZ8tqgCNKAasFVbYfClvcZL0AE7hdqb2ailS5tvtGcNsBFylNRlud3tkeoeWahnKM2WQbYhDt-GStkOXx-_x8qhlicm0qgXZYxDtcAtFIFsUJScil3XfY2r3IZuqze2DWe31Kv2rXoweKr9EoErNUxHNwQPC7tsmU-LKsg2U9XsFy");'></div>
+</div>
+</header>
+<main class="max-w-[1280px] mx-auto w-full px-6 py-8">
+<!-- Breadcrumbs -->
+<nav class="flex flex-wrap gap-2 py-4">
+<a class="text-[#896168] dark:text-gray-400 text-sm font-medium hover:text-primary" href="#">Home</a>
+<span class="text-[#896168] dark:text-gray-400 text-sm font-medium">/</span>
+<a class="text-[#896168] dark:text-gray-400 text-sm font-medium hover:text-primary" href="#">Dresses</a>
+<span class="text-[#896168] dark:text-gray-400 text-sm font-medium">/</span>
+<span class="text-[#181112] dark:text-white text-sm font-bold">Product Comparison</span>
+</nav>
+<!-- Page Heading -->
+<div class="flex flex-wrap justify-between items-end gap-3 py-6 border-b border-dashed border-terracotta/30 mb-8">
+<div class="flex min-w-72 flex-col gap-2">
+<h1 class="text-[#181112] dark:text-white text-5xl font-black leading-tight tracking-tight">Compare <span class="text-terracotta">Summer</span> Collection</h1>
+<p class="text-[#896168] dark:text-gray-400 text-lg font-normal">Discover the nuances of fabric, drape, and design to find your ultimate fit.</p>
+</div>
+<div class="flex gap-4">
+<button class="flex items-center justify-center rounded-lg h-12 px-6 bg-white dark:bg-white/5 border border-terracotta/20 text-[#181112] dark:text-white text-sm font-bold hover:bg-terracotta/5 transition-all">
+<span class="material-symbols-outlined mr-2">delete_sweep</span>
+                        Clear Comparison
+                    </button>
+<button class="flex items-center justify-center rounded-lg h-12 px-6 bg-primary text-white text-sm font-bold shadow-xl shadow-primary/20 hover:scale-[1.02] transition-transform">
+                        Share Selection
+                    </button>
+</div>
+</div>
+<!-- Comparison Table Container -->
+<div class="bg-white dark:bg-background-dark rounded-xl shadow-2xl shadow-terracotta/5 border border-terracotta/10 overflow-hidden">
+<div class="grid grid-cols-4 min-w-[1000px]">
+<!-- Left Attribute Column -->
+<div class="bg-terracotta/[0.03] dark:bg-white/5 border-r border-terracotta/10">
+<div class="h-[480px] flex items-end p-8 pb-12">
+<span class="text-xs font-black tracking-widest uppercase text-terracotta rotate-[-90deg] origin-left whitespace-nowrap">Product Overview</span>
+</div>
+<div class="flex flex-col">
+<div class="h-20 px-8 flex items-center border-t border-terracotta/10 text-sm font-bold text-[#896168] dark:text-gray-400 gap-3">
+<span class="material-symbols-outlined text-primary">eco</span> Material
+                            </div>
+<div class="h-20 px-8 flex items-center border-t border-terracotta/10 text-sm font-bold text-[#896168] dark:text-gray-400 gap-3">
+<span class="material-symbols-outlined text-primary">apparel</span> Fit
+                            </div>
+<div class="h-20 px-8 flex items-center border-t border-terracotta/10 text-sm font-bold text-[#896168] dark:text-gray-400 gap-3">
+<span class="material-symbols-outlined text-primary">straighten</span> Length
+                            </div>
+<div class="h-20 px-8 flex items-center border-t border-terracotta/10 text-sm font-bold text-[#896168] dark:text-gray-400 gap-3">
+<span class="material-symbols-outlined text-primary">local_laundry_service</span> Care
+                            </div>
+<div class="h-32 px-8 flex items-center border-t border-terracotta/10">
+<!-- Spacer for Action Row -->
+</div>
+</div>
+</div>
+<!-- Product Column 1 -->
+<div class="group border-r border-terracotta/10 hover:bg-terracotta/[0.02] transition-colors duration-500">
+<div class="p-6">
+<div class="h-[360px] w-full rounded-lg overflow-hidden relative mb-6 shadow-md">
+<div class="absolute top-3 left-3 bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider z-10">Limited Edition</div>
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Floral Silk Maxi Dress" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA9oV-wSNKXV9CbWnZJiuOZevil0lgw0ZBctT1hIhRIn6OwDZenpaulRs4AkvXEA4Zs8o6bpGuC6nRuXp6PB9n6xBlQCE8NcPLmK29ReoVjZgKAmrNFswaUaCXwwVhynGX4SRGXn6g2wuLbZFuy-R5kCgH5DTOeP-G_zk4DO0MsiEJmpxUXC0U1BOxLWCX7Xkqsm64R75B0RXeIZIo_1DwkZrw-egfSZeKljNm8sDmTHDOlm2bixiFT3YIwHDkLbQOa_Ou6eWqMVmav');"></div>
+</div>
+<h3 class="text-xl font-extrabold text-[#181112] dark:text-white mb-2 leading-tight">Floral Silk Maxi</h3>
+<div class="flex items-center gap-1 text-primary mb-3">
+<span class="material-symbols-outlined text-sm fill-1">star</span>
+<span class="material-symbols-outlined text-sm fill-1">star</span>
+<span class="material-symbols-outlined text-sm fill-1">star</span>
+<span class="material-symbols-outlined text-sm fill-1">star</span>
+<span class="material-symbols-outlined text-sm fill-1">star_half</span>
+<span class="text-[#896168] dark:text-gray-400 text-xs font-medium ml-1">(4.8/5)</span>
+</div>
+<div class="text-2xl font-black text-terracotta">$210.00</div>
+</div>
+<div class="flex flex-col">
+<div class="h-20 px-6 flex items-center border-t border-terracotta/10 text-sm font-medium">100% Mulberry Silk</div>
+<div class="h-20 px-6 flex items-center border-t border-terracotta/10 text-sm font-medium">Relaxed &amp; Airy</div>
+<div class="h-20 px-6 flex items-center border-t border-terracotta/10 text-sm font-medium">Floor Length</div>
+<div class="h-20 px-6 flex items-center border-t border-terracotta/10 text-sm font-medium">Dry Clean Only</div>
+<div class="h-32 px-6 flex items-center border-t border-terracotta/10">
+<button class="w-full h-12 bg-primary text-white font-bold rounded-lg shadow-lg shadow-primary/30 hover:bg-[#d61f3e] transition-all">Add to Cart</button>
+</div>
+</div>
+</div>
+<!-- Product Column 2 -->
+<div class="group border-r border-terracotta/10 hover:bg-terracotta/[0.02] transition-colors duration-500 bg-terracotta/[0.01]">
+<div class="p-6">
+<div class="h-[360px] w-full rounded-lg overflow-hidden relative mb-6 shadow-md border-2 border-terracotta/20">
+<div class="absolute top-3 left-3 bg-terracotta text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider z-10">Best Value</div>
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Terracotta Wrap Dress" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAL5qGCeN7QPAYkNCUPno-cH4XJ7z8W4t4UM1ZhK9Pmpdmv63NpvsMWVE3w2bQvgLjPfJkbnLTPmfHrxgyJ2tRku4f2toDd2sqa6BGDcSnUB2dII6NYmHxfi3HSyyBz-r2CHX1dQuGFJSbJXwz7bQtDw0gCRlt7aabKNHPKxlPuUwJToTFLRJAbM6aucEPJMivimQgrIwpHe-Kx7Fz_o0VQyYEH40hVZJTcOLSOBiHKl2hEmqlORqImImZfJ1AtrbJtWTyhX2ROJjKh');"></div>
+</div>
+<h3 class="text-xl font-extrabold text-[#181112] dark:text-white mb-2 leading-tight">Terracotta Wrap</h3>
+<div class="flex items-center gap-1 text-primary mb-3">
+<span class="material-symbols-outlined text-sm fill-1">star</span>
+<span class="material-symbols-outlined text-sm fill-1">star</span>
+<span class="material-symbols-outlined text-sm fill-1">star</span>
+<span class="material-symbols-outlined text-sm fill-1">star</span>
+<span class="material-symbols-outlined text-sm fill-1">star_half</span>
+<span class="text-[#896168] dark:text-gray-400 text-xs font-medium ml-1">(4.5/5)</span>
+</div>
+<div class="text-2xl font-black text-terracotta">$89.00</div>
+</div>
+<div class="flex flex-col">
+<div class="h-20 px-6 flex items-center border-t border-terracotta/10 text-sm font-medium">Organic Linen Blend</div>
+<div class="h-20 px-6 flex items-center border-t border-terracotta/10 text-sm font-medium">Tailored Fit</div>
+<div class="h-20 px-6 flex items-center border-t border-terracotta/10 text-sm font-medium">Midi Cut</div>
+<div class="h-20 px-6 flex items-center border-t border-terracotta/10 text-sm font-medium">Machine Wash Cold</div>
+<div class="h-32 px-6 flex items-center border-t border-terracotta/10">
+<button class="w-full h-12 bg-primary text-white font-bold rounded-lg shadow-lg shadow-primary/30 hover:bg-[#d61f3e] transition-all">Add to Cart</button>
+</div>
+</div>
+</div>
+<!-- Product Column 3 -->
+<div class="group border-terracotta/10 hover:bg-terracotta/[0.02] transition-colors duration-500">
+<div class="p-6">
+<div class="h-[360px] w-full rounded-lg overflow-hidden relative mb-6 shadow-md">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Evening Velvet Gown" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBTVkbcc6OhwrONXfK_9Xp0KqAtAm8ykeaG-L10SedaFcniQ_F0J-cZZyOZjOJYfjpG60_MQsCwYI_KhxNZ5_VoyCE3QsmCz0oixdBVtQNo59Rg1C8BnYiVgjuyi1xLgR7-Nwy5KEmMwkCqw_QLnei-naJrjc0BooGnYnnLX-HVkWpSGq3i5WVxHUijY8qN9cZzqSkI7E7ZMHTV_mOKfz3IJHUJM93w2OrkwqKK8wKgdwHsJ96xx-ZBYNJgxL6zvG9qO1OO9s3Jwkqg');"></div>
+</div>
+<h3 class="text-xl font-extrabold text-[#181112] dark:text-white mb-2 leading-tight">Evening Velvet Gown</h3>
+<div class="flex items-center gap-1 text-primary mb-3">
+<span class="material-symbols-outlined text-sm fill-1">star</span>
+<span class="material-symbols-outlined text-sm fill-1">star</span>
+<span class="material-symbols-outlined text-sm fill-1">star</span>
+<span class="material-symbols-outlined text-sm fill-1">star</span>
+<span class="material-symbols-outlined text-sm fill-1">star</span>
+<span class="text-[#896168] dark:text-gray-400 text-xs font-medium ml-1">(5.0/5)</span>
+</div>
+<div class="text-2xl font-black text-terracotta">$175.00</div>
+</div>
+<div class="flex flex-col">
+<div class="h-20 px-6 flex items-center border-t border-terracotta/10 text-sm font-medium">Premium Velvet Blend</div>
+<div class="h-20 px-6 flex items-center border-t border-terracotta/10 text-sm font-medium">Slim Fit Silhouette</div>
+<div class="h-20 px-6 flex items-center border-t border-terracotta/10 text-sm font-medium">Ankle Length</div>
+<div class="h-20 px-6 flex items-center border-t border-terracotta/10 text-sm font-medium">Hand Wash Only</div>
+<div class="h-32 px-6 flex items-center border-t border-terracotta/10">
+<button class="w-full h-12 bg-primary text-white font-bold rounded-lg shadow-lg shadow-primary/30 hover:bg-[#d61f3e] transition-all">Add to Cart</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Comparison Footer Info -->
+<div class="mt-12 p-8 bg-terracotta/10 dark:bg-white/5 rounded-xl border-l-4 border-terracotta">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-terracotta text-3xl">info</span>
+<div>
+<h4 class="font-bold text-[#181112] dark:text-white mb-1">Our Fitting Promise</h4>
+<p class="text-sm text-[#896168] dark:text-gray-400">Not sure about your size? Use our virtual fit tool or order two sizes for a home try-on. Free returns on all dresses within 30 days of purchase.</p>
+</div>
+</div>
+</div>
+</main>
+<footer class="mt-auto border-t border-[#e6dbdd] dark:border-[#3d2a2d] py-10 px-6 bg-white dark:bg-background-dark">
+<div class="max-w-[1280px] mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">styler</span>
+<span class="font-black text-[#181112] dark:text-white tracking-tighter">FASHIONCOMPARE</span>
+</div>
+<div class="flex gap-8 text-sm text-[#896168] dark:text-gray-400 font-medium">
+<a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-primary transition-colors" href="#">Shipping Info</a>
+<a class="hover:text-primary transition-colors" href="#">Size Guide</a>
+<a class="hover:text-primary transition-colors" href="#">Contact Us</a>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-[#896168] dark:text-gray-400 cursor-pointer hover:text-primary transition-colors">public</span>
+<span class="material-symbols-outlined text-[#896168] dark:text-gray-400 cursor-pointer hover:text-primary transition-colors">mail</span>
+</div>
+</div>
+<p class="text-center text-xs text-[#896168]/60 dark:text-gray-500 mt-8">© 2024 FashionCompare. All rights reserved. Designed for editorial excellence.</p>
+</footer>
+</div>
+</body></html>
