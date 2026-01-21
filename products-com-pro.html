@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Smartphone Comparison Table</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Spline Sans", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: "Spline Sans", sans-serif;
+        }
+        .sticky-header {
+            position: sticky;
+            top: 0;
+            z-index: 20;
+        }
+        .glass-effect {
+            backdrop-filter: blur(8px);
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+        .dark .glass-effect {
+            background-color: rgba(16, 25, 34, 0.9);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#111418] dark:text-white min-h-screen">
+
+<main class="max-w-[1280px] mx-auto px-4 py-8">
+<!-- Comparison Table -->
+<div class="bg-white dark:bg-slate-900 rounded-xl border border-[#dbe0e6] dark:border-slate-700 shadow-xl overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full border-collapse">
+<!-- Sticky Header Row -->
+<thead class="sticky-header glass-effect border-b border-[#dbe0e6] dark:border-slate-700">
+<tr>
+<th class="p-6 text-left w-64 min-w-[200px] align-bottom">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined">compare_arrows</span>
+<span class="text-sm font-bold uppercase tracking-wider">Features</span>
+</div>
+</th>
+<!-- Product 1 -->
+<th class="p-6 text-center w-80 min-w-[250px] relative">
+<div class="flex flex-col items-center gap-4">
+<div class="w-32 h-32 bg-slate-100 dark:bg-slate-800 rounded-xl flex items-center justify-center p-2">
+<div class="w-full h-full bg-contain bg-center bg-no-repeat" data-alt="Titanium smartphone flagship device standing upright" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCnSq8FELq66SOdF3AOaDHuZcBAGkl04z5lCqeO6Pr-jSyM6D4rAjCZIiHjqiOm5M7BakYy0Tk-vcHIEqppuLFXjEszBKrll1XWwORArfWq3wtpZ0YhDVs3tmtFKonS5LbQ4NNxLI2r8hcJ9oC7URhgGk-77YKSHjceVerhHmWyspBJGGh-Bx3sWcsAdvmwCHQ-6ScTwC5cYvtrF6SGUuCJJ0xXlWps3fIkMQ0I02gBX4EXqQ1BkkSdhBcSjE6_01SCQ4ILniggpNFx');"></div>
+</div>
+<div>
+<h3 class="text-lg font-bold text-[#111418] dark:text-white">iPhone 15 Pro</h3>
+<p class="text-primary font-bold text-xl mt-1">$999</p>
+</div>
+<button class="w-full bg-primary hover:bg-primary/90 text-white py-3 rounded-lg font-bold text-sm transition-all shadow-md shadow-primary/20 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-lg">shopping_cart</span>
+                                        Buy Now
+                                    </button>
+</div>
+</th>
+<!-- Product 2 -->
+<th class="p-6 text-center w-80 min-w-[250px]">
+<div class="flex flex-col items-center gap-4">
+<div class="w-32 h-32 bg-slate-100 dark:bg-slate-800 rounded-xl flex items-center justify-center p-2">
+<div class="w-full h-full bg-contain bg-center bg-no-repeat" data-alt="Sleek black android flagship smartphone display side" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB08vTTxaTMx45CENvzKR1uokuaeg59u7n5UafpaF1UONioXMuE1qqW50kHKGGdBymRKpnbwCsqsHuGSfku3UAcYkY136rE8oS9V2higWIxmepO23BG06GtZs5wy8wtGtLXkE_4_fN2VcVWeu8HcGJ93ve6wdJqzVmhaAbTckBnC-zwIhty2_cprjqOG5PmTm4FpcusORwT7FibMHo20bCF5Xa6CKXT52CzJSGS0yEf2Rg_SnyYZEp_WZv7DQrRSGbbBGhi6ih1VACF');"></div>
+</div>
+<div>
+<h3 class="text-lg font-bold text-[#111418] dark:text-white">Samsung S24</h3>
+<p class="text-primary font-bold text-xl mt-1">$799</p>
+</div>
+<button class="w-full bg-primary hover:bg-primary/90 text-white py-3 rounded-lg font-bold text-sm transition-all shadow-md shadow-primary/20 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-lg">shopping_cart</span>
+                                        Buy Now
+                                    </button>
+</div>
+</th>
+<!-- Product 3 -->
+<th class="p-6 text-center w-80 min-w-[250px] bg-primary/5 dark:bg-primary/10">
+
+<div class="flex flex-col items-center gap-4">
+<div class="w-32 h-32 bg-white dark:bg-slate-700 rounded-xl flex items-center justify-center p-2">
+<div class="w-full h-full bg-contain bg-center bg-no-repeat" data-alt="Modern smartphone with large camera island on back" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAZ8R2ZJBy20HUXjKHrY2x0NLZWU46i3N4fpUzcjr47X3SQyyZNjL-mztKxzbenbY_mUbd67BDSgyoPcjpNk6631E4woxLVHyYv3SqehnHADbkVol0_xIDdmMUrx_jfrQsA4n6hgfzZF4c3dYKELiEY0Cprx_1e3vF0-GXPgsH1MQCvWMQ1i1aI5PeDQzm_Q8WNq4WL--cjT69U3J3WAT3Cpw8-9-R8fzgGUeSyFOu3QepjhHuwE_NF8EsaCBEXiBpavfrfErWX34Xy');"></div>
+</div>
+<div>
+<h3 class="text-lg font-bold text-[#111418] dark:text-white">Google Pixel 8</h3>
+<p class="text-primary font-bold text-xl mt-1">$699</p>
+</div>
+<button class="w-full bg-primary hover:bg-primary/90 text-white py-3 rounded-lg font-bold text-sm transition-all shadow-md shadow-primary/20 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-lg">shopping_cart</span>
+                                        Buy Now
+                                    </button>
+</div>
+</th>
+</tr>
+</thead>
+<!-- Body Rows -->
+<tbody class="divide-y divide-[#dbe0e6] dark:divide-slate-800">
+<!-- Display Row -->
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+<td class="p-6 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary bg-primary/10 p-2 rounded-lg">screenshot</span>
+<span class="text-sm font-semibold text-[#617589]">Display</span>
+</td>
+<td class="p-6 text-center text-sm font-medium text-[#111418] dark:text-slate-300">
+                                6.1" Super Retina XDR OLED<br/>120Hz ProMotion
+                            </td>
+<td class="p-6 text-center text-sm font-medium text-[#111418] dark:text-slate-300">
+                                6.2" Dynamic AMOLED 2X<br/>120Hz Refresh
+                            </td>
+<td class="p-6 text-center text-sm font-medium text-[#111418] dark:text-slate-300 bg-primary/5 dark:bg-primary/10">
+                                6.2" Actua Display OLED<br/>120Hz Smooth Display
+                            </td>
+</tr>
+<!-- Processor Row -->
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors bg-background-light dark:bg-slate-800/20">
+<td class="p-6 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary bg-primary/10 p-2 rounded-lg">memory</span>
+<span class="text-sm font-semibold text-[#617589]">Processor</span>
+</td>
+<td class="p-6 text-center text-sm font-bold text-primary">
+                                A17 Pro (3nm)
+                            </td>
+<td class="p-6 text-center text-sm font-medium text-[#111418] dark:text-slate-300">
+                                Snapdragon 8 Gen 3
+                            </td>
+<td class="p-6 text-center text-sm font-medium text-[#111418] dark:text-slate-300 bg-primary/5 dark:bg-primary/10">
+                                Google Tensor G3
+                            </td>
+</tr>
+<!-- Rear Camera Row -->
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+<td class="p-6 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary bg-primary/10 p-2 rounded-lg">photo_camera</span>
+<span class="text-sm font-semibold text-[#617589]">Rear Camera</span>
+</td>
+<td class="p-6 text-center text-sm font-medium text-[#111418] dark:text-slate-300">
+                                48MP Main | 12MP Ultra | 12MP Tele
+                            </td>
+<td class="p-6 text-center text-sm font-medium text-[#111418] dark:text-slate-300">
+                                50MP Main | 12MP Ultra | 10MP Tele
+                            </td>
+<td class="p-6 text-center text-sm font-bold text-primary bg-primary/5 dark:bg-primary/10">
+                                50MP Octa PD Main | 12MP Ultra
+                            </td>
+</tr>
+<!-- Battery Life Row -->
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors bg-background-light dark:bg-slate-800/20">
+<td class="p-6 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary bg-primary/10 p-2 rounded-lg">battery_charging_full</span>
+<span class="text-sm font-semibold text-[#617589]">Battery Life</span>
+</td>
+<td class="p-6 text-center text-sm font-medium text-[#111418] dark:text-slate-300">
+                                Up to 23 hrs video playback
+                            </td>
+<td class="p-6 text-center text-sm font-bold text-primary">
+                                Up to 29 hrs video playback
+                            </td>
+<td class="p-6 text-center text-sm font-medium text-[#111418] dark:text-slate-300 bg-primary/5 dark:bg-primary/10">
+                                24+ hour battery life
+                            </td>
+</tr>
+<!-- Storage Row -->
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+<td class="p-6 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary bg-primary/10 p-2 rounded-lg">storage</span>
+<span class="text-sm font-semibold text-[#617589]">Storage Options</span>
+</td>
+<td class="p-6 text-center text-sm font-medium text-[#111418] dark:text-slate-300">
+                                128GB, 256GB, 512GB, 1TB
+                            </td>
+<td class="p-6 text-center text-sm font-medium text-[#111418] dark:text-slate-300">
+                                128GB, 256GB, 512GB
+                            </td>
+<td class="p-6 text-center text-sm font-medium text-[#111418] dark:text-slate-300 bg-primary/5 dark:bg-primary/10">
+                                128GB, 256GB
+                            </td>
+</tr>
+<!-- Build Quality -->
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors bg-background-light dark:bg-slate-800/20">
+<td class="p-6 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary bg-primary/10 p-2 rounded-lg">diamond</span>
+<span class="text-sm font-semibold text-[#617589]">Build</span>
+</td>
+<td class="p-6 text-center text-sm font-medium text-[#111418] dark:text-slate-300">
+                                Aerospace-grade Titanium
+                            </td>
+<td class="p-6 text-center text-sm font-medium text-[#111418] dark:text-slate-300">
+                                Armor Aluminum 2.0
+                            </td>
+<td class="p-6 text-center text-sm font-medium text-[#111418] dark:text-slate-300 bg-primary/5 dark:bg-primary/10">
+                                Polished Aluminum / Glass back
+                            </td>
+</tr>
+<!-- Water Resistance -->
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+<td class="p-6 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary bg-primary/10 p-2 rounded-lg">water_drop</span>
+<span class="text-sm font-semibold text-[#617589]">Water Resistance</span>
+</td>
+<td class="p-6 text-center text-sm font-medium text-[#111418] dark:text-slate-300">
+                                IP68 (6m for 30 min)
+                            </td>
+<td class="p-6 text-center text-sm font-medium text-[#111418] dark:text-slate-300">
+                                IP68 (1.5m for 30 min)
+                            </td>
+<td class="p-6 text-center text-sm font-medium text-[#111418] dark:text-slate-300 bg-primary/5 dark:bg-primary/10">
+                                IP68 (1.5m for 30 min)
+                            </td>
+</tr>
+</tbody>
+<!-- Table Footer -->
+<tfoot>
+<tr class="bg-slate-50 dark:bg-slate-800/40">
+<td class="p-6"></td>
+<td class="p-6 text-center">
+<a class="text-primary font-bold text-sm hover:underline" href="#">View Full Details</a>
+</td>
+<td class="p-6 text-center">
+<a class="text-primary font-bold text-sm hover:underline" href="#">View Full Details</a>
+</td>
+<td class="p-6 text-center bg-primary/5 dark:bg-primary/10">
+<a class="text-primary font-bold text-sm hover:underline" href="#">View Full Details</a>
+</td>
+</tr>
+</tfoot>
+</table>
+</div>
+</div>
+
+</main>
+
+</body></html>

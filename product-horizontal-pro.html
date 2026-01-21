@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Horizontal Router Comparison Table</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .editor-pick-row {
+            border: 2px solid #d4af37;
+            position: relative;
+            background-color: #fffdf0;
+        }
+        .dark .editor-pick-row {
+            background-color: rgba(212, 175, 55, 0.05);
+        }
+        .editor-badge {
+            background: #d4af37;
+            color: white;
+            position: absolute;
+            left: -2px;
+            top: -12px;
+            font-size: 10px;
+            font-weight: 800;
+            padding: 2px 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border-radius: 4px;
+            z-index: 20;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#0d141b] dark:text-slate-50 transition-colors duration-200">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-[#cfdbe7] dark:border-slate-700 px-10 py-3 bg-white dark:bg-background-dark">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-[#0d141b] dark:text-white">
+<div class="size-6 text-primary">
+<span class="material-symbols-outlined text-3xl">router</span>
+</div>
+<h2 class="text-lg font-bold leading-tight tracking-tight">TechSpec Networking</h2>
+</div>
+<nav class="hidden md:flex items-center gap-9">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Routers</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Mesh Systems</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Modems</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Guides</a>
+</nav>
+</div>
+<div class="flex flex-1 justify-end gap-4">
+<label class="hidden sm:flex flex-col min-w-40 h-10 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded h-full bg-[#e7edf3] dark:bg-slate-800">
+<div class="text-[#4c739a] flex items-center justify-center pl-4">
+<span class="material-symbols-outlined text-xl">search</span>
+</div>
+<input class="form-input w-full border-none bg-transparent focus:ring-0 text-sm font-normal px-2 placeholder:text-[#4c739a]" placeholder="Search gear..."/>
+</div>
+</label>
+<button class="flex items-center justify-center rounded h-10 px-4 bg-primary text-white text-sm font-bold tracking-wide hover:bg-blue-600 transition-colors">
+                Compare
+            </button>
+</div>
+</header>
+<main class="flex-1 max-w-[1400px] mx-auto w-full px-4 sm:px-10 py-8">
+<div class="flex flex-wrap items-center gap-2 mb-6">
+<a class="text-[#4c739a] dark:text-slate-400 text-sm font-medium hover:underline" href="#">Home</a>
+<span class="material-symbols-outlined text-xs text-[#4c739a]">chevron_right</span>
+<a class="text-[#4c739a] dark:text-slate-400 text-sm font-medium hover:underline" href="#">Networking</a>
+<span class="material-symbols-outlined text-xs text-[#4c739a]">chevron_right</span>
+<span class="text-primary text-sm font-medium">Comparison Table</span>
+</div>
+<div class="mb-8">
+<h1 class="text-[#0d141b] dark:text-white text-4xl font-black leading-tight tracking-tight mb-3">WiFi Router Comparison Table</h1>
+<p class="text-[#4c739a] dark:text-slate-400 text-lg font-normal max-w-2xl">Horizontal performance analysis of the industry-leading Wi-Fi hardware.</p>
+</div>
+<div class="overflow-x-auto rounded-xl border border-[#cfdbe7] dark:border-slate-700 bg-white dark:bg-background-dark shadow-sm">
+<table class="w-full border-collapse min-w-[1200px]">
+<thead>
+<tr class="bg-[#f8f9fa] dark:bg-slate-900 border-b border-[#cfdbe7] dark:border-slate-700">
+<th class="p-6 text-left w-[320px]">
+<span class="text-xs uppercase tracking-widest font-bold text-[#4c739a]">Product Info</span>
+</th>
+<th class="p-6 text-left">
+<span class="text-xs uppercase tracking-widest font-bold text-[#4c739a]">Max Speed</span>
+</th>
+<th class="p-6 text-left">
+<span class="text-xs uppercase tracking-widest font-bold text-[#4c739a]">Coverage</span>
+</th>
+<th class="p-6 text-left">
+<span class="text-xs uppercase tracking-widest font-bold text-[#4c739a]">Ethernet Ports</span>
+</th>
+<th class="p-6 text-left">
+<span class="text-xs uppercase tracking-widest font-bold text-[#4c739a]">Key Features</span>
+</th>
+<th class="p-6 text-left">
+<span class="text-xs uppercase tracking-widest font-bold text-[#4c739a]">Price</span>
+</th>
+<th class="p-6 text-center w-[180px]">
+<span class="text-xs uppercase tracking-widest font-bold text-[#4c739a]">Action</span>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="editor-pick-row border-b border-[#cfdbe7] dark:border-slate-700 hover:bg-[#fffcf0] dark:hover:bg-slate-800/80 transition-colors">
+<td class="p-6 relative">
+<div class="editor-badge">Editor's Pick</div>
+<div class="flex items-center gap-4">
+<div class="w-20 h-20 bg-slate-100 dark:bg-slate-700 rounded-lg overflow-hidden border border-slate-200 dark:border-slate-600 flex-shrink-0">
+<div class="w-full h-full bg-cover bg-center" data-alt="Futuristic black gaming router" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC56gzLPiaMNP8S-3bKd7c1HazfQhM60EhRE0-wJD8bEWTSftJRUUGyc-AqZy1oYP1XnvBS45MaC7Hp_ygbusxNWb9Ijzhyk-RlKZQFHGxqtRC8SHQVkRX4ipcHgXYutB7ofVHBYh5twl1_izdudWnEsrJyjSvrD0W8Qs37Oa2h07CFnGCqLFqhVsiiXMXzG9hsEIByCX80TDKOGtjY6OdjdOqYHepWTTWmuQA5qk44fyoa1utAoEziZUYhUApdb0QTlCithiXz0ZA")'></div>
+</div>
+<span class="text-sm font-bold leading-tight">ASUS ROG Rapture GT-BE98 Pro</span>
+</div>
+</td>
+<td class="p-6">
+<div class="text-sm font-semibold">WiFi 7</div>
+<div class="text-xs text-[#4c739a]">Up to 30,000 Mbps</div>
+</td>
+<td class="p-6">
+<div class="text-sm">Up to 4,000 sq. ft.</div>
+</td>
+<td class="p-6">
+<div class="text-xs leading-relaxed">2x 10G, 4x 2.5G<br/>1x 10G SFP+</div>
+</td>
+<td class="p-6">
+<div class="flex flex-col gap-1 items-start">
+<span class="px-2 py-0.5 bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400 rounded text-[10px] font-bold uppercase w-fit">Quad-Band</span>
+<span class="text-xs">Advanced Game Boost</span>
+</div>
+</td>
+<td class="p-6">
+<div class="text-xl font-black text-[#0d141b] dark:text-white">$799.99</div>
+</td>
+<td class="p-6 text-center">
+<button class="w-full bg-primary hover:bg-blue-600 text-white font-bold py-2.5 px-4 rounded text-xs transition-all transform active:scale-95 shadow-md">
+                                BUY NOW
+                            </button>
+</td>
+</tr>
+<tr class="border-b border-[#cfdbe7] dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+<td class="p-6">
+<div class="flex items-center gap-4">
+<div class="w-20 h-20 bg-slate-100 dark:bg-slate-700 rounded-lg overflow-hidden border border-slate-200 dark:border-slate-600 flex-shrink-0">
+<div class="w-full h-full bg-cover bg-center" data-alt="Sleek modern white mesh router" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBlKtmfzh4r6hwn1iN5NkdXLkrUtf1lchhNLGu-L4Cxr_tzKbItHEXFDMyXZkHp_L8FvsgokoKSL1w7L6NEdAWkvTcTeHl4RsE78FSZYUet_fR8FgJ6ahQxijtAP0sm5Vu2CEn29txiCEX8MCy4X0T5iN2h_0PP3RaXJz1nPNPvZtFL4vbbHdz-75nZEUJJm054R474JSEOKEYc-2c4aYipfahurV0iCNzIdTKPQusYsKZfORK6nZZhbmSQr3VMHPtf15uReSrZYyw")'></div>
+</div>
+<span class="text-sm font-bold leading-tight">Netgear Nighthawk RAXE500</span>
+</div>
+</td>
+<td class="p-6">
+<div class="text-sm font-semibold">WiFi 6E</div>
+<div class="text-xs text-[#4c739a]">Up to 11,000 Mbps</div>
+</td>
+<td class="p-6">
+<div class="text-sm">Up to 3,500 sq. ft.</div>
+</td>
+<td class="p-6">
+<div class="text-xs leading-relaxed">1x 2.5G, 4x 1G<br/>Link Aggregation</div>
+</td>
+<td class="p-6">
+<div class="flex flex-col gap-1 items-start">
+<span class="px-2 py-0.5 bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400 rounded text-[10px] font-bold uppercase w-fit">Tri-Band</span>
+<span class="text-xs">Armor Security</span>
+</div>
+</td>
+<td class="p-6">
+<div class="text-xl font-black text-[#0d141b] dark:text-white">$449.99</div>
+</td>
+<td class="p-6 text-center">
+<button class="w-full bg-[#e7edf3] dark:bg-slate-800 hover:bg-[#d1dce7] dark:hover:bg-slate-700 text-[#0d141b] dark:text-white font-bold py-2.5 px-4 rounded text-xs transition-all transform active:scale-95">
+                                VIEW DEAL
+                            </button>
+</td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+<td class="p-6">
+<div class="flex items-center gap-4">
+<div class="w-20 h-20 bg-slate-100 dark:bg-slate-700 rounded-lg overflow-hidden border border-slate-200 dark:border-slate-600 flex-shrink-0">
+<div class="w-full h-full bg-cover bg-center" data-alt="Angular black router" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDPBZcsp2LnyRXi9ZD0_s4EKexnfMSfBCRUkzGao_Q9zpl7cuBNuNKUdvtVGHc_eIu2j4vVsHpgzPAOl2xlUUqQgeHtAeNHSsWMjRiAXJ5srcCyfLhK5v6DNSJQJcxan7odr0g7ZgQAQvgg1g2lP-ynLv848oFkMjvWHwbaEBA80e0fHgjtdBiINUihwEOblkJYwqFid7BEjUZOAmXh4MWnThYEX9SCBHRGHYSI9B5envJj5xwCOPh2C4aGp4Ma6uTIqsvIDztU4pk")'></div>
+</div>
+<span class="text-sm font-bold leading-tight">TP-Link Archer BE800</span>
+</div>
+</td>
+<td class="p-6">
+<div class="text-sm font-semibold">WiFi 7</div>
+<div class="text-xs text-[#4c739a]">Up to 19,000 Mbps</div>
+</td>
+<td class="p-6">
+<div class="text-sm">Up to 3,000 sq. ft.</div>
+</td>
+<td class="p-6">
+<div class="text-xs leading-relaxed">2x 10G, 4x 2.5G<br/>USB 3.0</div>
+</td>
+<td class="p-6">
+<div class="flex flex-col gap-1 items-start">
+<span class="px-2 py-0.5 bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-400 rounded text-[10px] font-bold uppercase w-fit">Tri-Band</span>
+<span class="text-xs">LED Screen</span>
+</div>
+</td>
+<td class="p-6">
+<div class="text-xl font-black text-[#0d141b] dark:text-white">$599.99</div>
+</td>
+<td class="p-6 text-center">
+<button class="w-full bg-[#e7edf3] dark:bg-slate-800 hover:bg-[#d1dce7] dark:hover:bg-slate-700 text-[#0d141b] dark:text-white font-bold py-2.5 px-4 rounded text-xs transition-all transform active:scale-95">
+                                VIEW DEAL
+                            </button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="mt-12 p-6 bg-slate-100 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-xl">
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary">info</span>
+<div>
+<h4 class="font-bold mb-1">Testing Methodology</h4>
+<p class="text-sm text-[#4c739a] dark:text-slate-400 leading-relaxed">
+                        Max speeds represent theoretical maximum throughput. Real-world performance may vary based on environmental factors, client hardware capabilities, and internet service provider (ISP) limits. All products were tested in a 3,000 sq ft home environment using Wi-Fi 7 capable laptops.
+                    </p>
+</div>
+</div>
+</div>
+</main>
+<footer class="border-t border-[#cfdbe7] dark:border-slate-700 py-10 px-10 bg-white dark:bg-background-dark">
+<div class="max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">router</span>
+<span class="font-bold text-sm tracking-tight">TechSpec Networking © 2024</span>
+</div>
+<div class="flex gap-8">
+<a class="text-xs font-medium text-[#4c739a] hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="text-xs font-medium text-[#4c739a] hover:text-primary transition-colors" href="#">Affiliate Disclosure</a>
+<a class="text-xs font-medium text-[#4c739a] hover:text-primary transition-colors" href="#">Contact</a>
+</div>
+</div>
+</footer>
+</div>
+
+</body></html>
