@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Affiliate Product List Table</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ee2b4b",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221013",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .filled-star {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#181112] transition-colors duration-300">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Navigation Bar -->
+<div class="flex h-full grow flex-col">
+<div class="px-4 md:px-20 lg:px-40 flex flex-1 justify-center py-5">
+<div class="layout-content-container flex flex-col max-w-[1200px] flex-1">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-[#e6dbdd] dark:border-[#3a2a2d] px-4 md:px-10 py-4 mb-6">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-primary">
+<div class="size-6">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M24 45.8096C19.6865 45.8096 15.4698 44.5305 11.8832 42.134C8.29667 39.7376 5.50128 36.3314 3.85056 32.3462C2.19985 28.361 1.76794 23.9758 2.60947 19.7452C3.451 15.5145 5.52816 11.6284 8.57829 8.5783C11.6284 5.52817 15.5145 3.45101 19.7452 2.60948C23.9758 1.76795 28.361 2.19986 32.3462 3.85057C36.3314 5.50129 39.7376 8.29668 42.134 11.8833C44.5305 15.4698 45.8096 19.6865 45.8096 24L24 24L24 45.8096Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-[#181112] dark:text-white text-xl font-bold leading-tight tracking-[-0.015em]">AffiliateHub</h2>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-[#181112] dark:text-white text-sm font-semibold" href="#">Home</a>
+<a class="text-[#896168] dark:text-[#a38086] text-sm font-medium hover:text-primary transition-colors" href="#">Categories</a>
+<a class="text-[#896168] dark:text-[#a38086] text-sm font-medium hover:text-primary transition-colors" href="#">Deals</a>
+<a class="text-[#896168] dark:text-[#a38086] text-sm font-medium hover:text-primary transition-colors" href="#">Reviews</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<label class="hidden sm:flex flex-col min-w-40 !h-10 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded-full h-full">
+<div class="text-[#896168] flex border-none bg-white dark:bg-[#3a2a2d] items-center justify-center pl-4 rounded-l-full">
+<span class="material-symbols-outlined text-xl">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-r-full text-[#181112] dark:text-white focus:outline-0 focus:ring-0 border-none bg-white dark:bg-[#3a2a2d] placeholder:text-[#896168] px-4 pl-2 text-sm font-normal" placeholder="Search products..." value=""/>
+</div>
+</label>
+<button class="flex min-w-[100px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-5 bg-primary text-white text-sm font-bold shadow-lg shadow-primary/20 hover:scale-105 transition-transform">
+<span class="truncate">Sign Up</span>
+</button>
+</div>
+</header>
+<!-- Page Heading -->
+<div class="flex flex-wrap justify-between items-end gap-3 p-4 mb-4">
+<div class="flex min-w-72 flex-col gap-3">
+<p class="text-[#181112] dark:text-white text-4xl font-black leading-tight tracking-[-0.033em]">Top Fashion Picks</p>
+<p class="text-[#896168] dark:text-[#a38086] text-base font-normal max-w-xl">Curated clothing items with the highest customer satisfaction and massive seasonal discounts.</p>
+<div class="flex items-center gap-2 mt-2">
+<span class="material-symbols-outlined text-xs text-[#896168]">info</span>
+<p class="text-[#896168] text-xs italic">Disclosure: We may earn a commission from purchases made via our links.</p>
+</div>
+</div>
+<div class="flex gap-3">
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-6 bg-white dark:bg-[#3a2a2d] border border-[#e6dbdd] dark:border-[#4a3a3d] text-[#181112] dark:text-white text-sm font-bold transition-all hover:bg-[#f4f0f1]">
+<span class="truncate">All Categories</span>
+</button>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-6 bg-primary/10 text-primary text-sm font-bold border border-primary/20">
+<span class="truncate">Best Deals</span>
+</button>
+</div>
+</div>
+<!-- Tabs Section -->
+<div class="px-4 pb-6">
+<div class="flex border-b border-[#e6dbdd] dark:border-[#3a2a2d] gap-8">
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-primary text-primary pb-[13px] pt-4" href="#">
+<p class="text-sm font-bold tracking-[0.015em]">Recommended</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-[#896168] pb-[13px] pt-4 hover:text-[#181112]" href="#">
+<p class="text-sm font-bold tracking-[0.015em]">Latest Arrivals</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-[#896168] pb-[13px] pt-4 hover:text-[#181112]" href="#">
+<p class="text-sm font-bold tracking-[0.015em]">Price Low-High</p>
+</a>
+</div>
+</div>
+<!-- Product Table Component -->
+<div class="flex flex-col gap-4 p-4">
+<!-- Product Item 1 -->
+<div class="flex flex-col md:flex-row items-center gap-6 bg-white dark:bg-[#2b1b1e] p-6 rounded-xl shadow-sm border border-[#f0e8e9] dark:border-[#3a2a2d] hover:shadow-md hover:border-primary/20 transition-all group">
+<div class="relative shrink-0">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-[120px] shadow-sm border border-[#e6dbdd] dark:border-[#4a3a3d]" data-alt="Dark blue denim jacket on white background" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAQwU5QCBwG0L57SwvC3zVFKDERaTvJF5a5tIa-UAQG7zOQmSKXNXIqQXB1GM-AqLwfLItv6zKr7B5MGrYMbMHto--pSyjanYNCPwbsRrn5JCPBksU7qHEZidi6lCsAlN8u1mW9OmVwnYZS5q9pRFZRT5WStl1zOK4LiuF8gwLW9lOXxq-15rfqMmxJIiNdHjBNBpOSvhEMdE-JKGtdMGXOPYZr426KnId3-9pgV5jL0aDNTRemdktQOfqG1JAtBE0R8CFzDP9cTfyA");'></div>
+<div class="absolute -top-3 -left-3 bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Top Pick</div>
+</div>
+<div class="flex flex-1 flex-col gap-1 text-center md:text-left">
+<h3 class="text-[#181112] dark:text-white text-xl font-bold group-hover:text-primary transition-colors">Classic Fit Cotton Blazer</h3>
+<p class="text-[#896168] dark:text-[#a38086] text-sm font-normal line-clamp-2">Premium breathable cotton with a modern slim-fit cut. Ideal for casual-business settings and evening outings.</p>
+<div class="flex items-center justify-center md:justify-start gap-1 mt-1 text-orange-400">
+<span class="material-symbols-outlined text-lg filled-star">star</span>
+<span class="material-symbols-outlined text-lg filled-star">star</span>
+<span class="material-symbols-outlined text-lg filled-star">star</span>
+<span class="material-symbols-outlined text-lg filled-star">star</span>
+<span class="material-symbols-outlined text-lg filled-star">star_half</span>
+<span class="text-[#896168] text-xs font-medium ml-2">(1,248 reviews)</span>
+</div>
+</div>
+<div class="flex flex-col items-center md:items-end gap-3 min-w-[200px]">
+<div class="flex flex-col items-center md:items-end">
+<span class="text-primary text-2xl font-black leading-tight">$65.00</span>
+<span class="text-[#896168] text-sm line-through decoration-[#ee2b4b]/40">Regular: $120.00</span>
+</div>
+<button class="flex w-full min-w-[180px] cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-full h-12 px-6 bg-primary text-white text-sm font-bold shadow-lg shadow-primary/30 hover:brightness-110 active:scale-95 transition-all">
+<span class="truncate">Check Price on Amazon</span>
+<span class="material-symbols-outlined text-base">open_in_new</span>
+</button>
+</div>
+</div>
+<!-- Product Item 2 -->
+<div class="flex flex-col md:flex-row items-center gap-6 bg-white dark:bg-[#2b1b1e] p-6 rounded-xl shadow-sm border border-[#f0e8e9] dark:border-[#3a2a2d] hover:shadow-md hover:border-primary/20 transition-all group">
+<div class="relative shrink-0">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-[120px] shadow-sm border border-[#e6dbdd] dark:border-[#4a3a3d]" data-alt="Beige wool knit sweater detail" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDGMgfnO0A-Csa02fmqKshF47TqMFekR-XoihYLs95IskjcgEKl4AAW2E05-nnOAToCF6QMeBTQXlxgVyeFPVh1oeIMgMbHwdvc8gTFXUX26ABjE3QJhqhsgrcrOMVKulsbODZjVJABSvOgONuEfc57f76xgjhMB7zBEeA0D_Wfl9ckJLvyObOaKF7yFtiovwRzMW7yIE4s59nzRq88U2mDzHm-Gfy9z9biJxhaYELDYqbKxeqh2l4a1VJsuX3R8VlbOn2NOzxWRx_A");'></div>
+<div class="absolute -top-3 -left-3 bg-[#4285f4] text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Best Seller</div>
+</div>
+<div class="flex flex-1 flex-col gap-1 text-center md:text-left">
+<h3 class="text-[#181112] dark:text-white text-xl font-bold group-hover:text-primary transition-colors">Merino Wool Crew Neck</h3>
+<p class="text-[#896168] dark:text-[#a38086] text-sm font-normal line-clamp-2">Ultra-soft sustainably sourced wool. Temperature-regulating fabric that keeps you warm in winter and cool in spring.</p>
+<div class="flex items-center justify-center md:justify-start gap-1 mt-1 text-orange-400">
+<span class="material-symbols-outlined text-lg filled-star">star</span>
+<span class="material-symbols-outlined text-lg filled-star">star</span>
+<span class="material-symbols-outlined text-lg filled-star">star</span>
+<span class="material-symbols-outlined text-lg filled-star">star</span>
+<span class="material-symbols-outlined text-lg filled-star">star</span>
+<span class="text-[#896168] text-xs font-medium ml-2">(842 reviews)</span>
+</div>
+</div>
+<div class="flex flex-col items-center md:items-end gap-3 min-w-[200px]">
+<div class="flex flex-col items-center md:items-end">
+<span class="text-primary text-2xl font-black leading-tight">$45.00</span>
+<span class="text-[#896168] text-sm line-through decoration-[#ee2b4b]/40">Regular: $89.00</span>
+</div>
+<button class="flex w-full min-w-[180px] cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-full h-12 px-6 bg-primary text-white text-sm font-bold shadow-lg shadow-primary/30 hover:brightness-110 active:scale-95 transition-all">
+<span class="truncate">Buy Now on Amazon</span>
+<span class="material-symbols-outlined text-base">shopping_cart</span>
+</button>
+</div>
+</div>
+<!-- Product Item 3 -->
+<div class="flex flex-col md:flex-row items-center gap-6 bg-white dark:bg-[#2b1b1e] p-6 rounded-xl shadow-sm border border-[#f0e8e9] dark:border-[#3a2a2d] hover:shadow-md hover:border-primary/20 transition-all group">
+<div class="relative shrink-0">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-[120px] shadow-sm border border-[#e6dbdd] dark:border-[#4a3a3d]" data-alt="Light brown chinos flat lay" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDdTLgKe8P-op95uSnkIqhY1CW4awBg79rMCixoVDl-Putsox1cUWda40izraBfoB3NQ6R_FUGhsHPA-dS1tbNLS8qlm3n1GfvuOE6fp_l_nYiPvWpakyb_yyv9YXBDwJewBtlewjX6PmtRlEEyKNgdf7tDmLWiuYblSO-Bsypoi14GJHdFhJRm_0ly4sNRHeYBpuMssrxIBAjMv_-PWICVK2Th9BMEa_j_aMKyJWde2365_Ecrr4iSwiU7mpNWiNFlwjXwyiKcHJAy");'></div>
+<div class="absolute -top-3 -left-3 bg-[#34a853] text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Best Value</div>
+</div>
+<div class="flex flex-1 flex-col gap-1 text-center md:text-left">
+<h3 class="text-[#181112] dark:text-white text-xl font-bold group-hover:text-primary transition-colors">Heritage Slim-Fit Chinos</h3>
+<p class="text-[#896168] dark:text-[#a38086] text-sm font-normal line-clamp-2">Stretch-infused cotton twill for all-day comfort. Available in 12 different colors to match any wardrobe.</p>
+<div class="flex items-center justify-center md:justify-start gap-1 mt-1 text-orange-400">
+<span class="material-symbols-outlined text-lg filled-star">star</span>
+<span class="material-symbols-outlined text-lg filled-star">star</span>
+<span class="material-symbols-outlined text-lg filled-star">star</span>
+<span class="material-symbols-outlined text-lg filled-star">star</span>
+<span class="material-symbols-outlined text-lg">star</span>
+<span class="text-[#896168] text-xs font-medium ml-2">(2,115 reviews)</span>
+</div>
+</div>
+<div class="flex flex-col items-center md:items-end gap-3 min-w-[200px]">
+<div class="flex flex-col items-center md:items-end">
+<span class="text-primary text-2xl font-black leading-tight">$32.00</span>
+<span class="text-[#896168] text-sm line-through decoration-[#ee2b4b]/40">Regular: $55.00</span>
+</div>
+<button class="flex w-full min-w-[180px] cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-full h-12 px-6 bg-primary text-white text-sm font-bold shadow-lg shadow-primary/30 hover:brightness-110 active:scale-95 transition-all">
+<span class="truncate">View Product Info</span>
+<span class="material-symbols-outlined text-base">visibility</span>
+</button>
+</div>
+</div>
+<!-- Product Item 4 -->
+<div class="flex flex-col md:flex-row items-center gap-6 bg-white dark:bg-[#2b1b1e] p-6 rounded-xl shadow-sm border border-[#f0e8e9] dark:border-[#3a2a2d] hover:shadow-md hover:border-primary/20 transition-all group">
+<div class="relative shrink-0">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-[120px] shadow-sm border border-[#e6dbdd] dark:border-[#4a3a3d]" data-alt="White minimalist leather sneakers" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBlmcXeV30dNgqoI10Xrc_Ga8lUJTrsahlvoQUmYXq3KJiF7VUvylic-ky6sr_ZLw092bDX3f6p0731hKZDzYZt_opivhFaG3Pl1c08Bymy8AkWt_URGAJ3kRbdH6uyv-PVliuZLDRLl08v9Pqe5NdgX_jfsftJtrYiiQsBrW-Xea4Uc4RgxTL-5GNqGAHUe3tpRtj39U4aLNA8GGi-nrYFBl6t7nnU2wZxFu_eIX5eiK_U122b6W_N-zrXyBOn03w2eM_lCLFNYCs5");'></div>
+</div>
+<div class="flex flex-1 flex-col gap-1 text-center md:text-left">
+<h3 class="text-[#181112] dark:text-white text-xl font-bold group-hover:text-primary transition-colors">Urban Minimalist Sneakers</h3>
+<p class="text-[#896168] dark:text-[#a38086] text-sm font-normal line-clamp-2">Genuine full-grain leather with a durable rubber sole. The ultimate versatile shoe for work or weekend travel.</p>
+<div class="flex items-center justify-center md:justify-start gap-1 mt-1 text-orange-400">
+<span class="material-symbols-outlined text-lg filled-star">star</span>
+<span class="material-symbols-outlined text-lg filled-star">star</span>
+<span class="material-symbols-outlined text-lg filled-star">star</span>
+<span class="material-symbols-outlined text-lg filled-star">star</span>
+<span class="material-symbols-outlined text-lg filled-star">star_half</span>
+<span class="text-[#896168] text-xs font-medium ml-2">(529 reviews)</span>
+</div>
+</div>
+<div class="flex flex-col items-center md:items-end gap-3 min-w-[200px]">
+<div class="flex flex-col items-center md:items-end">
+<span class="text-primary text-2xl font-black leading-tight">$85.00</span>
+<span class="text-[#896168] text-sm line-through decoration-[#ee2b4b]/40">Regular: $140.00</span>
+</div>
+<button class="flex w-full min-w-[180px] cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-full h-12 px-6 bg-primary text-white text-sm font-bold shadow-lg shadow-primary/30 hover:brightness-110 active:scale-95 transition-all">
+<span class="truncate">Check Price on Amazon</span>
+<span class="material-symbols-outlined text-base">open_in_new</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Footer Section / More Deals -->
+<div class="mt-8 mb-20 px-4 text-center">
+<p class="text-[#896168] text-sm mb-6">Looking for something else? We update our top picks every 24 hours based on sales data and review trends.</p>
+<button class="inline-flex items-center gap-2 px-8 py-4 bg-white dark:bg-[#3a2a2d] border border-[#e6dbdd] dark:border-[#4a3a3d] text-[#181112] dark:text-white rounded-full font-bold hover:bg-[#f4f0f1] transition-colors">
+<span>View 50+ More Deals</span>
+<span class="material-symbols-outlined">arrow_downward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>
