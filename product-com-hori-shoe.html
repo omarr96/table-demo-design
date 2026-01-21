@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Premium Shoe Comparison Table</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Montserrat:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#F87171", // Coral-pink accent
+                        "navy-custom": "#1E293B", // Deep navy for header
+                        "background-light": "#F8FAFC",
+                        "background-dark": "#0F172A",
+                    },
+                    fontFamily: {
+                        display: ["Montserrat", "sans-serif"],
+                        body: ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "8px",
+                    },
+                },
+            },
+        };
+    </script>
+<style>
+        .star-rating {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            color: #FBBF24;
+        }
+        .ribbon {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 80px;
+            height: 80px;
+            overflow: hidden;
+            z-index: 10;
+        }
+        .ribbon span {
+            position: absolute;
+            display: block;
+            width: 120px;
+            padding: 4px 0;
+            background-color: #22C55E;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            color: #fff;
+            font: 700 10px/1 'Inter', sans-serif;
+            text-shadow: 0 1px 1px rgba(0,0,0,0.2);
+            text-transform: uppercase;
+            text-align: center;
+            left: -31px;
+            top: 15px;
+            transform: rotate(-45deg);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-body transition-colors duration-200">
+<div class="max-w-7xl mx-auto px-4 py-12">
+<div class="mb-8 flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<h1 class="text-3xl font-display font-extrabold text-navy-custom dark:text-white mb-2 uppercase tracking-tight">Premium Footwear Comparison</h1>
+<p class="text-slate-500 dark:text-slate-400">Expertly curated running shoes for high-performance athletes.</p>
+</div>
+<button class="p-2 rounded-full bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300" onclick="document.documentElement.classList.toggle('dark')">
+<span class="material-symbols-rounded block dark:hidden">dark_mode</span>
+<span class="material-symbols-rounded hidden dark:block">light_mode</span>
+</button>
+</div>
+<div class="overflow-hidden shadow-2xl rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+<div class="bg-navy-custom p-6 flex flex-col md:flex-row items-center justify-between gap-6">
+<div class="grid grid-cols-6 w-full text-white font-display font-bold uppercase text-sm tracking-wider hidden md:grid">
+<div class="col-span-1">Product</div>
+<div class="col-span-1">Brand</div>
+<div class="col-span-2">Model Name</div>
+<div class="col-span-1 text-center">Price / Rating</div>
+<div class="col-span-1 text-right">Action</div>
+</div>
+<div class="flex items-center justify-between w-full md:w-auto md:ml-auto">
+<div class="relative w-full md:w-72">
+<input class="w-full bg-slate-800/50 border-none text-white placeholder-slate-400 rounded-lg pl-10 pr-4 py-2 focus:ring-2 focus:ring-primary" placeholder="Search this table..." type="text"/>
+<span class="material-symbols-rounded absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg">search</span>
+</div>
+</div>
+</div>
+<div class="divide-y divide-slate-100 dark:divide-slate-800">
+<div class="group relative flex flex-col md:grid md:grid-cols-6 items-center p-6 bg-slate-50 dark:bg-slate-800/30 hover:bg-slate-100/50 dark:hover:bg-slate-800/50 transition-colors">
+<div class="ribbon"><span>Top Rated</span></div>
+<div class="col-span-1 flex justify-center mb-4 md:mb-0">
+<img alt="Nike Air Max Red" class="h-24 w-24 object-contain drop-shadow-lg group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPQmAdSS8DeFQ9_0WgOUPASUPIzebMMQWDueWRp5IQNx9ATSPR29ludQin3XRaH4AMG0CGH-MfnEzRrcxk3ZYSkUKMpqLc1k_0ROrFvizftCcUXZ8zAwcbM0H7xDhk8uzaf7-dNE42NAwu_yBkNBiieJKIyzg5G7sJtcXz1fX1Cp6aMkTguWVDzYyogLL9QrJM9yifRmiQQPnmSsQgEWDLX_U6MZChPUuZEVecd6eo8pgv77wnOiA2jPkdhJgbhwb2nq3kbnMcK58"/>
+</div>
+<div class="col-span-1 text-center md:text-left mb-2 md:mb-0">
+<span class="text-xs font-bold text-primary uppercase tracking-widest">Nike</span>
+</div>
+<div class="col-span-2 text-center md:text-left mb-4 md:mb-0">
+<h3 class="font-bold text-slate-900 dark:text-white text-lg">Air Max 270 React Premium</h3>
+<p class="text-sm text-slate-500 dark:text-slate-400">Lightweight foam midsole with full-length Max Air unit.</p>
+</div>
+<div class="col-span-1 flex flex-col items-center justify-center gap-1 mb-6 md:mb-0">
+<span class="text-xl font-extrabold text-navy-custom dark:text-white">$160.00</span>
+<div class="flex">
+<span class="material-symbols-rounded star-rating text-lg">star</span>
+<span class="material-symbols-rounded star-rating text-lg">star</span>
+<span class="material-symbols-rounded star-rating text-lg">star</span>
+<span class="material-symbols-rounded star-rating text-lg">star</span>
+<span class="material-symbols-rounded star-rating text-lg text-slate-300">star</span>
+</div>
+</div>
+<div class="col-span-1 flex justify-center md:justify-end">
+<a class="bg-primary hover:bg-rose-500 text-white px-6 py-3 rounded-xl font-bold text-sm transition-all shadow-lg shadow-primary/20 flex items-center gap-2" href="#">
+                            Check Price
+                            <span class="material-symbols-rounded text-base">shopping_cart</span>
+</a>
+</div>
+</div>
+<div class="group flex flex-col md:grid md:grid-cols-6 items-center p-6 bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800/20 transition-colors">
+<div class="col-span-1 flex justify-center mb-4 md:mb-0">
+<img alt="New Balance Grey" class="h-24 w-24 object-contain drop-shadow-lg group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuACsJRvD5Zl_9Zg9_lwftrQ3_OoJKj1-Qa_W6T-wExM-X5oFoyYQ7-D9Q7wjp-ckL9Lytx4pwrZyHsmHqwWI_EcD_up0o6ChqSgbsSFcLP3C-I-TZQywlrUKHSLuakFl4YcnRyElPe9aUi9Hipammgc4udbgwGFwffRBv7zsT5Wkl7IuwiaQxCL_Kyulnun9HLWwvFOoDAuxb7VaDXhoW4ZslzyAx_w-ikmUSFBCtz-StyqWp134PyOVdW589lp_Fq7y0I3soO70GY"/>
+</div>
+<div class="col-span-1 text-center md:text-left mb-2 md:mb-0">
+<span class="text-xs font-bold text-primary uppercase tracking-widest">New Balance</span>
+</div>
+<div class="col-span-2 text-center md:text-left mb-4 md:mb-0">
+<h3 class="font-bold text-slate-900 dark:text-white text-lg">Fresh Foam 1080v11</h3>
+<p class="text-sm text-slate-500 dark:text-slate-400">Hypoknit upper designed to provide strategic areas of stretch.</p>
+</div>
+<div class="col-span-1 flex flex-col items-center justify-center gap-1 mb-6 md:mb-0">
+<span class="text-xl font-extrabold text-navy-custom dark:text-white">$149.99</span>
+<div class="flex">
+<span class="material-symbols-rounded star-rating text-lg">star</span>
+<span class="material-symbols-rounded star-rating text-lg">star</span>
+<span class="material-symbols-rounded star-rating text-lg">star</span>
+<span class="material-symbols-rounded star-rating text-lg">star</span>
+<span class="material-symbols-rounded star-rating text-lg">star_half</span>
+</div>
+</div>
+<div class="col-span-1 flex justify-center md:justify-end">
+<a class="bg-primary hover:bg-rose-500 text-white px-6 py-3 rounded-xl font-bold text-sm transition-all shadow-lg shadow-primary/20 flex items-center gap-2" href="#">
+                            Check Price
+                            <span class="material-symbols-rounded text-base">shopping_cart</span>
+</a>
+</div>
+</div>
+<div class="group flex flex-col md:grid md:grid-cols-6 items-center p-6 bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800/20 transition-colors">
+<div class="col-span-1 flex justify-center mb-4 md:mb-0">
+<img alt="Nike Zoom Green" class="h-24 w-24 object-contain drop-shadow-lg group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDziuLnRaK-xCA95eVGpkVtdu_FZfq7KJB74EW-Ds516XhJTvYIpU4dImKntDSZplmfsJoTyyAkrOkTafUwcaA0O78nV0VHei7BQMA5_euYFjWtvnW50JCoaC2CSAPbXxTpWYvFRzorikj8wRqeJI58AVerTaqwvZaMtszGPses0OIzMtEAgbxDhaHpjLS39bSytF1P-UiKBqp7TcV6RXzwtFlXOa8DbV2vRIshnV-5jCLV8qbqS59jKF_eRyLIIquWEY0ChF-6t8c"/>
+</div>
+<div class="col-span-1 text-center md:text-left mb-2 md:mb-0">
+<span class="text-xs font-bold text-primary uppercase tracking-widest">Nike</span>
+</div>
+<div class="col-span-2 text-center md:text-left mb-4 md:mb-0">
+<h3 class="font-bold text-slate-900 dark:text-white text-lg">Zoom Pegasus Turbo 2</h3>
+<p class="text-sm text-slate-500 dark:text-slate-400">Featherlight upper with Nike ZoomX foam for responsiveness.</p>
+</div>
+<div class="col-span-1 flex flex-col items-center justify-center gap-1 mb-6 md:mb-0">
+<span class="text-xl font-extrabold text-navy-custom dark:text-white">$180.00</span>
+<div class="flex">
+<span class="material-symbols-rounded star-rating text-lg">star</span>
+<span class="material-symbols-rounded star-rating text-lg">star</span>
+<span class="material-symbols-rounded star-rating text-lg">star</span>
+<span class="material-symbols-rounded star-rating text-lg">star</span>
+<span class="material-symbols-rounded star-rating text-lg">star</span>
+</div>
+</div>
+<div class="col-span-1 flex justify-center md:justify-end">
+<a class="bg-primary hover:bg-rose-500 text-white px-6 py-3 rounded-xl font-bold text-sm transition-all shadow-lg shadow-primary/20 flex items-center gap-2" href="#">
+                            Check Price
+                            <span class="material-symbols-rounded text-base">shopping_cart</span>
+</a>
+</div>
+</div>
+<div class="group flex flex-col md:grid md:grid-cols-6 items-center p-6 bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800/20 transition-colors">
+<div class="col-span-1 flex justify-center mb-4 md:mb-0">
+<img alt="Adidas Ultraboost" class="h-24 w-24 object-contain drop-shadow-lg group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5nMlYI1KfQVzJCAgy6UOh7rChZNBpxlrn4wOZuIqFQmIb39wf6AZFYw1IBKS8gsVh5V3GsZuefGh0hRMua8L00Yu7IB3ZWE6bAh1yoQvaEh3LOGYgZvq-gsHzNcN3C9fR-VNRdKQD2mLuIQNkSHXB1ztoYGIJ9zliR5Ru2N-OkZQeZ1Xs3lL9PdGCEezMFc0xQDsian8KwrYpTCfkZBu9zqmqaYjDzEzWfPb-XaRJtMPDSuXm7lWh_XddeVYiMmb15k8QVBYzVpg"/>
+</div>
+<div class="col-span-1 text-center md:text-left mb-2 md:mb-0">
+<span class="text-xs font-bold text-primary uppercase tracking-widest">Adidas</span>
+</div>
+<div class="col-span-2 text-center md:text-left mb-4 md:mb-0">
+<h3 class="font-bold text-slate-900 dark:text-white text-lg">Ultraboost 22</h3>
+<p class="text-sm text-slate-500 dark:text-slate-400">Linear Energy Push system increases forefoot and midfoot stiffness.</p>
+</div>
+<div class="col-span-1 flex flex-col items-center justify-center gap-1 mb-6 md:mb-0">
+<span class="text-xl font-extrabold text-navy-custom dark:text-white">$190.00</span>
+<div class="flex">
+<span class="material-symbols-rounded star-rating text-lg">star</span>
+<span class="material-symbols-rounded star-rating text-lg">star</span>
+<span class="material-symbols-rounded star-rating text-lg">star</span>
+<span class="material-symbols-rounded star-rating text-lg">star</span>
+<span class="material-symbols-rounded star-rating text-lg text-slate-300">star</span>
+</div>
+</div>
+<div class="col-span-1 flex justify-center md:justify-end">
+<a class="bg-primary hover:bg-rose-500 text-white px-6 py-3 rounded-xl font-bold text-sm transition-all shadow-lg shadow-primary/20 flex items-center gap-2" href="#">
+                            Check Price
+                            <span class="material-symbols-rounded text-base">shopping_cart</span>
+</a>
+</div>
+</div>
+<div class="group flex flex-col md:grid md:grid-cols-6 items-center p-6 bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800/20 transition-colors">
+<div class="col-span-1 flex justify-center mb-4 md:mb-0">
+<img alt="Asics Gel" class="h-24 w-24 object-contain drop-shadow-lg group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcj_14--SxWbhmcak6mshyr3sUR-jf1-ub3yiD3aBDMKST7NU8a5EwxLD5u--RIjQM3lz3HSvuCe9Ck9pSp7NNifobugJvV0U33XFqzj24tyGwulCGYmoAiKQYZ8_goIDvY1Gp6YJVqmaSac0V-U-KncngNedoPhLucprLnEnbwPA4QfQVzIbpKjjM2sFKE5_EpNzoyf3DQ5Gw9sWmdbS5abUUZOm9U6VQEAVIhehsbwiZxHwvTZVK4zgg_UBJkIvOrheAPSYZdgo"/>
+</div>
+<div class="col-span-1 text-center md:text-left mb-2 md:mb-0">
+<span class="text-xs font-bold text-primary uppercase tracking-widest">ASICS</span>
+</div>
+<div class="col-span-2 text-center md:text-left mb-4 md:mb-0">
+<h3 class="font-bold text-slate-900 dark:text-white text-lg">Gel-Kayano 28</h3>
+<p class="text-sm text-slate-500 dark:text-slate-400">External heel counter and FF BLAST cushioning for stability.</p>
+</div>
+<div class="col-span-1 flex flex-col items-center justify-center gap-1 mb-6 md:mb-0">
+<span class="text-xl font-extrabold text-navy-custom dark:text-white">$160.00</span>
+<div class="flex">
+<span class="material-symbols-rounded star-rating text-lg">star</span>
+<span class="material-symbols-rounded star-rating text-lg">star</span>
+<span class="material-symbols-rounded star-rating text-lg">star</span>
+<span class="material-symbols-rounded star-rating text-lg">star</span>
+<span class="material-symbols-rounded star-rating text-lg">star_half</span>
+</div>
+</div>
+<div class="col-span-1 flex justify-center md:justify-end">
+<a class="bg-primary hover:bg-rose-500 text-white px-6 py-3 rounded-xl font-bold text-sm transition-all shadow-lg shadow-primary/20 flex items-center gap-2" href="#">
+                            Check Price
+                            <span class="material-symbols-rounded text-base">shopping_cart</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+<p class="mt-8 text-center text-slate-400 text-sm dark:text-slate-500">
+            * Prices and availability are subject to change. Affiliate links may earn us a commission at no extra cost to you.
+        </p>
+</div>
+
+</body></html>
