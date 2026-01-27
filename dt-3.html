@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Employee Data Management | HR Portal</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ec49",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#102215",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        body {
+            font-family: 'Manrope', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen text-slate-900 dark:text-slate-100">
+<div class="flex flex-col w-full min-h-screen">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md">
+<div class="max-w-[1440px] mx-auto px-6 h-16 flex items-center justify-between">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-2">
+<div class="bg-primary p-1.5 rounded-lg">
+<span class="material-symbols-outlined text-background-dark font-bold">corporate_fare</span>
+</div>
+<h1 class="text-xl font-extrabold tracking-tight">HR <span class="text-primary">Portal</span></h1>
+</div>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Dashboard</a>
+<a class="text-sm font-semibold text-primary" href="#">Employees</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Payroll</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Performance</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-colors relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-red-500 rounded-full border-2 border-white dark:border-background-dark"></span>
+</button>
+<button class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-colors">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<div class="h-8 w-[1px] bg-slate-200 dark:border-slate-800 mx-2"></div>
+<div class="flex items-center gap-3 pl-2">
+<div class="text-right hidden sm:block">
+<p class="text-xs font-bold leading-none">Alex Rivera</p>
+<p class="text-[10px] text-slate-500">HR Manager</p>
+</div>
+<div class="w-9 h-9 rounded-full bg-slate-200 border border-slate-300 dark:border-slate-700 overflow-hidden">
+<div class="w-full h-full bg-cover bg-center" data-alt="User profile avatar of Alex Rivera" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBT9IiNQm2zfR4nHS9L5J6YY7ZZiZeiGRYFt_2t0OYnPG2YE4XoCtQCy3c_n_CvvXQhCU5NULwtyDyC_i-HsGi9ylldUxusCaOJeshAl_tUJIAuVSoRP5iC7EGziLvLT-sRa6e9-WinACB0odGlyfJqE6Bu_wQRVd8yfr7Pghcb4N2AWWZE6JDuHgO2EV7fdr-Fqd4_5upvXKk_MDTNxjOBWDSNX_PAL64BPEizlH3gfWbn5PqDVkIVDxSbjvnqLGoWySF2_NXPre0')"></div>
+</div>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-1 max-w-[1440px] mx-auto w-full px-6 py-8">
+<!-- Page Heading -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+<div>
+<h2 class="text-3xl font-black tracking-tight dark:text-white">Employee Records</h2>
+<p class="text-slate-500 dark:text-slate-400 mt-1 flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+                        Manage 1,240 active team members across 12 departments
+                    </p>
+</div>
+<div class="flex items-center gap-3">
+<button class="flex items-center gap-2 px-4 py-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-sm font-bold hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors shadow-sm">
+<span class="material-symbols-outlined text-sm">filter_list</span>
+                        Advanced Filters
+                    </button>
+<button class="flex items-center gap-2 px-5 py-2 bg-primary text-background-dark rounded-lg text-sm font-bold hover:opacity-90 transition-all shadow-md shadow-primary/20">
+<span class="material-symbols-outlined text-sm">person_add</span>
+                        Add New Employee
+                    </button>
+</div>
+</div>
+<!-- Card Styled Data Table Container -->
+<div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden">
+<!-- Table Toolbar (Integrated Header) -->
+<div class="p-4 border-b border-slate-100 dark:border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 bg-slate-50/50 dark:bg-slate-900/50">
+<div class="flex items-center gap-3 w-full sm:w-auto">
+<div class="relative w-full sm:w-72">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg">search</span>
+<input class="w-full pl-10 pr-4 py-2 rounded-lg border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-sm focus:ring-primary focus:border-primary" placeholder="Search by name, email, or role..." type="text"/>
+</div>
+<div class="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400 whitespace-nowrap">
+<span>Show</span>
+<select class="py-1.5 pl-3 pr-8 rounded-lg border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-sm focus:ring-primary">
+<option>10</option>
+<option selected="">25</option>
+<option>50</option>
+</select>
+<span>entries</span>
+</div>
+</div>
+<div class="flex items-center gap-2 w-full sm:w-auto justify-end">
+<div class="flex p-1 bg-slate-100 dark:bg-slate-800 rounded-lg gap-1">
+<button class="p-1.5 hover:bg-white dark:hover:bg-slate-700 rounded transition-all text-slate-600 dark:text-slate-300" title="Export CSV">
+<span class="material-symbols-outlined text-lg">csv</span>
+</button>
+<button class="p-1.5 hover:bg-white dark:hover:bg-slate-700 rounded transition-all text-slate-600 dark:text-slate-300" title="Export PDF">
+<span class="material-symbols-outlined text-lg">picture_as_pdf</span>
+</button>
+<button class="p-1.5 hover:bg-white dark:hover:bg-slate-700 rounded transition-all text-slate-600 dark:text-slate-300" title="Export Excel">
+<span class="material-symbols-outlined text-lg">description</span>
+</button>
+</div>
+<div class="w-[1px] h-6 bg-slate-200 dark:bg-slate-700 mx-1"></div>
+<button class="flex items-center gap-2 px-3 py-1.5 border border-primary/30 text-primary dark:text-primary rounded-lg text-xs font-bold hover:bg-primary/10 transition-colors uppercase tracking-wider">
+<span class="material-symbols-outlined text-sm">download</span>
+                            Export
+                        </button>
+</div>
+</div>
+<!-- Main Data Table -->
+<div class="overflow-x-auto">
+<table class="w-full border-collapse text-left">
+<thead>
+<tr class="bg-slate-50 dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800">
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">User</th>
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Contact Email</th>
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Position</th>
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Status</th>
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Performance</th>
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Rating</th>
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+<!-- Row 1 -->
+<tr class="hover:bg-slate-50/80 dark:hover:bg-slate-800/30 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full border-2 border-primary/20 bg-slate-100 overflow-hidden">
+<div class="w-full h-full bg-cover bg-center" data-alt="Avatar of Johnathan Doe" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA1C2gQGsDFpL3W7R_fteUfiwwuMoZrShZQG0Gq7Payy0N90OBJa_3wG4xEljqM0WDCTRO36NFR_Ss4PvXZDnu01HGyCa0hM8CjgL5PO2Z3z8jP26dpqhofe4qCfzUHoNsd7XTh7Oocsj-c1G-0TmVg8N2OKjbrnh4xmSBeqjFh46YCcFg2LUrtHyA7s2AlGtrNdOdMg3krkI8FvZy_YlSpOrdLabuCXj1HHxD-FPvj75G6jp_2M4UmNB6Aop0JfiiPJ4YT4UgmlUg')"></div>
+</div>
+<span class="font-bold text-sm">Johnathan Doe</span>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-slate-500 dark:text-slate-400 font-medium">johnathan.doe@corporate.com</td>
+<td class="px-6 py-4">
+<div class="flex flex-col">
+<span class="text-sm font-semibold">Senior Developer</span>
+<span class="text-[10px] text-slate-400">Engineering</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary/10 text-primary-dark text-xs font-bold border border-primary/20">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+                                        Active
+                                    </div>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<span class="text-sm font-bold">94%</span>
+<span class="material-symbols-outlined text-primary text-lg">trending_up</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-1">
+<span class="text-sm font-bold">4.8</span>
+<span class="material-symbols-outlined text-amber-400 text-sm fill-1" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="px-3 py-1.5 bg-slate-100 dark:bg-slate-800 hover:bg-primary hover:text-white rounded-lg text-xs font-bold transition-all">View Profile</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-slate-50/80 dark:hover:bg-slate-800/30 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full border-2 border-primary/20 bg-slate-100 overflow-hidden">
+<div class="w-full h-full bg-cover bg-center" data-alt="Avatar of Jane Smith" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB51-IpTghgmqMrwn7nA7_wPLnTb8KlvwfFSWXyWhKKpWfiYPE-n14EP40ZsnhiHO7GfzpPA7BoJK-41Dr1kU_PZMjDELtSnYmnR3WnaZdOKf_U8xOvSMZKhI0-t-tRDKdtczl9DTobuL7K6F-mvgkPfXjxp1z-Nd16-lvErA4DWqjWqANel2HgOdkPE_nxgdL4KVQPaxS0-uzmFDICfJJ2XPFnlO1AWSCnarbUEjND_0u_mfJ9LkvY9zz32D5-VQN7iqs-H6oCOso')"></div>
+</div>
+<span class="font-bold text-sm">Jane Smith</span>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-slate-500 dark:text-slate-400 font-medium">jane.smith@corporate.com</td>
+<td class="px-6 py-4">
+<div class="flex flex-col">
+<span class="text-sm font-semibold">Product Designer</span>
+<span class="text-[10px] text-slate-400">Design</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary/10 text-primary-dark text-xs font-bold border border-primary/20">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                                        Active
+                                    </div>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<span class="text-sm font-bold">88%</span>
+<span class="material-symbols-outlined text-primary text-lg">trending_up</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-1">
+<span class="text-sm font-bold">4.9</span>
+<span class="material-symbols-outlined text-amber-400 text-sm fill-1" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="px-3 py-1.5 bg-slate-100 dark:bg-slate-800 hover:bg-primary hover:text-white rounded-lg text-xs font-bold transition-all">View Profile</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-slate-50/80 dark:hover:bg-slate-800/30 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full border-2 border-slate-200/50 bg-slate-100 overflow-hidden">
+<div class="w-full h-full bg-cover bg-center" data-alt="Avatar of Robert Wilson" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBIBL6E3mQj2lESbsiBU1y59jzIRMXOpQCIqRc-c1npR0F_TY_iAMZNO_f5w1pE29Ond7UvorVTwXNn3AFOW6m0G3qbLwur43Gwf5MaA5wvQz3zjFij0QUlyPAshIAasjaE6UbdVOe8Z1GWKTjs8T0RjsWJJJ4Gvui1Esn0XuTJmYI9Jhbs-PhiYoZkLqOnIKueZQgyTZponQpxCsr6AHVNJ9-pD7nHe5butxaTMe3fS9MD_FyewnX2WY8HnETvCgqquPe3tYDUDgw')"></div>
+</div>
+<span class="font-bold text-sm">Robert Wilson</span>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-slate-500 dark:text-slate-400 font-medium">robert.wilson@corporate.com</td>
+<td class="px-6 py-4">
+<div class="flex flex-col">
+<span class="text-sm font-semibold">HR Manager</span>
+<span class="text-[10px] text-slate-400">Human Resources</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-amber-500/10 text-amber-700 text-xs font-bold border border-amber-500/20">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+                                        On Leave
+                                    </div>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<span class="text-sm font-bold text-slate-400">76%</span>
+<span class="material-symbols-outlined text-slate-400 text-lg">trending_down</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-1">
+<span class="text-sm font-bold">4.2</span>
+<span class="material-symbols-outlined text-amber-400 text-sm fill-1" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="px-3 py-1.5 bg-slate-100 dark:bg-slate-800 hover:bg-primary hover:text-white rounded-lg text-xs font-bold transition-all">View Profile</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-slate-50/80 dark:hover:bg-slate-800/30 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full border-2 border-primary/20 bg-slate-100 overflow-hidden">
+<div class="w-full h-full bg-cover bg-center" data-alt="Avatar of Emily Chen" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB3ZdOhXjXepSrEDB0eejBGQGMAatY5S8iL9_Gnwjo--JfaC1KumHfYZdixVFQmzs1gmNxR_jITGpLwuisuOnQOoHCJXr3ZMU8B87-8ot18gHGYaJrdiNJPY_IzBSnsOBauhjJ3Gszu2nPNsBo9ZbioQqnJd27RZW2eKQSoztKZj61m1LPwItKFKLpDXBzP3CRhrhFLjvne6C3uNJp_ICY4zpqF656kuwY-RqSyl69UrI23SFxIF7G7PAh365XVpKNGABAvu2H832s')"></div>
+</div>
+<span class="font-bold text-sm">Emily Chen</span>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-slate-500 dark:text-slate-400 font-medium">emily.chen@corporate.com</td>
+<td class="px-6 py-4">
+<div class="flex flex-col">
+<span class="text-sm font-semibold">Sales Lead</span>
+<span class="text-[10px] text-slate-400">Sales</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary/10 text-primary-dark text-xs font-bold border border-primary/20">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                                        Active
+                                    </div>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<span class="text-sm font-bold">91%</span>
+<span class="material-symbols-outlined text-primary text-lg">trending_up</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-1">
+<span class="text-sm font-bold">4.5</span>
+<span class="material-symbols-outlined text-amber-400 text-sm fill-1" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="px-3 py-1.5 bg-slate-100 dark:bg-slate-800 hover:bg-primary hover:text-white rounded-lg text-xs font-bold transition-all">View Profile</button>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-slate-50/80 dark:hover:bg-slate-800/30 transition-colors border-b-0">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full border-2 border-slate-300 dark:border-slate-700 bg-slate-100 overflow-hidden opacity-60">
+<div class="w-full h-full bg-cover bg-center" data-alt="Avatar of Michael Thorne" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA9we4vMw5aMMJiAHIZtEbzFnv1goLs4tVu4KIJ8y28sdGLMbiIHAzj0XyBsqXfV5wBdt-D2qYpLtsJ_fUUp08IzKILuJ1KzTTqF7CCUOM8slfrosDj-rQnj5kCuAIIVchPZkwQtoekFYcEuDzi1wg0K2XC5qMNmjz9yIC_DdTAG0Jbt6aKurGJsO7EritmBpEkEywzDleoy0RRbejp_HKUl__uC_oRCH6UzacETJ9Hh1c1r-8U1WMaNS-3GCc4a-ixpnrslHKPLfc')"></div>
+</div>
+<span class="font-bold text-sm opacity-60">Michael Thorne</span>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-slate-400 dark:text-slate-500 font-medium">michael.thorne@corporate.com</td>
+<td class="px-6 py-4 opacity-60">
+<div class="flex flex-col">
+<span class="text-sm font-semibold">QA Engineer</span>
+<span class="text-[10px] text-slate-400">Engineering</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-slate-500/10 text-slate-500 text-xs font-bold border border-slate-500/20">
+<span class="w-1.5 h-1.5 rounded-full bg-slate-500"></span>
+                                        Inactive
+                                    </div>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<span class="text-sm font-bold text-slate-400">82%</span>
+<span class="material-symbols-outlined text-slate-300 text-lg">horizontal_rule</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-1 opacity-60">
+<span class="text-sm font-bold">3.9</span>
+<span class="material-symbols-outlined text-slate-400 text-sm">star</span>
+</div>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="px-3 py-1.5 bg-slate-100 dark:bg-slate-800 hover:bg-primary hover:text-white rounded-lg text-xs font-bold transition-all">View Profile</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination Footer -->
+<div class="px-6 py-4 border-t border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/50 flex flex-col sm:flex-row items-center justify-between gap-4">
+<p class="text-sm text-slate-500 dark:text-slate-400">
+                        Showing <span class="font-bold text-slate-900 dark:text-slate-200">1</span> to <span class="font-bold text-slate-900 dark:text-slate-200">5</span> of <span class="font-bold text-slate-900 dark:text-slate-200">1,240</span> results
+                    </p>
+<div class="flex items-center gap-1">
+<button class="w-8 h-8 flex items-center justify-center rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-400 hover:bg-slate-100 transition-colors">
+<span class="material-symbols-outlined text-sm">chevron_left</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg bg-primary text-background-dark font-bold text-sm shadow-sm">1</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg border border-transparent hover:border-slate-200 dark:hover:border-slate-700 hover:bg-white dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300 text-sm transition-all">2</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg border border-transparent hover:border-slate-200 dark:hover:border-slate-700 hover:bg-white dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300 text-sm transition-all">3</button>
+<span class="px-1 text-slate-400">...</span>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg border border-transparent hover:border-slate-200 dark:hover:border-slate-700 hover:bg-white dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300 text-sm transition-all">24</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-400 hover:bg-slate-100 transition-colors">
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Performance Overview Section (Small Highlight Cards) -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+<div class="bg-white dark:bg-slate-900 p-5 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex items-center justify-between mb-2">
+<p class="text-sm font-bold text-slate-500 uppercase tracking-tight">Average Rating</p>
+<span class="material-symbols-outlined text-amber-500">star_half</span>
+</div>
+<div class="flex items-end gap-3">
+<p class="text-2xl font-black">4.62</p>
+<p class="text-xs text-primary font-bold mb-1">+0.12 this mo</p>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 p-5 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex items-center justify-between mb-2">
+<p class="text-sm font-bold text-slate-500 uppercase tracking-tight">On Leave Today</p>
+<span class="material-symbols-outlined text-amber-600">event_busy</span>
+</div>
+<div class="flex items-end gap-3">
+<p class="text-2xl font-black">12</p>
+<p class="text-xs text-slate-400 font-bold mb-1">0.9% of total</p>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 p-5 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex items-center justify-between mb-2">
+<p class="text-sm font-bold text-slate-500 uppercase tracking-tight">Avg Performance</p>
+<span class="material-symbols-outlined text-primary">analytics</span>
+</div>
+<div class="flex items-end gap-3">
+<p class="text-2xl font-black">92.4%</p>
+<p class="text-xs text-primary font-bold mb-1">Stable</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="mt-auto py-6 px-6 border-t border-slate-200 dark:border-slate-800 text-center">
+<p class="text-xs text-slate-500 dark:text-slate-400">© 2024 Corporate HR Management Systems. All rights reserved.</p>
+</footer>
+</div>
+</body></html>

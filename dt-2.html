@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HR Employee Directory</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ec49",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#102215",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Manrope', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .filled-icon {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Top Navigation Bar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-10 py-3 sticky top-0 z-50">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-slate-900 dark:text-white">
+<div class="size-8 bg-primary rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-background-dark">group</span>
+</div>
+<h2 class="text-lg font-bold leading-tight tracking-tight">HR Portal</h2>
+</div>
+</div>
+<div class="flex flex-1 justify-end gap-8">
+<nav class="flex items-center gap-9">
+<a class="text-slate-600 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors" href="#">Dashboard</a>
+<a class="text-primary text-sm font-bold border-b-2 border-primary py-1" href="#">Directory</a>
+<a class="text-slate-600 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors" href="#">Attendance</a>
+<a class="text-slate-600 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors" href="#">Payroll</a>
+</nav>
+<div class="flex gap-2">
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 transition-colors">
+<span class="material-symbols-outlined text-xl">notifications</span>
+</button>
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 transition-colors">
+<span class="material-symbols-outlined text-xl">settings</span>
+</button>
+</div>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 ring-2 ring-primary/20" data-alt="User profile avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDZSnpo512ceo3rkIlb_of0JYmgBRgEQoEYR2OLuFy0ydxohL6tFUxLrfwKx1Vdg0TJ5Nww7ViwJmPI-pAZr8-PDXcyUtAaDxT4cbiK9AI9OUp8NxidqYbQHMMy3W7p8-rCNlJ0qY1gXX2I7pg8U7wsevSqqtLDqEXl72vYPOsr10PNQwL5TMJjoMAUCMEfSf0vQiS3EhTSg0Zky40VOhQl4TEOI_o7QQM5cQEZTicgK9DfhD8_vlpBR_H42NKVvpJ-Ix_0ygmfPlA");'></div>
+</div>
+</header>
+<main class="flex-1 px-4 lg:px-10 py-8">
+<div class="max-w-[1400px] mx-auto space-y-6">
+<!-- Page Heading -->
+<div class="flex flex-wrap justify-between items-end gap-4">
+<div class="flex flex-col gap-1">
+<h1 class="text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">Employee Directory</h1>
+<p class="text-slate-500 dark:text-slate-400 text-base font-normal">Manage and track your organization's talent records.</p>
+</div>
+<button class="flex items-center justify-center gap-2 rounded-lg h-11 px-6 bg-primary text-background-dark text-sm font-bold transition-transform active:scale-95 shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-lg">person_add</span>
+<span>Add New Employee</span>
+</button>
+</div>
+<!-- ToolBar & Controls -->
+<div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 p-4 shadow-sm space-y-4">
+<div class="flex flex-wrap items-center justify-between gap-4">
+<div class="flex items-center gap-4 flex-1 min-w-[300px]">
+<div class="flex items-center gap-2 bg-slate-100 dark:bg-slate-800 rounded-lg px-3 py-2 border border-slate-200 dark:border-slate-700">
+<span class="text-xs font-semibold text-slate-500">Show</span>
+<select class="bg-transparent border-none text-sm font-bold focus:ring-0 p-0 text-slate-900 dark:text-white cursor-pointer">
+<option>10</option>
+<option>25</option>
+<option>50</option>
+</select>
+<span class="text-xs font-semibold text-slate-500">entries</span>
+</div>
+<div class="relative flex-1 max-w-sm">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">search</span>
+<input class="w-full bg-slate-100 dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-lg py-2 pl-10 pr-4 text-sm focus:ring-primary focus:border-primary dark:text-white placeholder:text-slate-400" placeholder="Search employees, departments..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-sm font-bold text-slate-400 mr-2">Export As:</span>
+<div class="flex rounded-lg overflow-hidden border border-slate-200 dark:border-slate-700">
+<button class="flex items-center gap-2 px-4 py-2 bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-primary hover:text-background-dark transition-all border-r border-slate-200 dark:border-slate-700">
+<span class="material-symbols-outlined text-lg">csv</span>
+<span class="text-xs font-bold uppercase tracking-wider">CSV</span>
+</button>
+<button class="flex items-center gap-2 px-4 py-2 bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-primary hover:text-background-dark transition-all border-r border-slate-200 dark:border-slate-700">
+<span class="material-symbols-outlined text-lg">picture_as_pdf</span>
+<span class="text-xs font-bold uppercase tracking-wider">PDF</span>
+</button>
+<button class="flex items-center gap-2 px-4 py-2 bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-primary hover:text-background-dark transition-all">
+<span class="material-symbols-outlined text-lg">table_view</span>
+<span class="text-xs font-bold uppercase tracking-wider">Excel</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Table Container -->
+<div class="overflow-x-auto rounded-lg border border-slate-200 dark:border-slate-800">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-slate-50 dark:bg-slate-800/50">
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 border-b border-slate-200 dark:border-slate-800">Profile</th>
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 border-b border-slate-200 dark:border-slate-800">Username</th>
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 border-b border-slate-200 dark:border-slate-800">Email</th>
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 border-b border-slate-200 dark:border-slate-800 text-center">Status</th>
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 border-b border-slate-200 dark:border-slate-800">Job Position</th>
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 border-b border-slate-200 dark:border-slate-800">Performance</th>
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 border-b border-slate-200 dark:border-slate-800">Rating</th>
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 border-b border-slate-200 dark:border-slate-800 text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+<!-- Row 1 -->
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors group">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded-full bg-cover ring-2 ring-slate-100 dark:ring-slate-800" data-alt="Employee profile" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAF86-sIm9Ll-1lLgaZi_ZuMHXLFTzABi0YkPjKCZoK2jK5B9KOLP-_LJMRicNiUlrMbBtys_vVPSvuR7DfwK3jLXjr0pETLkH7UVfFpqlUq_EDRN5EpGpcMltuaGoVEIvvZ-OkQaT0L0BEKZAtHxD0gImVUrwZa4M4l2yIValcgj7UrpxMRknD0oDa7OJjJ6_7ud5k87_BJF0wkCEej75TX13wkZuEzbUqCvdvSLOkLEVzNbveval8QYxmgBtNtc4VLYXxhmc_oR8");'></div>
+<span class="font-bold text-slate-900 dark:text-white text-sm">Jane Cooper</span>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-400 font-medium">@jcooper</td>
+<td class="px-6 py-4">
+<a class="text-sm font-medium text-slate-900 dark:text-slate-200 hover:text-primary transition-colors underline decoration-slate-200 dark:decoration-slate-700 underline-offset-4" href="#">jane.cooper@company.com</a>
+</td>
+<td class="px-6 py-4 text-center">
+<span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-primary/10 text-emerald-600 dark:text-primary">Active</span>
+</td>
+<td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-400">Senior UI Designer</td>
+<td class="px-6 py-4">
+<div class="flex flex-col gap-1.5 min-w-[120px]">
+<div class="flex justify-between text-[10px] font-bold text-slate-500 uppercase tracking-tighter">
+<span>92%</span>
+</div>
+<div class="h-1.5 w-full bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 92%"></div>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="flex text-primary">
+<span class="material-symbols-outlined text-sm filled-icon">star</span>
+<span class="material-symbols-outlined text-sm filled-icon">star</span>
+<span class="material-symbols-outlined text-sm filled-icon">star</span>
+<span class="material-symbols-outlined text-sm filled-icon">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+</div>
+</td>
+<td class="px-6 py-4 text-right">
+<div class="flex justify-end gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-1.5 text-slate-400 hover:text-primary transition-colors rounded hover:bg-slate-100 dark:hover:bg-slate-800"><span class="material-symbols-outlined">visibility</span></button>
+<button class="p-1.5 text-slate-400 hover:text-primary transition-colors rounded hover:bg-slate-100 dark:hover:bg-slate-800"><span class="material-symbols-outlined">edit</span></button>
+<button class="p-1.5 text-slate-400 hover:text-red-500 transition-colors rounded hover:bg-slate-100 dark:hover:bg-slate-800"><span class="material-symbols-outlined">delete</span></button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors group">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded-full bg-cover ring-2 ring-slate-100 dark:ring-slate-800" data-alt="Employee profile" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBxEGD_W0uEOhTc22fgtRKXGQPasYRWtpqdwJHXBj_Bq_fTtHZ4dAQjcQ0cuix-ykL5v3MjrrN_S4mM_4aehSK1KOcwE0W1xLVSanThmxWhC46QxOX6GRZGSLsTsutIKnz01farqadOI0DHbSQASYSwHNNSDthoEGxaVMlYYFIeNqh-4ZyMEWcyteMEylkaPjKbwuQmfufqf2qDzHr2LyX3n2lERoowBcXf9YS1O4MNFo2K70EMwc6RXnqpNtPadBMD5pKGJH8EQs4");'></div>
+<span class="font-bold text-slate-900 dark:text-white text-sm">Robert Fox</span>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-400 font-medium">@rfox</td>
+<td class="px-6 py-4">
+<a class="text-sm font-medium text-slate-900 dark:text-slate-200 hover:text-primary transition-colors underline decoration-slate-200 dark:decoration-slate-700 underline-offset-4" href="#">robert.fox@company.com</a>
+</td>
+<td class="px-6 py-4 text-center">
+<span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400">Deactive</span>
+</td>
+<td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-400">Project Manager</td>
+<td class="px-6 py-4">
+<div class="flex flex-col gap-1.5 min-w-[120px]">
+<div class="flex justify-between text-[10px] font-bold text-slate-500 uppercase tracking-tighter">
+<span>68%</span>
+</div>
+<div class="h-1.5 w-full bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 68%"></div>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="flex text-primary">
+<span class="material-symbols-outlined text-sm filled-icon">star</span>
+<span class="material-symbols-outlined text-sm filled-icon">star</span>
+<span class="material-symbols-outlined text-sm filled-icon">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+</div>
+</td>
+<td class="px-6 py-4 text-right">
+<div class="flex justify-end gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-1.5 text-slate-400 hover:text-primary transition-colors rounded hover:bg-slate-100 dark:hover:bg-slate-800"><span class="material-symbols-outlined">visibility</span></button>
+<button class="p-1.5 text-slate-400 hover:text-primary transition-colors rounded hover:bg-slate-100 dark:hover:bg-slate-800"><span class="material-symbols-outlined">edit</span></button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors group">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded-full bg-cover ring-2 ring-slate-100 dark:ring-slate-800" data-alt="Employee profile" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDcMr3dZFpAmZSXtN8uEIokrEYCf_bJWvieyiZBT8WM5n61xAWmm9JjZNHZcTHnrXg4euDWkTvX3zN-4p1EMpxNn7etiWI2OrwoDIdRryKULqVO7RU7WkicF-TV7S1DgdxlDIOv9hMe3HszH4Glfv_t73dZqhbN_7sFB09BdcmFYTX2x7OXG9nFucNeQqRSUkbg-mDew0RsuZ3nNxdRnYWpi0tRNSGe4JUeU_x2ZcAry2Tt2vkZ_aP9Y5jLGx1rtjp8K2TEWmOXE7g");'></div>
+<span class="font-bold text-slate-900 dark:text-white text-sm">Cameron Williamson</span>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-400 font-medium">@cameronw</td>
+<td class="px-6 py-4">
+<a class="text-sm font-medium text-slate-900 dark:text-slate-200 hover:text-primary transition-colors underline decoration-slate-200 dark:decoration-slate-700 underline-offset-4" href="#">cameron.w@company.com</a>
+</td>
+<td class="px-6 py-4 text-center">
+<span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-primary/10 text-emerald-600 dark:text-primary">Active</span>
+</td>
+<td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-400">Backend Developer</td>
+<td class="px-6 py-4">
+<div class="flex flex-col gap-1.5 min-w-[120px]">
+<div class="flex justify-between text-[10px] font-bold text-slate-500 uppercase tracking-tighter">
+<span>85%</span>
+</div>
+<div class="h-1.5 w-full bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 85%"></div>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="flex text-primary">
+<span class="material-symbols-outlined text-sm filled-icon">star</span>
+<span class="material-symbols-outlined text-sm filled-icon">star</span>
+<span class="material-symbols-outlined text-sm filled-icon">star</span>
+<span class="material-symbols-outlined text-sm filled-icon">star</span>
+<span class="material-symbols-outlined text-sm filled-icon">star_half</span>
+</div>
+</td>
+<td class="px-6 py-4 text-right">
+<div class="flex justify-end gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-1.5 text-slate-400 hover:text-primary transition-colors rounded hover:bg-slate-100 dark:hover:bg-slate-800"><span class="material-symbols-outlined">visibility</span></button>
+<button class="p-1.5 text-slate-400 hover:text-primary transition-colors rounded hover:bg-slate-100 dark:hover:bg-slate-800"><span class="material-symbols-outlined">edit</span></button>
+</div>
+</td>
+</tr>
+<!-- Repeat similar rows to reach 10 -->
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors group">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded-full bg-cover ring-2 ring-slate-100 dark:ring-slate-800" data-alt="Employee profile" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAsJ0Riy9vqhuWRCyPneC9nejZN9OJ_Sx1TAC2a3Ilv4ZpDrY2pCdD2dKrYFZQaQcQUwpl5tQXWief-G8Lw0_Ol5QQrjpOGG2wObB3lkfxXdfJp0wefjxS8d1lAEErnAU-u5UEfJEU0PR6OV-eN_cNQt3y1tTk7srppVy7PlEtfNptNQWEnxl5OaCl0SWcssR9uxUO6QCHnwl9qjvVROq8x1Yz1Lr96H_47waEfh67ajH3mY2yP7r8yz9-sI75ww3EVT8kiLlAHzKM");'></div>
+<span class="font-bold text-slate-900 dark:text-white text-sm">Arlene McCoy</span>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-400 font-medium">@amccoy</td>
+<td class="px-6 py-4"><a class="text-sm font-medium text-slate-900 dark:text-slate-200 hover:text-primary transition-colors underline decoration-slate-200 dark:decoration-slate-700 underline-offset-4" href="#">arlene.mccoy@company.com</a></td>
+<td class="px-6 py-4 text-center"><span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-primary/10 text-emerald-600 dark:text-primary">Active</span></td>
+<td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-400">Data Analyst</td>
+<td class="px-6 py-4">
+<div class="flex flex-col gap-1.5 min-w-[120px]">
+<div class="flex justify-between text-[10px] font-bold text-slate-500 uppercase tracking-tighter"><span>90%</span></div>
+<div class="h-1.5 w-full bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden"><div class="h-full bg-primary rounded-full" style="width: 90%"></div></div>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="flex text-primary">
+<span class="material-symbols-outlined text-sm filled-icon">star</span>
+<span class="material-symbols-outlined text-sm filled-icon">star</span>
+<span class="material-symbols-outlined text-sm filled-icon">star</span>
+<span class="material-symbols-outlined text-sm filled-icon">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+</div>
+</td>
+<td class="px-6 py-4 text-right">
+<div class="flex justify-end gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-1.5 text-slate-400 hover:text-primary transition-colors rounded hover:bg-slate-100 dark:hover:bg-slate-800"><span class="material-symbols-outlined">visibility</span></button>
+<button class="p-1.5 text-slate-400 hover:text-primary transition-colors rounded hover:bg-slate-100 dark:hover:bg-slate-800"><span class="material-symbols-outlined">edit</span></button>
+</div>
+</td>
+</tr>
+<!-- Rows 5-10 abbreviated for design output -->
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors group border-t border-slate-100 dark:border-slate-800">
+<td class="px-6 py-4 text-center" colspan="8">
+<button class="text-sm font-bold text-primary hover:underline underline-offset-4">Load 6 more entries...</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination -->
+<div class="flex flex-wrap items-center justify-between gap-4 pt-2">
+<p class="text-sm font-medium text-slate-500">Showing <span class="text-slate-900 dark:text-white font-bold">1</span> to <span class="text-slate-900 dark:text-white font-bold">10</span> of <span class="text-slate-900 dark:text-white font-bold">50</span> entries</p>
+<div class="flex items-center gap-1">
+<button class="flex items-center justify-center rounded-lg h-9 px-3 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-200 transition-colors disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined text-lg">chevron_left</span>
+<span class="text-sm font-bold ml-1">Prev</span>
+</button>
+<div class="flex gap-1 mx-2">
+<button class="h-9 w-9 rounded-lg bg-primary text-background-dark text-sm font-bold">1</button>
+<button class="h-9 w-9 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400 text-sm font-bold">2</button>
+<button class="h-9 w-9 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400 text-sm font-bold">3</button>
+<span class="px-2 text-slate-400">...</span>
+<button class="h-9 w-9 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400 text-sm font-bold">5</button>
+</div>
+<button class="flex items-center justify-center rounded-lg h-9 px-3 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-200 transition-colors">
+<span class="text-sm font-bold mr-1">Next</span>
+<span class="material-symbols-outlined text-lg">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<footer class="mt-auto py-6 px-10 border-t border-slate-200 dark:border-slate-800 text-center">
+<p class="text-sm text-slate-500">© 2024 HR Portal Systems. All records are confidential.</p>
+</footer>
+</div>
+</body></html>
