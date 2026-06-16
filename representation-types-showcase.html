@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Variation Representation Types — Live Showcase</title>
+<style>
+  :root{
+    --bg:#f4f5f7;--card:#fff;--ink:#1d2327;--muted:#6b7280;--line:#e2e4e9;
+    --accent:#7b4dff;--accent-ink:#5a2fd6;--warn:#d63638;--ok:#1e9e5a;
+    --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);line-height:1.5}
+  header.pg{max-width:1200px;margin:0 auto;padding:38px 24px 6px}
+  header.pg h1{font-size:26px;margin:0 0 6px;letter-spacing:-.02em}
+  header.pg p{color:var(--muted);margin:0;font-size:14.5px;max-width:780px}
+  .fams{max-width:1200px;margin:0 auto;padding:8px 24px}
+  .fam-title{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-ink);margin:26px 0 12px;border-bottom:2px solid var(--line);padding-bottom:6px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:18px}
+  .c{background:var(--card);border:1px solid var(--line);border-radius:13px;box-shadow:0 2px 4px rgba(20,20,40,.04),0 8px 22px rgba(20,20,40,.06);padding:16px 18px 18px}
+  .c .hd{display:flex;align-items:baseline;gap:8px;margin-bottom:3px}
+  .c .n{width:24px;height:24px;border-radius:6px;background:var(--accent);color:#fff;font-size:12px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;flex:none}
+  .c h3{font-size:14.5px;margin:0}
+  .c .for{color:var(--muted);font-size:12px;margin:0 0 13px 32px}
+  .row{display:flex;flex-wrap:wrap;gap:9px;align-items:center}
+
+  /* color swatch */
+  .cs{width:32px;height:32px;border-radius:50%;border:2px solid transparent;cursor:pointer;position:relative;transition:.15s;background-size:cover}
+  .cs.sq{border-radius:7px}
+  .cs[aria-checked=true]{box-shadow:0 0 0 2px #fff,0 0 0 4px var(--accent)}
+  .cs:hover{transform:translateY(-1px)}
+  /* split swatch */
+  .split{width:34px;height:34px;border-radius:50%;cursor:pointer;border:2px solid transparent}
+  .split[aria-checked=true]{box-shadow:0 0 0 2px #fff,0 0 0 4px var(--accent)}
+  /* image swatch */
+  .imgsw{width:50px;height:50px;border-radius:8px;overflow:hidden;border:2px solid var(--line);cursor:pointer}
+  .imgsw[aria-checked=true]{border-color:var(--accent);box-shadow:0 0 0 2px rgba(123,77,255,.25)}
+  .imgsw img{width:100%;height:100%;object-fit:cover;display:block}
+  /* image+label */
+  .il{width:64px;cursor:pointer;text-align:center}
+  .il .t{width:64px;height:50px;border-radius:8px;overflow:hidden;border:2px solid var(--line)}
+  .il[aria-checked=true] .t{border-color:var(--accent)}
+  .il img{width:100%;height:100%;object-fit:cover}
+  .il span{display:block;font-size:11px;margin-top:4px;color:var(--ink)}
+  /* label / pill / two-line / chip buttons */
+  .btn{border:1.6px solid var(--line);background:#fff;border-radius:8px;padding:9px 14px;font-weight:600;font-size:13.5px;cursor:pointer;color:var(--ink);transition:.15s;font-family:inherit}
+  .btn:hover{border-color:var(--accent)}
+  .btn[aria-checked=true]{background:var(--accent);border-color:var(--accent);color:#fff}
+  .btn.pill{border-radius:999px}
+  .btn.two{display:flex;flex-direction:column;align-items:flex-start;line-height:1.2;padding:8px 14px}
+  .btn.two small{font-weight:500;font-size:11px;opacity:.7}
+  .chip{display:inline-flex;align-items:center;gap:8px}
+  .chip .dot{width:14px;height:14px;border-radius:50%;flex:none}
+  .chip .ck{display:none}
+  .chip[aria-checked=true] .ck{display:inline}
+  /* radio */
+  .rad{display:flex;align-items:center;gap:9px;border:1.5px solid var(--line);border-radius:9px;padding:8px 12px;cursor:pointer}
+  .rad .d{width:16px;height:16px;border-radius:50%;border:2px solid var(--line);position:relative;flex:none}
+  .rad[aria-checked=true]{border-color:var(--accent);background:rgba(123,77,255,.05)}
+  .rad[aria-checked=true] .d{border-color:var(--accent)}
+  .rad[aria-checked=true] .d:after{content:"";position:absolute;inset:3px;border-radius:50%;background:var(--accent)}
+  .radcol{display:flex;flex-direction:column;gap:7px;width:100%}
+  .rrow{display:flex;align-items:center;gap:10px;border:1.5px solid var(--line);border-radius:10px;padding:8px 10px;cursor:pointer}
+  .rrow[aria-checked=true]{border-color:var(--accent);background:rgba(123,77,255,.05)}
+  .rrow img{width:34px;height:34px;border-radius:6px}
+  .rrow .m{flex:1}.rrow .m .a{font-weight:600;font-size:13px}.rrow .m .b{font-size:11px;color:var(--ok)}
+  .rrow .p{font-weight:700;font-size:13px}
+  /* dropdowns */
+  .sel{width:100%;max-width:230px;padding:9px 11px;border:1.5px solid var(--line);border-radius:9px;font-size:13.5px;font-family:inherit;background:#fff}
+  .edd{position:relative;max-width:230px}
+  .edd .f{display:flex;align-items:center;justify-content:space-between;border:1.5px solid var(--line);border-radius:9px;padding:9px 12px;cursor:pointer;font-weight:600;font-size:13.5px}
+  .edd .f .l{display:flex;align-items:center;gap:9px}.edd .f .dot{width:15px;height:15px;border-radius:50%}
+  .edd .f:after{content:"▾";color:var(--muted)}
+  .edd .mn{position:absolute;left:0;right:0;top:calc(100% + 5px);background:#fff;border:1px solid var(--line);border-radius:9px;box-shadow:0 8px 24px rgba(20,20,40,.12);padding:5px;display:none;z-index:9}
+  .edd.op .mn{display:block}
+  .edd .o{display:flex;align-items:center;gap:9px;padding:8px 9px;border-radius:6px;cursor:pointer;font-size:13px}
+  .edd .o:hover{background:rgba(123,77,255,.08)}.edd .o .dot{width:15px;height:15px;border-radius:50%}
+  .edd .o img{width:26px;height:26px;border-radius:5px}
+  /* select now */
+  .selnow{display:flex;align-items:center;justify-content:space-between;border:1.5px solid var(--line);border-radius:10px;padding:11px 14px;max-width:240px}
+  .selnow .pickbtn{border:1.5px solid var(--accent);color:var(--accent-ink);background:#fff;border-radius:999px;padding:6px 16px;font-weight:600;font-size:12.5px;cursor:pointer}
+  /* card/tile */
+  .tiles{display:flex;gap:10px;flex-wrap:wrap}
+  .tile{width:120px;border:1.5px solid var(--line);border-radius:11px;padding:10px;cursor:pointer;transition:.15s}
+  .tile[aria-checked=true]{border-color:var(--accent);box-shadow:0 4px 14px rgba(123,77,255,.18)}
+  .tile .ph{height:46px;border-radius:7px;background:linear-gradient(135deg,#e9ecf5,#dfe3ee);margin-bottom:8px}
+  .tile .tt{font-weight:700;font-size:13px}.tile .ts{font-size:11px;color:var(--muted)}.tile .tp{font-weight:700;font-size:12.5px;margin-top:3px;color:var(--accent-ink)}
+
+  /* states demo */
+  .oos-cross{position:relative;cursor:not-allowed;opacity:.85}
+  .oos-cross:after{content:"";position:absolute;inset:0;border-radius:inherit;background:linear-gradient(to top left,transparent 46%,var(--warn) 46%,var(--warn) 54%,transparent 54%)}
+  .oos-blur{filter:grayscale(1);opacity:.4;cursor:not-allowed}
+  .tipw{position:relative;display:inline-flex}
+  .tipw .bb{position:absolute;bottom:calc(100% + 7px);left:50%;transform:translateX(-50%) translateY(4px);background:#1d2327;color:#fff;font-size:11px;padding:4px 8px;border-radius:6px;white-space:nowrap;opacity:0;pointer-events:none;transition:.15s;z-index:5}
+  .tipw:hover .bb{opacity:1;transform:translateX(-50%)}
+  .more{font-size:12.5px;color:var(--accent-ink);font-weight:600;cursor:pointer;text-decoration:underline}
+  .pager{display:flex;gap:6px;align-items:center}
+  .pager span{width:26px;height:26px;border:1px solid var(--line);border-radius:7px;display:inline-flex;align-items:center;justify-content:center;font-size:12px;cursor:pointer}
+  .pager span.on{border-color:var(--accent);color:var(--accent-ink);font-weight:700}
+  footer{max-width:1200px;margin:0 auto;padding:14px 24px 50px;color:var(--muted);font-size:12.5px}
+</style>
+</head>
+<body>
+<header class="pg">
+  <h1>Variation Representation Types — Live Showcase</h1>
+  <p>16 ways to represent a product option, grouped into 5 families — plus overflow handling and states. Everything is clickable. This is the menu of choices a Divi addon would expose <b>per attribute</b>.</p>
+</header>
+
+<div class="fams">
+
+  <!-- FAMILY A -->
+  <div class="fam-title">A · Visual swatches</div>
+  <div class="grid">
+
+    <div class="c"><div class="hd"><span class="n">1</span><h3>Solid color swatch</h3></div><p class="for">Color · circle / square</p>
+      <div class="row" data-rg>
+        <div class="cs" role="radio" tabindex="0" aria-checked="true" style="background:#1c2230"></div>
+        <div class="cs" role="radio" tabindex="0" aria-checked="false" style="background:#5aaef5"></div>
+        <div class="cs" role="radio" tabindex="0" aria-checked="false" style="background:#d63638"></div>
+        <div class="cs sq" role="radio" tabindex="0" aria-checked="false" style="background:#e9a6b3"></div>
+        <div class="cs sq" role="radio" tabindex="0" aria-checked="false" style="background:#33415c"></div>
+      </div>
+    </div>
+
+    <div class="c"><div class="hd"><span class="n">2</span><h3>Dual / split swatch</h3></div><p class="for">Multi-tone · "Black/White"</p>
+      <div class="row" data-rg>
+        <div class="split" role="radio" tabindex="0" aria-checked="true" style="background:linear-gradient(135deg,#1c2230 50%,#fff 50%)"></div>
+        <div class="split" role="radio" tabindex="0" aria-checked="false" style="background:linear-gradient(135deg,#a87f48 50%,#e8e2d6 50%)"></div>
+        <div class="split" role="radio" tabindex="0" aria-checked="false" style="background:linear-gradient(135deg,#5b7d3a 50%,#d63638 50%)"></div>
+      </div>
+    </div>
+
+    <div class="c"><div class="hd"><span class="n">3</span><h3>Gradient swatch</h3></div><p class="for">Iridescent / metallic finishes</p>
+      <div class="row" data-rg>
+        <div class="cs" role="radio" tabindex="0" aria-checked="true" style="background:linear-gradient(135deg,#7b4dff,#22d3ee)"></div>
+        <div class="cs" role="radio" tabindex="0" aria-checked="false" style="background:linear-gradient(135deg,#fb7185,#f59e0b)"></div>
+        <div class="cs" role="radio" tabindex="0" aria-checked="false" style="background:linear-gradient(135deg,#c0c5cc,#7b818a)"></div>
+      </div>
+    </div>
+
+    <div class="c"><div class="hd"><span class="n">4</span><h3>Image / photo swatch</h3></div><p class="for">Style · Pattern · Print</p>
+      <div class="row" data-rg>
+        <div class="imgsw" role="radio" tabindex="0" aria-checked="true"><img alt="" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='50' height='50'><rect width='50' height='50' fill='%23f3e8ff'/><circle cx='16' cy='18' r='7' fill='%23c084fc'/><circle cx='34' cy='32' r='9' fill='%23a855f7'/></svg>"></div>
+        <div class="imgsw" role="radio" tabindex="0" aria-checked="false"><img alt="" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='50' height='50'><rect width='50' height='50' fill='%23dbeafe'/><rect width='50' height='12' fill='%233b82f6'/><rect y='25' width='50' height='12' fill='%233b82f6'/></svg>"></div>
+        <div class="imgsw" role="radio" tabindex="0" aria-checked="false"><img alt="" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='50' height='50'><rect width='50' height='50' fill='%23fef3c7'/><circle cx='14' cy='14' r='4' fill='%23f59e0b'/><circle cx='36' cy='22' r='4' fill='%23f59e0b'/><circle cx='22' cy='38' r='4' fill='%23f59e0b'/></svg>"></div>
+      </div>
+    </div>
+
+    <div class="c"><div class="hd"><span class="n">5</span><h3>Texture / material swatch</h3></div><p class="for">Material · Finish · Surface</p>
+      <div class="row" data-rg>
+        <div class="cs sq" role="radio" tabindex="0" aria-checked="true" style="background:linear-gradient(135deg,#c8a26a,#a87f48)"></div>
+        <div class="cs sq" role="radio" tabindex="0" aria-checked="false" style="background:linear-gradient(135deg,#8a8f99,#5d626b)"></div>
+        <div class="cs sq" role="radio" tabindex="0" aria-checked="false" style="background:linear-gradient(135deg,#e8e2d6,#cfc6b3)"></div>
+        <div class="cs sq" role="radio" tabindex="0" aria-checked="false" style="background:linear-gradient(135deg,#3a3a3a,#111)"></div>
+      </div>
+    </div>
+
+    <div class="c"><div class="hd"><span class="n">6</span><h3>Image + label swatch</h3></div><p class="for">Image with caption / price</p>
+      <div class="row" data-rg>
+        <div class="il" role="radio" tabindex="0" aria-checked="true"><div class="t"><img alt="" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='50'><rect width='64' height='50' fill='%231c2230'/></svg>"></div><span>Black · $17</span></div>
+        <div class="il" role="radio" tabindex="0" aria-checked="false"><div class="t"><img alt="" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='50'><rect width='64' height='50' fill='%23e8e2d6'/></svg>"></div><span>Taupe · $27</span></div>
+        <div class="il" role="radio" tabindex="0" aria-checked="false"><div class="t"><img alt="" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='50'><rect width='64' height='50' fill='%23fff'/></svg>"></div><span>White · $27</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAMILY B -->
+  <div class="fam-title">B · Text-based controls</div>
+  <div class="grid">
+    <div class="c"><div class="hd"><span class="n">7</span><h3>Label / text button</h3></div><p class="for">Size · Weight · Capacity · Grade</p>
+      <div class="row" data-rg>
+        <button class="btn" role="radio" aria-checked="false">S</button>
+        <button class="btn" role="radio" aria-checked="true">M</button>
+        <button class="btn" role="radio" aria-checked="false">L</button>
+        <button class="btn" role="radio" aria-checked="false">XL</button>
+        <button class="btn oos-cross" disabled aria-disabled="true">XXL</button>
+      </div>
+    </div>
+
+    <div class="c"><div class="hd"><span class="n">8</span><h3>Pill button</h3></div><p class="for">Material · Flavor · short labels</p>
+      <div class="row" data-rg>
+        <button class="btn pill" role="radio" aria-checked="true">Fresh</button>
+        <button class="btn pill" role="radio" aria-checked="false">Frozen</button>
+        <button class="btn pill" role="radio" aria-checked="false">Ground</button>
+      </div>
+    </div>
+
+    <div class="c"><div class="hd"><span class="n">9</span><h3>Two-line / rich text button</h3></div><p class="for">RAM\|ROM · specs · grade</p>
+      <div class="row" data-rg>
+        <button class="btn two" role="radio" aria-checked="true">12GB | 256GB</button>
+        <button class="btn two" role="radio" aria-checked="false">8GB | 256GB</button>
+        <button class="btn two" role="radio" aria-checked="false">A+<small>Almost new</small></button>
+      </div>
+    </div>
+
+    <div class="c"><div class="hd"><span class="n">10</span><h3>Color-dot + text chip</h3></div><p class="for">Color with name (+ check when active)</p>
+      <div class="row" data-rg>
+        <button class="btn chip" role="radio" aria-checked="false"><span class="dot" style="background:#b8a9e0"></span>Lavender</button>
+        <button class="btn chip" role="radio" aria-checked="false"><span class="dot" style="background:#1e7d32"></span>Green</button>
+        <button class="btn chip" role="radio" aria-checked="true"><span class="ck">✓</span><span class="dot" style="background:#111"></span>Phantom Black</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAMILY C -->
+  <div class="fam-title">C · List-based controls</div>
+  <div class="grid">
+    <div class="c"><div class="hd"><span class="n">11</span><h3>Classic radio + label</h3></div><p class="for">Plans · simple either/or</p>
+      <div class="radcol" data-rg>
+        <div class="rad" role="radio" tabindex="0" aria-checked="true"><span class="d"></span>Single SIM</div>
+        <div class="rad" role="radio" tabindex="0" aria-checked="false"><span class="d"></span>Dual SIM</div>
+      </div>
+    </div>
+
+    <div class="c"><div class="hd"><span class="n">12</span><h3>Rich radio row</h3></div><p class="for">Per-variant price + stock</p>
+      <div class="radcol" data-rg>
+        <div class="rrow" role="radio" tabindex="0" aria-checked="false"><img alt="" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='34' height='34'><rect width='34' height='34' rx='6' fill='%23e0e7ff'/></svg>"><div class="m"><div class="a">Monthly</div><div class="b">In stock</div></div><div class="p">$12</div></div>
+        <div class="rrow" role="radio" tabindex="0" aria-checked="true"><img alt="" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='34' height='34'><rect width='34' height='34' rx='6' fill='%23ddd6fe'/></svg>"><div class="m"><div class="a">1 Year · Save 20%</div><div class="b">In stock</div></div><div class="p">$115</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAMILY D -->
+  <div class="fam-title">D · Compact controls</div>
+  <div class="grid">
+    <div class="c"><div class="hd"><span class="n">13</span><h3>Native dropdown</h3></div><p class="for">Long lists · default WooCommerce</p>
+      <select class="sel"><option>Choose a size…</option><option>Small</option><option selected>Medium</option><option>Large</option></select>
+    </div>
+
+    <div class="c"><div class="hd"><span class="n">14</span><h3>Enhanced dropdown</h3></div><p class="for">Color chips / thumbnails inside</p>
+      <div class="edd" data-edd>
+        <div class="f"><span class="l"><span class="dot" style="background:#5aaef5"></span><span class="v">Sky Blue</span></span></div>
+        <div class="mn">
+          <div class="o" data-v="Sky Blue" data-c="#5aaef5"><span class="dot" style="background:#5aaef5"></span>Sky Blue</div>
+          <div class="o" data-v="Charcoal" data-c="#2b2f36"><span class="dot" style="background:#2b2f36"></span>Charcoal</div>
+          <div class="o" data-v="Crimson" data-c="#d63638"><span class="dot" style="background:#d63638"></span>Crimson</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="c"><div class="hd"><span class="n">15</span><h3>"Select now" modal picker</h3></div><p class="for">Huge sets · model name · mobile</p>
+      <div class="selnow"><span style="font-weight:600;font-size:13.5px">Model name</span><button class="pickbtn">Select now</button></div>
+    </div>
+  </div>
+
+  <!-- FAMILY E -->
+  <div class="fam-title">E · Composite</div>
+  <div class="grid">
+    <div class="c" style="grid-column:span 2"><div class="hd"><span class="n">16</span><h3>Card / tile selector</h3></div><p class="for">Bundles · plans · configurations</p>
+      <div class="tiles" data-rg>
+        <div class="tile" role="radio" tabindex="0" aria-checked="true"><div class="ph"></div><div class="tt">Starter</div><div class="ts">1 user</div><div class="tp">$9/mo</div></div>
+        <div class="tile" role="radio" tabindex="0" aria-checked="false"><div class="ph" style="background:linear-gradient(135deg,#ddd6fe,#c4b5fd)"></div><div class="tt">Pro</div><div class="ts">5 users</div><div class="tp">$29/mo</div></div>
+        <div class="tile" role="radio" tabindex="0" aria-checked="false"><div class="ph" style="background:linear-gradient(135deg,#fde68a,#fbbf24)"></div><div class="tt">Team</div><div class="ts">Unlimited</div><div class="tp">$79/mo</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LAYOUT / OVERFLOW -->
+  <div class="fam-title">Overflow handling (when there are many options)</div>
+  <div class="grid">
+    <div class="c"><div class="hd"><h3>"+N more variants" link</h3></div><p class="for">Show first row, expand on click</p>
+      <div class="row" data-rg>
+        <div class="cs" role="radio" tabindex="0" aria-checked="true" style="background:#1c2230"></div>
+        <div class="cs" role="radio" tabindex="0" aria-checked="false" style="background:#5aaef5"></div>
+        <div class="cs" role="radio" tabindex="0" aria-checked="false" style="background:#d63638"></div>
+      </div>
+      <p class="more" style="margin:12px 0 0">+ 2 more variants</p>
+    </div>
+    <div class="c"><div class="hd"><h3>Pagination</h3></div><p class="for">Large sets, keep page short</p>
+      <div class="row" data-rg style="margin-bottom:12px">
+        <div class="imgsw" role="radio" tabindex="0" aria-checked="true"><img alt="" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='50' height='50'><rect width='50' height='50' fill='%231c2230'/></svg>"></div>
+        <div class="imgsw" role="radio" tabindex="0" aria-checked="false"><img alt="" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='50' height='50'><rect width='50' height='50' fill='%23e8e2d6'/></svg>"></div>
+        <div class="imgsw" role="radio" tabindex="0" aria-checked="false"><img alt="" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='50' height='50'><rect width='50' height='50' fill='%235aaef5'/></svg>"></div>
+      </div>
+      <div class="pager"><span>‹</span><span class="on">1</span><span>2</span><span>›</span></div>
+    </div>
+  </div>
+
+  <!-- STATES -->
+  <div class="fam-title">States (apply to every type)</div>
+  <div class="grid">
+    <div class="c"><div class="hd"><h3>Selected styles</h3></div><p class="for">ring · border · fill/lift · check icon</p>
+      <div class="row">
+        <div class="cs" aria-checked="true" style="background:#5aaef5"></div>
+        <button class="btn" aria-checked="true">Border</button>
+        <button class="btn chip" aria-checked="true"><span class="ck" style="display:inline">✓</span><span class="dot" style="background:#111"></span>Check</button>
+      </div>
+    </div>
+    <div class="c"><div class="hd"><h3>Out-of-stock treatments</h3></div><p class="for">cross · blur · hide</p>
+      <div class="row">
+        <button class="btn oos-cross" aria-disabled="true">XL</button>
+        <button class="btn oos-blur" aria-disabled="true">XXL</button>
+        <span style="font-size:12px;color:var(--muted)">(3rd = hidden)</span>
+      </div>
+    </div>
+    <div class="c"><div class="hd"><h3>Tooltip on hover</h3></div><p class="for">show variation name / info</p>
+      <div class="row">
+        <div class="tipw"><div class="cs" style="background:#a87f48"></div><span class="bb">Leather Tan</span></div>
+        <div class="tipw"><div class="cs" style="background:#5d626b"></div><span class="bb">Concrete</span></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>Three layers combine freely: <b>representation</b> (per attribute) × <b>overflow</b> (per attribute) × <b>states</b> (global). That architecture covers every pattern in the reference screenshots.</footer>
+
+<script>
+document.querySelectorAll('[data-rg]').forEach(g=>{
+  const items=[...g.querySelectorAll('[role="radio"]')];
+  items.forEach((el,i)=>{
+    const pick=()=>{if(el.getAttribute('aria-disabled')==='true'||el.hasAttribute('disabled'))return;items.forEach(x=>x.setAttribute('aria-checked','false'));el.setAttribute('aria-checked','true');};
+    el.addEventListener('click',pick);
+    el.addEventListener('keydown',e=>{
+      if(e.key===' '||e.key==='Enter'){e.preventDefault();pick();}
+      if(['ArrowRight','ArrowDown'].includes(e.key)){e.preventDefault();(items[i+1]||items[0]).focus();}
+      if(['ArrowLeft','ArrowUp'].includes(e.key)){e.preventDefault();(items[i-1]||items[items.length-1]).focus();}
+    });
+  });
+});
+document.querySelectorAll('[data-edd]').forEach(d=>{
+  const f=d.querySelector('.f'),v=d.querySelector('.v'),dot=d.querySelector('.f .dot');
+  f.onclick=()=>d.classList.toggle('op');
+  d.querySelectorAll('.o').forEach(o=>o.onclick=()=>{v.textContent=o.dataset.v;dot.style.background=o.dataset.c;d.classList.remove('op');});
+  document.addEventListener('click',e=>{if(!d.contains(e.target))d.classList.remove('op');});
+});
+</script>
+</body>
+</html>

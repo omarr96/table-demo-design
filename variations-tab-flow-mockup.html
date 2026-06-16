@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Variations Tab — Step-by-step Mockup</title>
+<style>
+  :root{
+    --wp-bg:#f0f0f1;--side:#1d2327;--blue:#2271b1;--blue-d:#135e96;--ink:#1d2327;--muted:#646970;
+    --line:#dcdcde;--green:#00a32a;--warn:#d63638;--plugin:#7b4dff;--plugin-ink:#5a2fd6;
+    --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--wp-bg);color:var(--ink);font-family:var(--font);font-size:13px;line-height:1.5}
+  .wp{display:grid;grid-template-columns:158px 1fr;min-height:100vh}
+  .side{background:var(--side);color:#c3c4c7;padding-top:8px}
+  .side .it{display:flex;align-items:center;gap:9px;padding:9px 12px;font-size:13px;cursor:pointer;border-left:3px solid transparent}
+  .side .it.on{background:var(--blue);color:#fff;border-left-color:#fff}
+  .side .it .ic{width:15px;height:15px;border-radius:3px;background:#a7aaad}.side .it.on .ic{background:#fff}
+  .bar{background:#fff;border-bottom:1px solid var(--line);padding:9px 22px;font-size:12.5px;color:var(--muted);display:flex;justify-content:space-between;align-items:center}
+  .badge{background:linear-gradient(135deg,#7b4dff,#9d6dff);color:#fff;font-weight:700;font-size:11px;padding:3px 9px;border-radius:20px}
+  .wrap{padding:18px 26px 70px;max-width:1000px}
+  h1.wp{font-size:22px;font-weight:400;margin:4px 0 14px}
+
+  /* stepper */
+  .stepper{display:flex;gap:0;margin-bottom:22px;background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+  .stepper .st{flex:1;display:flex;align-items:center;gap:10px;padding:13px 16px;cursor:pointer;border-right:1px solid var(--line);position:relative}
+  .stepper .st:last-child{border-right:0}
+  .stepper .st .nb{width:24px;height:24px;border-radius:50%;background:#dcdcde;color:#fff;font-weight:700;font-size:12px;display:flex;align-items:center;justify-content:center;flex:none}
+  .stepper .st .tx{font-size:12px;line-height:1.25}.stepper .st .tx b{display:block;font-size:12.5px}
+  .stepper .st.on{background:#f6f4fe}.stepper .st.on .nb{background:var(--plugin)}
+  .stepper .st.done .nb{background:var(--green)}
+
+  .screen{display:none}.screen.on{display:block}
+  .panel{background:#fff;border:1px solid var(--line);border-radius:5px;margin-bottom:14px}
+  .panel .ph{padding:11px 14px;border-bottom:1px solid var(--line);font-weight:600;display:flex;align-items:center;gap:8px}
+  .tabsrow{display:flex;gap:0;border-bottom:1px solid var(--line);background:#f6f7f7}
+  .tabsrow .tb{padding:11px 16px;font-size:13px;font-weight:600;color:var(--muted);border-bottom:3px solid transparent;cursor:default}
+  .tabsrow .tb.on{color:var(--blue);border-bottom-color:var(--blue);background:#fff}
+  .toolbar{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;border-bottom:1px solid var(--line)}
+  .toolbar select{padding:5px 8px;border:1px solid #8c8f94;border-radius:4px}
+  .btn{background:var(--blue);border:1px solid var(--blue-d);color:#fff;padding:7px 14px;border-radius:4px;font-weight:600;cursor:pointer;font-size:13px;font-family:inherit}
+  .btn.sec{background:#f6f7f7;border-color:#c3c4c7;color:var(--blue)}
+  .btn.sm{padding:4px 10px;font-size:12px}
+
+  /* variation rows */
+  .vrow{display:flex;align-items:center;gap:12px;padding:11px 14px;border-bottom:1px solid var(--line)}
+  .vrow:last-child{border-bottom:0}
+  .vrow .grip{color:#a7aaad;cursor:grab}
+  .vrow .vimg{width:38px;height:38px;border-radius:5px;flex:none;border:1px solid var(--line);background-size:cover}
+  .vrow .vmeta{flex:1}
+  .vrow .vmeta .nm{font-weight:600;font-size:13px}
+  .vrow .vmeta .sub{font-size:11.5px;color:var(--muted)}
+  .vrow .price{font-weight:700;font-size:13px;width:96px;text-align:right}
+  .vrow .stk{width:92px;text-align:center;font-size:11.5px}
+  .stk .in{color:var(--green);font-weight:600}.stk .out{color:var(--warn);font-weight:600}
+  .editlink{color:var(--blue);font-weight:600;cursor:pointer;font-size:12.5px}
+  .swprev{width:18px;height:18px;border-radius:50%;border:1px solid var(--line);display:inline-block;vertical-align:middle}
+  .swprev.sq{border-radius:4px}
+  .lblprev{display:inline-block;border:1.4px solid #2b2f36;border-radius:5px;padding:1px 7px;font-size:11px;font-weight:600;color:#2b2f36;vertical-align:middle}
+
+  /* expanded edit panel */
+  .expand{border:1px solid var(--blue);border-radius:6px;margin:0 14px 14px;overflow:hidden;box-shadow:0 2px 10px rgba(34,113,177,.12)}
+  .expand .eh{background:#eaf4fb;padding:10px 14px;display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--line)}
+  .expand .eh .vimg{width:30px;height:30px;border-radius:5px}
+  .expand .eh .nm{font-weight:700}
+  .ebody{padding:16px;display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  @media(max-width:760px){.ebody{grid-template-columns:1fr}}
+  .col h4{margin:0 0 10px;font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+  .fld{margin-bottom:12px}
+  label.f{display:block;font-weight:600;font-size:12.5px;margin-bottom:4px}
+  input[type=text],select{width:100%;padding:7px 9px;border:1px solid #8c8f94;border-radius:4px;font-size:13px;font-family:inherit;background:#fff}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .imgup{display:flex;align-items:center;gap:10px}
+  .imgup .ph{width:54px;height:54px;border-radius:6px;border:1px dashed #c3c4c7;background:#fafafa;display:flex;align-items:center;justify-content:center;color:#a7aaad;font-size:18px;background-size:cover}
+
+  /* plugin block */
+  .pluginblock{grid-column:1/-1;border:1.5px dashed var(--plugin);background:rgba(123,77,255,.045);border-radius:8px;padding:15px 15px 5px;position:relative;margin-top:2px}
+  .pluginblock:before{content:"⬡ Variation Switcher — swatch design";position:absolute;top:-10px;left:14px;background:var(--plugin);color:#fff;font-size:10px;font-weight:700;padding:2px 9px;border-radius:11px}
+  .pbgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:680px){.pbgrid{grid-template-columns:1fr}}
+  .typeseg,.shapeseg,.oosseg{display:flex;flex-wrap:wrap;gap:6px;margin-top:2px}
+  .typeseg button,.shapeseg button,.oosseg button{border:1.5px solid var(--line);background:#fff;border-radius:6px;padding:6px 11px;font-size:12px;font-weight:600;cursor:pointer;color:var(--ink);font-family:inherit}
+  .typeseg button.on,.shapeseg button.on,.oosseg button.on{background:var(--plugin);border-color:var(--plugin);color:#fff}
+  .colorpick{display:flex;align-items:center;gap:9px;margin-top:6px}
+  input[type=color]{width:40px;height:30px;border:1px solid #8c8f94;border-radius:4px;background:none;cursor:pointer}
+  .livewrap{background:#fff;border:1px solid var(--line);border-radius:7px;padding:12px;text-align:center;margin-top:4px}
+  .livewrap .cap{font-size:11px;color:var(--muted);margin-bottom:8px}
+  .liveswatch{display:inline-flex;align-items:center;gap:8px}
+  .toggle{display:flex;align-items:center;gap:8px;margin-top:6px;font-size:12.5px}
+  .efoot{grid-column:1/-1;display:flex;gap:8px;align-items:center;border-top:1px solid var(--line);padding-top:13px;margin-top:4px}
+  .hint{color:var(--muted);font-size:11.5px}
+  .note{background:rgba(123,77,255,.08);color:var(--plugin-ink);border-radius:6px;padding:10px 12px;font-size:12px;margin-top:10px;display:flex;gap:7px}
+  .donebar{background:#edfaf0;border:1px solid #b6e6c4;color:#1e7a3b;border-radius:6px;padding:10px 13px;font-size:12.5px;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+</style>
+</head>
+<body>
+<div class="wp">
+  <nav class="side">
+    <div class="it"><span class="ic"></span>Dashboard</div>
+    <div class="it on"><span class="ic"></span>Products</div>
+    <div class="it"><span class="ic"></span>WooCommerce</div>
+    <div class="it"><span class="ic"></span>Analytics</div>
+    <div class="it"><span class="ic"></span>Appearance</div>
+    <div class="it"><span class="ic"></span>Plugins</div>
+  </nav>
+
+  <div>
+    <div class="bar"><span>Products › Aero 5G Smartphone › Product data</span><span class="badge">⬡ Variation Switcher</span></div>
+    <div class="wrap">
+      <h1 class="wp">Set up a variation’s swatch design — 3 steps</h1>
+
+      <div class="stepper" id="stepper">
+        <div class="st on" data-go="1"><span class="nb">1</span><span class="tx"><b>Variations list</b>Open the tab, click Edit</span></div>
+        <div class="st" data-go="2"><span class="nb">2</span><span class="tx"><b>Edit a variation</b>Set swatch design</span></div>
+        <div class="st" data-go="3"><span class="nb">3</span><span class="tx"><b>Finished list</b>Swatches show in rows</span></div>
+      </div>
+
+      <!-- STEP 1 -->
+      <div class="screen on" data-screen="1">
+        <div class="panel">
+          <div class="tabsrow">
+            <div class="tb">General</div><div class="tb">Inventory</div><div class="tb">Attributes</div><div class="tb on">Variations</div>
+          </div>
+          <div class="toolbar">
+            <select><option>Add variation</option><option>Generate variations</option><option>Delete all</option></select>
+            <button class="btn sm sec">Go</button>
+          </div>
+          <div class="vrow"><span class="grip">≡</span><span class="vimg" style="background:#1c2230"></span><div class="vmeta"><div class="nm">Midnight · 256 GB</div><div class="sub">#SKU AERO-MID-256</div></div><div class="price">$799.00</div><div class="stk"><span class="in">In stock</span></div><span class="editlink" data-edit>Edit ▾</span></div>
+          <div class="vrow"><span class="grip">≡</span><span class="vimg" style="background:#5a2fd6"></span><div class="vmeta"><div class="nm">Aurora · 512 GB</div><div class="sub">#SKU AERO-AUR-512</div></div><div class="price">$899.00</div><div class="stk"><span class="in">In stock</span></div><span class="editlink" data-edit>Edit ▾</span></div>
+          <div class="vrow"><span class="grip">≡</span><span class="vimg" style="background:#e9a6b3"></span><div class="vmeta"><div class="nm">Rose · 1 TB</div><div class="sub">#SKU AERO-ROSE-1T</div></div><div class="price">$1,099.00</div><div class="stk"><span class="out">Out of stock</span></div><span class="editlink" data-edit>Edit ▾</span></div>
+        </div>
+        <div class="note"><span>ℹ️</span><span>This is the native WooCommerce Variations tab. Click <b>Edit ▾</b> on any row to expand it — that’s where your plugin adds the swatch design settings (Step 2).</span></div>
+      </div>
+
+      <!-- STEP 2 -->
+      <div class="screen" data-screen="2">
+        <div class="panel">
+          <div class="tabsrow">
+            <div class="tb">General</div><div class="tb">Inventory</div><div class="tb">Attributes</div><div class="tb on">Variations</div>
+          </div>
+          <div class="vrow" style="opacity:.55"><span class="grip">≡</span><span class="vimg" style="background:#5a2fd6"></span><div class="vmeta"><div class="nm">Aurora · 512 GB</div></div><div class="price">$899.00</div><div class="stk"><span class="in">In stock</span></div><span class="editlink">Edit ▴</span></div>
+
+          <div class="expand">
+            <div class="eh"><span class="vimg" style="background:#5a2fd6"></span><span class="nm">Editing: Midnight · 256 GB</span><span class="hint" style="margin-left:auto">Variation #128</span></div>
+            <div class="ebody">
+              <!-- native left -->
+              <div class="col">
+                <h4>WooCommerce fields</h4>
+                <div class="fld"><label class="f">Variation image</label><div class="imgup"><span class="ph" style="background:#1c2230"></span><button class="btn sm sec">Upload image</button></div></div>
+                <div class="fld"><label class="f">SKU</label><input type="text" value="AERO-MID-256"></div>
+                <div class="two"><div class="fld"><label class="f">Regular price ($)</label><input type="text" value="799.00"></div><div class="fld"><label class="f">Sale price ($)</label><input type="text" placeholder="—"></div></div>
+                <div class="fld"><label class="f">Stock status</label><select><option selected>In stock</option><option>Out of stock</option><option>On backorder</option></select></div>
+              </div>
+              <!-- native right -->
+              <div class="col">
+                <h4>More</h4>
+                <div class="fld"><label class="f">Weight</label><input type="text" placeholder="0.18 kg"></div>
+                <div class="fld"><label class="f">Description</label><input type="text" placeholder="Optional variation description"></div>
+                <div class="fld"><label class="f">Enabled</label><select><option selected>Yes — show this variation</option><option>No</option></select></div>
+              </div>
+
+              <!-- PLUGIN block -->
+              <div class="pluginblock">
+                <div class="pbgrid">
+                  <div>
+                    <div class="fld">
+                      <label class="f">Swatch type for this value</label>
+                      <div class="typeseg" id="typeseg">
+                        <button class="on" data-type="color">Color</button>
+                        <button data-type="image">Image</button>
+                        <button data-type="label">Label</button>
+                      </div>
+                    </div>
+                    <div id="valbox"></div>
+                    <div class="fld" style="margin-top:12px">
+                      <label class="f">Tooltip label (shown on hover)</label>
+                      <input type="text" id="tiptext" value="Midnight">
+                    </div>
+                  </div>
+                  <div>
+                    <div class="fld">
+                      <label class="f">Shape</label>
+                      <div class="shapeseg" id="shapeseg">
+                        <button class="on" data-shape="50%">Circle</button>
+                        <button data-shape="7px">Rounded</button>
+                        <button data-shape="0">Square</button>
+                      </div>
+                    </div>
+                    <div class="fld">
+                      <label class="f">If out of stock, show as</label>
+                      <div class="oosseg" id="oosseg">
+                        <button class="on" data-oos="cross">Cross out</button>
+                        <button data-oos="blur">Blur</button>
+                        <button data-oos="hide">Hide</button>
+                      </div>
+                    </div>
+                    <div class="livewrap">
+                      <div class="cap">Live preview (storefront)</div>
+                      <div class="liveswatch" id="live"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="note" style="margin:12px 0 4px"><span>⚡</span><span><b>Auto-detected as Color</b> because this value has a color set. Change the type only if you want to override.</span></div>
+              </div>
+
+              <div class="efoot">
+                <button class="btn" data-save>Save changes</button>
+                <button class="btn sec" data-go="1">Cancel</button>
+                <span class="hint">Saving updates this variation’s swatch everywhere it appears.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 3 -->
+      <div class="screen" data-screen="3">
+        <div class="donebar"><span>✅</span><span><b>Done.</b> Every variation now carries a swatch preview, tooltip label and out-of-stock rule. The list reads at a glance.</span></div>
+        <div class="panel">
+          <div class="tabsrow">
+            <div class="tb">General</div><div class="tb">Inventory</div><div class="tb">Attributes</div><div class="tb on">Variations</div>
+          </div>
+          <div class="vrow"><span class="grip">≡</span><span class="vimg" style="background:#1c2230"></span><div class="vmeta"><div class="nm"><span class="swprev" style="background:#1c2230"></span> Midnight · <span class="lblprev">256 GB</span></div><div class="sub">Color swatch · tooltip “Midnight” · OOS: cross</div></div><div class="price">$799.00</div><div class="stk"><span class="in">In stock</span></div><span class="editlink">Edit ▾</span></div>
+          <div class="vrow"><span class="grip">≡</span><span class="vimg" style="background:#5a2fd6"></span><div class="vmeta"><div class="nm"><span class="swprev" style="background:#5a2fd6"></span> Aurora · <span class="lblprev">512 GB</span></div><div class="sub">Color swatch · tooltip “Aurora” · OOS: cross</div></div><div class="price">$899.00</div><div class="stk"><span class="in">In stock</span></div><span class="editlink">Edit ▾</span></div>
+          <div class="vrow"><span class="grip">≡</span><span class="vimg" style="background:#e9a6b3"></span><div class="vmeta"><div class="nm"><span class="swprev" style="background:#e9a6b3;position:relative;overflow:hidden"></span> Rose · <span class="lblprev">1 TB</span></div><div class="sub">Color swatch · tooltip “Rose” · OOS: cross (shown crossed-out on store)</div></div><div class="price">$1,099.00</div><div class="stk"><span class="out">Out of stock</span></div><span class="editlink">Edit ▾</span></div>
+        </div>
+
+        <div class="panel">
+          <div class="ph">Result on the storefront (what shoppers see)</div>
+          <div style="padding:16px">
+            <div style="font-size:12px;font-weight:700;text-transform:uppercase;color:var(--muted);margin-bottom:9px">Color: <span style="color:var(--ink);text-transform:none">Aurora</span></div>
+            <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+              <span title="Midnight" style="width:34px;height:34px;border-radius:50%;background:#1c2230;cursor:pointer"></span>
+              <span title="Aurora" style="width:34px;height:34px;border-radius:50%;background:#5a2fd6;box-shadow:0 0 0 2px #fff,0 0 0 4px #5a2fd6;cursor:pointer"></span>
+              <span title="Rose — out of stock" style="position:relative;width:34px;height:34px;border-radius:50%;background:#e9a6b3;opacity:.85;cursor:not-allowed;overflow:hidden;display:inline-block"><span style="position:absolute;inset:0;background:linear-gradient(to top left,transparent 46%,#d63638 46%,#d63638 54%,transparent 54%)"></span></span>
+            </div>
+            <div style="font-size:12px;font-weight:700;text-transform:uppercase;color:var(--muted);margin:16px 0 9px">Storage: <span style="color:var(--ink);text-transform:none">512 GB</span></div>
+            <div style="display:flex;gap:8px;flex-wrap:wrap">
+              <button style="border:1.5px solid #dcdcde;background:#fff;border-radius:7px;padding:8px 14px;font-weight:600;cursor:pointer">256 GB</button>
+              <button style="border:1.5px solid #5a2fd6;background:#5a2fd6;color:#fff;border-radius:7px;padding:8px 14px;font-weight:600;cursor:pointer">512 GB</button>
+              <button style="border:1.5px solid #dcdcde;background:#fff;border-radius:7px;padding:8px 14px;font-weight:600;cursor:pointer">1 TB</button>
+            </div>
+          </div>
+        </div>
+        <div class="note"><span>ℹ️</span><span>Note the split of work: the <b>type/value</b> set here is data, while the <b>shape, selected ring and crossed-out style</b> come from the Divi module’s global design — set once, applied to all products.</span></div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+const screens=[...document.querySelectorAll('.screen')];
+const steps=[...document.querySelectorAll('.stepper .st')];
+function goto(n){
+  screens.forEach(s=>s.classList.toggle('on',s.dataset.screen==n));
+  steps.forEach(s=>{const k=+s.dataset.go;s.classList.toggle('on',k==n);s.classList.toggle('done',k<n);});
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+document.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>goto(b.dataset.go)));
+document.querySelectorAll('[data-edit]').forEach(b=>b.addEventListener('click',()=>goto(2)));
+document.querySelector('[data-save]').addEventListener('click',()=>goto(3));
+
+/* step-2 interactivity */
+const valbox=document.getElementById('valbox');
+const live=document.getElementById('live');
+let state={type:'color',shape:'50%',color:'#1c2230',tip:'Midnight'};
+function renderVal(){
+  if(state.type==='color'){
+    valbox.innerHTML=`<label class="f">Color value</label><div class="colorpick"><input type="color" id="cp" value="${state.color}"><input type="text" id="hex" value="${state.color.toUpperCase()}" style="max-width:120px"></div>`;
+    const cp=document.getElementById('cp'),hex=document.getElementById('hex');
+    cp.oninput=()=>{state.color=cp.value;hex.value=cp.value.toUpperCase();paint();};
+  }else if(state.type==='image'){
+    valbox.innerHTML=`<label class="f">Swatch image</label><div class="imgup"><span class="ph" style="background:linear-gradient(135deg,#c8a26a,#a87f48)">⬆</span><button class="btn sm sec">Choose image</button></div>`;
+  }else{
+    valbox.innerHTML=`<label class="f">Label text</label><input type="text" id="lbl" value="${state.tip}">`;
+    document.getElementById('lbl').oninput=e=>{state.tip=e.target.value;paint();};
+  }
+  paint();
+}
+function paint(){
+  let sw='';
+  if(state.type==='label'){
+    sw=`<span style="border:1.5px solid #2b2f36;border-radius:${state.shape==='50%'?'999px':state.shape};padding:7px 14px;font-weight:600;color:#2b2f36">${state.tip||'Label'}</span>`;
+  }else if(state.type==='image'){
+    sw=`<span style="width:34px;height:34px;border-radius:${state.shape};background:linear-gradient(135deg,#c8a26a,#a87f48);box-shadow:0 0 0 2px #fff,0 0 0 4px #5a2fd6;display:inline-block"></span>`;
+  }else{
+    sw=`<span style="width:34px;height:34px;border-radius:${state.shape};background:${state.color};box-shadow:0 0 0 2px #fff,0 0 0 4px #5a2fd6;display:inline-block"></span>`;
+  }
+  live.innerHTML=sw+`<span style="font-size:12px;color:#646970">${state.tip}</span>`;
+}
+document.querySelectorAll('#typeseg button').forEach(b=>b.onclick=()=>{document.querySelectorAll('#typeseg button').forEach(x=>x.classList.remove('on'));b.classList.add('on');state.type=b.dataset.type;renderVal();});
+document.querySelectorAll('#shapeseg button').forEach(b=>b.onclick=()=>{document.querySelectorAll('#shapeseg button').forEach(x=>x.classList.remove('on'));b.classList.add('on');state.shape=b.dataset.shape;paint();});
+document.querySelectorAll('#oosseg button').forEach(b=>b.onclick=()=>{document.querySelectorAll('#oosseg button').forEach(x=>x.classList.remove('on'));b.classList.add('on');});
+document.getElementById('tiptext').addEventListener('input',e=>{state.tip=e.target.value;paint();});
+renderVal();
+</script>
+</body>
+</html>
