@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dedicated Swatches Screen — Mockup</title>
+<style>
+  :root{
+    --wp-bg:#f0f0f1;--side:#1d2327;--blue:#2271b1;--blue-d:#135e96;--ink:#1d2327;--muted:#646970;
+    --line:#dcdcde;--green:#00a32a;--warn:#d63638;--plugin:#7b4dff;--plugin-ink:#5a2fd6;
+    --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--wp-bg);color:var(--ink);font-family:var(--font);font-size:13px;line-height:1.5}
+  .wp{display:grid;grid-template-columns:158px 1fr;min-height:100vh}
+  .side{background:var(--side);color:#c3c4c7;padding-top:8px}
+  .side .it{display:flex;align-items:center;gap:9px;padding:9px 12px;font-size:13px;cursor:pointer;border-left:3px solid transparent}
+  .side .it.on{background:var(--blue);color:#fff;border-left-color:#fff}
+  .side .it .ic{width:15px;height:15px;border-radius:3px;background:#a7aaad}.side .it.on .ic{background:#fff}
+  .side .it .ic.star{background:#9d6dff}
+  .bar{background:#fff;border-bottom:1px solid var(--line);padding:9px 22px;font-size:12.5px;color:var(--muted);display:flex;justify-content:space-between;align-items:center}
+  .badge{background:linear-gradient(135deg,#7b4dff,#9d6dff);color:#fff;font-weight:700;font-size:11px;padding:3px 9px;border-radius:20px}
+  .wrap{padding:18px 26px 70px;max-width:1040px}
+  h1.wp{font-size:22px;font-weight:400;margin:4px 0 4px}
+  .lead{color:var(--muted);margin:0 0 16px;max-width:760px}
+
+  /* primary/secondary tab */
+  .vtabs{display:flex;gap:0;border-bottom:1px solid var(--line);margin-bottom:18px}
+  .vtabs button{background:none;border:0;border-bottom:3px solid transparent;padding:10px 16px;font-size:13px;font-weight:600;color:var(--muted);cursor:pointer;font-family:inherit;display:flex;align-items:center;gap:7px}
+  .vtabs button.on{color:var(--plugin-ink);border-bottom-color:var(--plugin)}
+  .vtabs .pri{font-size:9.5px;font-weight:700;background:var(--green);color:#fff;padding:1px 6px;border-radius:9px}
+  .vtabs .sec{font-size:9.5px;font-weight:700;background:#b8bcc2;color:#fff;padding:1px 6px;border-radius:9px}
+  .view{display:none}.view.on{display:block}
+
+  /* attribute accordion */
+  .attr{border:1px solid var(--line);border-radius:7px;margin-bottom:12px;background:#fff;overflow:hidden}
+  .attr .ahead{display:flex;align-items:center;gap:14px;padding:13px 16px;cursor:pointer;background:#fff}
+  .attr.open .ahead{border-bottom:1px solid var(--line);background:#fafafb}
+  .attr .ahead .chev{color:#a7aaad;transition:.15s}
+  .attr.open .ahead .chev{transform:rotate(90deg)}
+  .attr .aname{font-weight:700;font-size:14px;min-width:96px}
+  .attr .acount{font-size:11.5px;color:var(--muted)}
+  .typewrap{margin-left:auto;display:flex;align-items:center;gap:9px}
+  .typewrap label{font-size:11.5px;color:var(--muted);font-weight:600}
+  .typesel{padding:6px 9px;border:1px solid #8c8f94;border-radius:5px;font-size:12.5px;font-family:inherit;background:#fff;min-width:150px}
+  .autochip{font-size:10px;font-weight:700;color:var(--plugin-ink);background:rgba(123,77,255,.1);padding:2px 7px;border-radius:9px}
+  .abody{padding:6px 16px 16px;display:none}
+  .attr.open .abody{display:block}
+
+  /* terms table */
+  table{width:100%;border-collapse:collapse;margin-top:8px}
+  th,td{text-align:left;padding:9px 10px;border-bottom:1px solid #ececed;font-size:12.5px;vertical-align:middle}
+  th{font-size:11px;text-transform:uppercase;letter-spacing:.03em;color:var(--muted);font-weight:600}
+  td .prev{display:inline-flex;align-items:center;gap:8px}
+  .sw{width:26px;height:26px;border-radius:50%;border:1px solid var(--line);flex:none;background-size:cover}
+  .sw.sq{border-radius:5px}
+  .lbl{display:inline-block;border:1.4px solid #2b2f36;border-radius:5px;padding:3px 10px;font-weight:600;color:#2b2f36}
+  input[type=text]{padding:6px 8px;border:1px solid #8c8f94;border-radius:5px;font-size:12.5px;font-family:inherit;width:100%}
+  input[type=color]{width:34px;height:28px;border:1px solid #8c8f94;border-radius:4px;background:none;cursor:pointer;vertical-align:middle}
+  .hex{width:92px}
+  .valcell{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+  .uploadmini{display:inline-flex;align-items:center;gap:8px}
+  .thumbmini{width:34px;height:34px;border-radius:5px;border:1px solid var(--line);background-size:cover}
+  .btn{background:var(--blue);border:1px solid var(--blue-d);color:#fff;padding:7px 14px;border-radius:5px;font-weight:600;cursor:pointer;font-size:12.5px;font-family:inherit}
+  .btn.sec{background:#f6f7f7;border-color:#c3c4c7;color:var(--blue)}
+  .btn.sm{padding:4px 9px;font-size:11.5px}
+  .seg{display:inline-flex;gap:5px}
+  .seg button{border:1.4px solid var(--line);background:#fff;border-radius:5px;padding:4px 9px;font-size:11.5px;font-weight:600;cursor:pointer;color:var(--ink);font-family:inherit}
+  .seg button.on{background:var(--plugin);border-color:var(--plugin);color:#fff}
+  .saverow{display:flex;align-items:center;gap:10px;margin-top:12px}
+  .saved{font-size:11.5px;color:var(--green);font-weight:600;opacity:0;transition:.2s}
+  .saved.show{opacity:1}
+  .note{background:rgba(123,77,255,.08);color:var(--plugin-ink);border-radius:6px;padding:9px 12px;font-size:12px;margin:14px 0;display:flex;gap:7px}
+
+  /* override view */
+  .ovbox{background:#fff;border:1px solid var(--line);border-radius:7px;padding:16px;max-width:620px}
+  .ovbox h3{margin:0 0 4px;font-size:14px}
+  .ovbox .sub{color:var(--muted);font-size:12px;margin:0 0 14px}
+  .ovrow{display:flex;align-items:center;justify-content:space-between;padding:11px 0;border-bottom:1px solid #ececed}
+  .ovrow:last-child{border-bottom:0}
+  .ovrow .k{font-weight:600}.ovrow .d{font-size:11.5px;color:var(--muted)}
+  .switch{position:relative;width:40px;height:23px;background:#cfd3da;border-radius:99px;cursor:pointer;transition:.2s;flex:none}
+  .switch.on{background:var(--plugin)}
+  .switch:after{content:"";position:absolute;top:3px;left:3px;width:17px;height:17px;border-radius:50%;background:#fff;transition:.2s}
+  .switch.on:after{left:20px}
+  .livemini{display:inline-flex;align-items:center;gap:8px;background:#f6f7f7;border:1px solid var(--line);border-radius:6px;padding:7px 12px}
+</style>
+</head>
+<body>
+<div class="wp">
+  <nav class="side">
+    <div class="it"><span class="ic"></span>Dashboard</div>
+    <div class="it"><span class="ic"></span>Products</div>
+    <div class="it on"><span class="ic star"></span>Swatches</div>
+    <div class="it"><span class="ic"></span>WooCommerce</div>
+    <div class="it"><span class="ic"></span>Appearance</div>
+    <div class="it"><span class="ic"></span>Plugins</div>
+  </nav>
+
+  <div>
+    <div class="bar"><span>Swatches</span><span class="badge">⬡ Variation Switcher</span></div>
+    <div class="wrap">
+      <h1 class="">Swatches</h1>
+      <p class="lead">Set each attribute's representation type and each term's value <b>once</b> here. Every product and variation reuses it automatically. (Per-variation overrides live in the product's Variations tab — see the second tab.)</p>
+
+      <div class="vtabs">
+        <button class="on" data-v="main">Attributes &amp; terms <span class="pri">PRIMARY</span></button>
+        <button data-v="override">Variation override <span class="sec">SECONDARY</span></button>
+      </div>
+
+      <!-- PRIMARY VIEW -->
+      <div class="view on" data-view="main">
+
+        <!-- COLOR attribute -->
+        <div class="attr open" data-attr>
+          <div class="ahead" data-toggle>
+            <span class="chev">▶</span>
+            <span class="aname">Color</span>
+            <span class="acount">5 terms</span>
+            <span class="autochip">⚡ auto-detected: Color</span>
+            <span class="typewrap"><label>Representation</label>
+              <select class="typesel" data-type><option value="color" selected>Color swatch</option><option value="multicolor">Multi-color (split)</option><option value="gradient">Gradient</option><option value="image">Image</option><option value="chip">Color-dot + text</option><option value="label">Label</option></select>
+            </span>
+          </div>
+          <div class="abody">
+            <table>
+              <thead><tr><th style="width:46px">Preview</th><th style="width:150px">Term</th><th>Value</th><th style="width:170px">Tooltip label</th></tr></thead>
+              <tbody data-terms></tbody>
+            </table>
+            <div class="saverow"><button class="btn" data-save>Save all</button><button class="btn sec sm">Reset</button><span class="saved" data-saved>✓ Saved</span></div>
+          </div>
+        </div>
+
+        <!-- SIZE attribute -->
+        <div class="attr" data-attr>
+          <div class="ahead" data-toggle>
+            <span class="chev">▶</span>
+            <span class="aname">Size</span>
+            <span class="acount">5 terms</span>
+            <span class="autochip">⚡ auto-detected: Label</span>
+            <span class="typewrap"><label>Representation</label>
+              <select class="typesel" data-type><option value="label" selected>Label / button</option><option value="pill">Pill</option><option value="twoline">Two-line</option><option value="radio">Radio</option></select>
+            </span>
+          </div>
+          <div class="abody">
+            <table>
+              <thead><tr><th style="width:46px">Preview</th><th style="width:150px">Term</th><th>Value</th><th style="width:170px">Tooltip label</th></tr></thead>
+              <tbody data-terms></tbody>
+            </table>
+            <div class="saverow"><button class="btn" data-save>Save all</button><button class="btn sec sm">Reset</button><span class="saved" data-saved>✓ Saved</span></div>
+          </div>
+        </div>
+
+        <!-- MATERIAL attribute -->
+        <div class="attr" data-attr>
+          <div class="ahead" data-toggle>
+            <span class="chev">▶</span>
+            <span class="aname">Material</span>
+            <span class="acount">3 terms</span>
+            <span class="autochip">⚡ auto-detected: Image</span>
+            <span class="typewrap"><label>Representation</label>
+              <select class="typesel" data-type><option value="image" selected>Image</option><option value="texture">Texture</option><option value="label">Label</option></select>
+            </span>
+          </div>
+          <div class="abody">
+            <table>
+              <thead><tr><th style="width:46px">Preview</th><th style="width:150px">Term</th><th>Value</th><th style="width:170px">Tooltip label</th></tr></thead>
+              <tbody data-terms></tbody>
+            </table>
+            <div class="saverow"><button class="btn" data-save>Save all</button><button class="btn sec sm">Reset</button><span class="saved" data-saved>✓ Saved</span></div>
+          </div>
+        </div>
+
+        <div class="note"><span>⚡</span><span><b>Change the Representation dropdown</b> on any attribute and watch the value fields below it change — that single choice governs all of that attribute's terms.</span></div>
+      </div>
+
+      <!-- OVERRIDE VIEW -->
+      <div class="view" data-view="override">
+        <div class="ovbox">
+          <h3>Variation override — “Aurora · 512 GB”</h3>
+          <p class="sub">This lives inside the product's Variations → Edit panel. It only holds variation-specific overrides; type &amp; value come from the Swatches screen.</p>
+          <div class="ovrow"><div><div class="k">Use this variation's image as the swatch</div><div class="d">Only relevant when the attribute is Image type</div></div><div class="switch" data-sw></div></div>
+          <div class="ovrow"><div><div class="k">Enable this swatch</div><div class="d">Off = show as plain text</div></div><div class="switch on" data-sw></div></div>
+          <div class="ovrow"><div><div class="k">Shape override</div><div class="d">Defaults to global</div></div><div class="seg"><button class="on">Inherit</button><button>Circle</button><button>Rounded</button><button>Square</button></div></div>
+          <div class="ovrow"><div><div class="k">If out of stock, show as</div><div class="d">Defaults to global</div></div><div class="seg"><button class="on">Inherit</button><button>Cross</button><button>Blur</button><button>Hide</button></div></div>
+          <div class="ovrow"><div class="k">Live preview</div><div class="livemini"><span class="sw" style="background:#5a2fd6;box-shadow:0 0 0 2px #fff,0 0 0 4px #5a2fd6"></span><span style="color:var(--muted)">Aurora</span></div></div>
+          <div class="saverow"><button class="btn">Save variation</button><span class="d" style="color:var(--muted)">Note: no type/value here — those are inherited.</span></div>
+        </div>
+        <div class="note"><span>ℹ️</span><span>For <b>local (custom) attributes</b> that have no global terms, this block expands to include the full type/value editor — the only case where representation is set per product.</span></div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+// data
+const TERMS={
+  Color:[
+    {name:"Sky Blue",color:"#5AAEF5"},{name:"Charcoal",color:"#1C2230"},
+    {name:"Crimson",color:"#D63638"},{name:"Olive",color:"#5B7D3A"},{name:"Mustard",color:"#E0B53D"}
+  ],
+  Size:[{name:"XS"},{name:"S"},{name:"M"},{name:"L"},{name:"XL"}],
+  Material:[
+    {name:"Mesh Grey",grad:"linear-gradient(135deg,#9aa0a8,#6b7178)"},
+    {name:"Leather Tan",grad:"linear-gradient(135deg,#c8a26a,#a87f48)"},
+    {name:"Fabric Navy",grad:"linear-gradient(135deg,#33415c,#1e293b)"}
+  ]
+};
+
+function valControl(type,t){
+  if(type==='color'||type==='chip'){
+    const c=t.color||'#7B4DFF';
+    return `<div class="valcell"><input type="color" value="${c}"><input type="text" class="hex" value="${c}"></div>`;
+  }
+  if(type==='multicolor'){
+    return `<div class="valcell"><input type="color" value="${t.color||'#1C2230'}"><input type="color" value="#FFFFFF"><select class="typesel" style="min-width:110px"><option>Diagonal</option><option>Horizontal</option><option>Vertical</option></select></div>`;
+  }
+  if(type==='gradient'){
+    return `<div class="valcell"><input type="color" value="#7B4DFF"><input type="color" value="#22D3EE"><span style="font-size:11.5px;color:var(--muted)">angle</span><input type="text" class="hex" style="width:56px" value="135°"></div>`;
+  }
+  if(type==='image'||type==='texture'){
+    return `<div class="valcell uploadmini"><span class="thumbmini" style="background:${t.grad||'#e9ecf5'}"></span><button class="btn sec sm">Choose image</button>${type==='image'?'<select class="typesel" style="min-width:96px"><option>Cover</option><option>Contain</option></select>':'<select class="typesel" style="min-width:96px"><option>No-repeat</option><option>Tile</option></select>'}</div>`;
+  }
+  if(type==='twoline'){
+    return `<div class="valcell"><input type="text" value="${t.name}" style="max-width:130px" placeholder="Primary"><input type="text" placeholder="Secondary (optional)" style="max-width:150px"></div>`;
+  }
+  // label / pill / radio
+  return `<div class="valcell"><input type="text" value="${t.name}" style="max-width:160px"><button class="btn sec sm">+ colors</button></div>`;
+}
+function preview(type,t){
+  if(type==='color'||type==='chip') return `<span class="sw" style="background:${t.color}"></span>`;
+  if(type==='multicolor') return `<span class="sw" style="background:linear-gradient(135deg,${t.color||'#1C2230'} 50%,#fff 50%)"></span>`;
+  if(type==='gradient') return `<span class="sw" style="background:linear-gradient(135deg,#7B4DFF,#22D3EE)"></span>`;
+  if(type==='image'||type==='texture') return `<span class="sw sq" style="background:${t.grad||'#e9ecf5'}"></span>`;
+  return `<span class="lbl">${t.name}</span>`;
+}
+
+function renderAttr(attrEl){
+  const name=attrEl.querySelector('.aname').textContent;
+  const type=attrEl.querySelector('[data-type]').value;
+  const tbody=attrEl.querySelector('[data-terms]');
+  tbody.innerHTML=TERMS[name].map(t=>`
+    <tr>
+      <td>${preview(type,t)}</td>
+      <td><b>${t.name}</b></td>
+      <td>${valControl(type,t)}</td>
+      <td><input type="text" value="${t.name}"></td>
+    </tr>`).join('');
+  // sync color preview live
+  tbody.querySelectorAll('tr').forEach((tr,i)=>{
+    const cp=tr.querySelector('input[type=color]');
+    if(cp){cp.addEventListener('input',()=>{const sw=tr.querySelector('.sw');if(sw)sw.style.background=cp.value;const hex=tr.querySelector('.hex');if(hex)hex.value=cp.value.toUpperCase();});}
+  });
+}
+
+document.querySelectorAll('[data-attr]').forEach(a=>{
+  renderAttr(a);
+  a.querySelector('[data-toggle]').addEventListener('click',e=>{if(e.target.closest('[data-type]'))return;a.classList.toggle('open');});
+  a.querySelector('[data-type]').addEventListener('change',()=>renderAttr(a));
+  a.querySelector('[data-save]')?.addEventListener('click',()=>{const s=a.querySelector('[data-saved]');s.classList.add('show');setTimeout(()=>s.classList.remove('show'),1600);});
+});
+// view tabs
+document.querySelectorAll('.vtabs button').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('.vtabs button').forEach(x=>x.classList.remove('on'));b.classList.add('on');
+  document.querySelectorAll('.view').forEach(v=>v.classList.toggle('on',v.dataset.view===b.dataset.v));
+});
+// override switches + segs
+document.querySelectorAll('[data-sw]').forEach(s=>s.onclick=()=>s.classList.toggle('on'));
+document.querySelectorAll('.seg').forEach(g=>g.querySelectorAll('button').forEach(b=>b.onclick=()=>{g.querySelectorAll('button').forEach(x=>x.classList.remove('on'));b.classList.add('on');}));
+</script>
+</body>
+</html>
